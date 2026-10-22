@@ -65,7 +65,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <h1 className="text-base font-bold text-slate-800 tracking-tight">Dashboard Overview</h1>
-            <p className="text-xs text-slate-500">Welcome to HAP Enterprise CRM · Pharma Chemicals & API Desk</p>
+            <p className="text-xs text-slate-500">Welcome to CHEMI PHARMA CRM · Pharma Chemicals & API Desk</p>
           </div>
         </div>
 

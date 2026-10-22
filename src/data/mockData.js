@@ -1,4 +1,4 @@
-// Comprehensive Mock Data for HAP Enterprise CRM
+// Comprehensive Mock Data for CHEMI PHARMA CRM
 
 export const STAFF_LIST = [
   { id: 'st-1', name: 'Eshwari', role: 'Sr. Sales & Sourcing Specialist', avatarBg: 'bg-indigo-600', leadsToday: 8 },
@@ -34,7 +34,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-1',
     description: 'Linezolid IP',
-    code: 'HAP-API-1021',
+    code: 'CP-API-1021',
     casNo: '165800-06-6',
     rate: 4800,
     price5kg: 5200,
@@ -52,7 +52,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-2',
     description: 'Telmisartan USP',
-    code: 'HAP-API-1022',
+    code: 'CP-API-1022',
     casNo: '144701-48-4',
     rate: 3200,
     price5kg: 3500,
@@ -70,7 +70,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-3',
     description: 'Domperidone IP',
-    code: 'HAP-API-1023',
+    code: 'CP-API-1023',
     casNo: '57808-66-9',
     rate: 2950,
     price5kg: 3200,
@@ -88,7 +88,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-4',
     description: 'Niacinamide IP/BP',
-    code: 'HAP-API-1024',
+    code: 'CP-API-1024',
     casNo: '98-92-0',
     rate: 3500,
     price5kg: 3800,
@@ -106,7 +106,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-5',
     description: 'Baclofen IP',
-    code: 'HAP-API-1025',
+    code: 'CP-API-1025',
     casNo: '1134-47-0',
     rate: 4200,
     price5kg: 4600,
@@ -124,7 +124,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-6',
     description: 'Folic Acid IP',
-    code: 'HAP-API-1026',
+    code: 'CP-API-1026',
     casNo: '59-30-3',
     rate: 7800,
     price5kg: 8400,
@@ -142,7 +142,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-7',
     description: 'Pregabalin BP',
-    code: 'HAP-API-1027',
+    code: 'CP-API-1027',
     casNo: '148553-50-8',
     rate: 5200,
     price5kg: 5600,
@@ -160,7 +160,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-8',
     description: 'Furosemide BP',
-    code: 'HAP-API-1028',
+    code: 'CP-API-1028',
     casNo: '54-31-9',
     rate: 3800,
     price5kg: 4100,
@@ -178,7 +178,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-9',
     description: 'Hydroxyzine Hydrochloride IP',
-    code: 'HAP-API-1029',
+    code: 'CP-API-1029',
     casNo: '68-88-2',
     rate: 3400,
     price5kg: 3700,
@@ -196,7 +196,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-10',
     description: 'Metformin HCl IP',
-    code: 'HAP-API-1030',
+    code: 'CP-API-1030',
     casNo: '1115-70-4',
     rate: 420,
     price5kg: 490,
@@ -214,7 +214,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-11',
     description: 'Montelukast Sodium IP',
-    code: 'HAP-API-1031',
+    code: 'CP-API-1031',
     casNo: '151767-02-1',
     rate: 16500,
     price5kg: 18000,
@@ -232,7 +232,7 @@ export const ITEMS_MASTER = [
   {
     id: 'itm-12',
     description: 'Aspirin IP (Acetylsalicylic Acid)',
-    code: 'HAP-API-1032',
+    code: 'CP-API-1032',
     casNo: '50-78-2',
     rate: 450,
     price5kg: 520,
@@ -814,7 +814,7 @@ export const INITIAL_TASKS = [
   {
     id: 'tsk-5',
     name: 'Price renegotiation with Calyx for Hydroxyzine HCl bulk contract',
-    customer: 'HAP Sourcing',
+    customer: 'CHEMI PHARMA Sourcing',
     status: 'Complete',
     startDate: '14-10-2026',
     dueDate: '19-10-2026',
@@ -886,7 +886,7 @@ export const GENERAL_LEADS = [
 export const ACCOUNTS_INVOICES = [
   {
     id: 'inv-1021',
-    invoiceNo: 'HAP/26-27/1021',
+    invoiceNo: 'CP/26-27/1021',
     date: '10-09-2026',
     customer: 'ZYMETH PHARMACEUTICALS PVT LTD-492614',
     salesman: 'Eshwari',
@@ -900,7 +900,7 @@ export const ACCOUNTS_INVOICES = [
   },
   {
     id: 'inv-1022',
-    invoiceNo: 'HAP/26-27/1022',
+    invoiceNo: 'CP/26-27/1022',
     date: '18-08-2026',
     customer: 'MIHIKA PHARMACEUTICALS-492075',
     salesman: 'Aishwarya',
@@ -914,7 +914,7 @@ export const ACCOUNTS_INVOICES = [
   },
   {
     id: 'inv-1023',
-    invoiceNo: 'HAP/26-27/1023',
+    invoiceNo: 'CP/26-27/1023',
     date: '02-10-2026',
     customer: 'R K LIFE SCIENCES',
     salesman: 'Amisha',
@@ -928,7 +928,7 @@ export const ACCOUNTS_INVOICES = [
   },
   {
     id: 'inv-1024',
-    invoiceNo: 'HAP/26-27/1024',
+    invoiceNo: 'CP/26-27/1024',
     date: '15-06-2026',
     customer: 'GLOBAL PHARMA CHEM',
     salesman: 'Disha',
@@ -942,7 +942,7 @@ export const ACCOUNTS_INVOICES = [
   },
   {
     id: 'inv-1025',
-    invoiceNo: 'HAP/26-27/1025',
+    invoiceNo: 'CP/26-27/1025',
     date: '12-10-2026',
     customer: 'SUNCARE FORMULATIONS LTD',
     salesman: 'Eshwari',

@@ -74,7 +74,7 @@ export default function AIExtractorModal() {
 
     const t2 = setTimeout(() => {
       setProcessingProgress(80);
-      setProcessingStatusText('Fuzzy-matching against HAP Items Master catalog...');
+      setProcessingStatusText('Fuzzy-matching against CHEMI PHARMA Items Master catalog...');
     }, 1200);
 
     try {
@@ -399,7 +399,7 @@ export default function AIExtractorModal() {
                   </div>
 
                   <p className="text-[10px] text-slate-700 mb-2">
-                    To, <strong>HAP Enterprise</strong>,<br />
+                    To, <strong>CHEMI PHARMA</strong>,<br />
                     Dear Team, Please provide your best competitive rate for the following items with delivery schedule:
                   </p>
 

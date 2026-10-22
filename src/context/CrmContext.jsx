@@ -21,7 +21,7 @@ export function CrmProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState({
     name: 'Eshwari',
-    email: 'eshwari@hapenterprise.com',
+    email: 'eshwari@chemipharma.com',
     role: 'Sr. Sales & Sourcing Specialist',
     color: 'bg-indigo-600'
   });
@@ -29,7 +29,7 @@ export function CrmProvider({ children }) {
   const login = (user) => {
     setCurrentUser(user || {
       name: 'Eshwari',
-      email: 'eshwari@hapenterprise.com',
+      email: 'eshwari@chemipharma.com',
       role: 'Sr. Sales Specialist',
       color: 'bg-indigo-600'
     });
@@ -39,7 +39,7 @@ export function CrmProvider({ children }) {
 
   const logout = () => {
     setIsAuthenticated(false);
-    showToast('Signed out of HAP Enterprise CRM.', 'info');
+    showToast('Signed out of CHEMI PHARMA CRM.', 'info');
   };
 
   // Navigation
@@ -239,7 +239,7 @@ export function CrmProvider({ children }) {
     const newItem = {
       id: `itm-${Date.now().toString().slice(-4)}`,
       description: itemData.description,
-      code: itemData.code || `HAP-API-${Math.floor(1000 + Math.random() * 9000)}`,
+      code: itemData.code || `CP-API-${Math.floor(1000 + Math.random() * 9000)}`,
       casNo: itemData.casNo || '00-00-0',
       rate: Number(itemData.rate) || 4000,
       price5kg: Number(itemData.rate) ? Number(itemData.rate) * 1.1 : 4400,
@@ -350,7 +350,7 @@ export function CrmProvider({ children }) {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `HAP_Sales_Leads_${Date.now()}.csv`);
+    link.setAttribute('download', `CHEMI_PHARMA_Sales_Leads_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

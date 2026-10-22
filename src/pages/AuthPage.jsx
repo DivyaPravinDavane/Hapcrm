@@ -15,7 +15,7 @@ export default function AuthPage() {
   const { login, STAFF_LIST, showToast } = useCrm();
 
   const [mode, setMode] = useState('signin'); // 'signin' | 'signup'
-  const [email, setEmail] = useState('eshwari@hapenterprise.com');
+  const [email, setEmail] = useState('eshwari@chemipharma.com');
   const [password, setPassword] = useState('admin123');
   const [name, setName] = useState('');
   const [role, setRole] = useState('Sales & Sourcing Specialist');
@@ -25,11 +25,11 @@ export default function AuthPage() {
 
   // Quick 1-click login preset profiles
   const quickStaffPresets = [
-    { name: 'Eshwari', role: 'Sr. Sales & Sourcing Specialist', email: 'eshwari@hapenterprise.com', color: 'bg-indigo-600' },
-    { name: 'Aishwarya', role: 'Key Account Executive', email: 'aishwarya@hapenterprise.com', color: 'bg-emerald-600' },
-    { name: 'Amisha', role: 'Commercial Sourcing Manager', email: 'amisha@hapenterprise.com', color: 'bg-cyan-600' },
-    { name: 'Disha', role: 'Customer Relations Executive', email: 'disha@hapenterprise.com', color: 'bg-amber-600' },
-    { name: 'Akanksha', role: 'Operations & Quotation Lead', email: 'akanksha@hapenterprise.com', color: 'bg-rose-600' },
+    { name: 'Eshwari', role: 'Sr. Sales & Sourcing Specialist', email: 'eshwari@chemipharma.com', color: 'bg-indigo-600' },
+    { name: 'Aishwarya', role: 'Key Account Executive', email: 'aishwarya@chemipharma.com', color: 'bg-emerald-600' },
+    { name: 'Amisha', role: 'Commercial Sourcing Manager', email: 'amisha@chemipharma.com', color: 'bg-cyan-600' },
+    { name: 'Disha', role: 'Customer Relations Executive', email: 'disha@chemipharma.com', color: 'bg-amber-600' },
+    { name: 'Akanksha', role: 'Operations & Quotation Lead', email: 'akanksha@chemipharma.com', color: 'bg-rose-600' },
   ];
 
   const handleSignIn = (e) => {
@@ -62,14 +62,14 @@ export default function AuthPage() {
     setTimeout(() => {
       const newUser = {
         name: name,
-        email: email || `${name.toLowerCase().replace(/\s+/g, '.')}@hapenterprise.com`,
+        email: email || `${name.toLowerCase().replace(/\s+/g, '.')}@chemipharma.com`,
         role: role,
         color: 'bg-blue-700'
       };
 
       login(newUser);
       setIsLoading(false);
-      showToast(`Account created for ${newUser.name}! Welcome to HAP CRM.`, 'success');
+      showToast(`Account created for ${newUser.name}! Welcome to CHEMI PHARMA CRM.`, 'success');
     }, 500);
   };
 
@@ -99,7 +99,7 @@ export default function AuthPage() {
             </svg>
           </div>
           <h1 className="text-xl font-bold tracking-tight text-white flex items-center justify-center gap-1.5">
-            <span>HAP Enterprise</span>
+            <span>CHEMI PHARMA</span>
             <span className="text-[10px] font-semibold uppercase tracking-wider bg-blue-600/70 px-1.5 py-0.5 rounded text-blue-200">CRM</span>
           </h1>
           <p className="text-xs text-blue-200 mt-1">Pharma Chemicals & API Trading Platform</p>
@@ -144,7 +144,7 @@ export default function AuthPage() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="eshwari@hapenterprise.com"
+                    placeholder="eshwari@chemipharma.com"
                     required
                     className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium bg-slate-50/50 focus:bg-white"
                   />
@@ -242,7 +242,7 @@ export default function AuthPage() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="ramesh@hapenterprise.com"
+                    placeholder="ramesh@chemipharma.com"
                     required
                     className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -283,7 +283,7 @@ export default function AuthPage() {
 
               <div className="text-[11px] text-slate-500 flex items-start gap-1.5 pt-1">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span>By signing up, you agree to HAP Enterprise internal trading compliance and NDA protocols.</span>
+                <span>By signing up, you agree to CHEMI PHARMA internal trading compliance and NDA protocols.</span>
               </div>
 
               {/* Submit Black Button */}
@@ -307,7 +307,7 @@ export default function AuthPage() {
 
         {/* Footer */}
         <div className="bg-slate-50 px-6 py-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-          <span>HAP Enterprise CRM v2.4</span>
+          <span>CHEMI PHARMA CRM v2.4</span>
           <span className="text-emerald-700 font-semibold flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Server Online

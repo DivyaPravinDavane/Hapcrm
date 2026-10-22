@@ -116,7 +116,7 @@ export default function Header() {
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-lg tracking-tight text-white">HAP Enterprise</span>
+              <span className="font-bold text-lg tracking-tight text-white">CHEMI PHARMA</span>
               <span className="text-[10px] font-semibold uppercase tracking-wider bg-blue-600/60 px-1.5 py-0.5 rounded text-blue-200">CRM</span>
             </div>
             <p className="text-[10px] text-blue-200 -mt-0.5 tracking-tight hidden sm:block">Pharma Chemicals & API Trading</p>

@@ -47,7 +47,7 @@ export default function ItemsPage() {
     addItem({
       ...item,
       description: `${item.description} (Copy)`,
-      code: `HAP-API-${Math.floor(2000 + Math.random() * 8000)}`
+      code: `CP-API-${Math.floor(2000 + Math.random() * 8000)}`
     });
   };
 
