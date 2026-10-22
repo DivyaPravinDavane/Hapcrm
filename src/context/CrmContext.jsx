@@ -17,6 +17,31 @@ import {
 const CrmContext = createContext(null);
 
 export function CrmProvider({ children }) {
+  // Authentication State
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [currentUser, setCurrentUser] = useState({
+    name: 'Eshwari',
+    email: 'eshwari@hapenterprise.com',
+    role: 'Sr. Sales & Sourcing Specialist',
+    color: 'bg-indigo-600'
+  });
+
+  const login = (user) => {
+    setCurrentUser(user || {
+      name: 'Eshwari',
+      email: 'eshwari@hapenterprise.com',
+      role: 'Sr. Sales Specialist',
+      color: 'bg-indigo-600'
+    });
+    setIsAuthenticated(true);
+    setActiveTab('Dashboard');
+  };
+
+  const logout = () => {
+    setIsAuthenticated(false);
+    showToast('Signed out of HAP Enterprise CRM.', 'info');
+  };
+
   // Navigation
   const [activeTab, setActiveTab] = useState('Dashboard');
   const [activeAccountsSubTab, setActiveAccountsSubTab] = useState('Outstanding All');
@@ -333,6 +358,11 @@ export function CrmProvider({ children }) {
   };
 
   const value = {
+    isAuthenticated,
+    setIsAuthenticated,
+    currentUser,
+    login,
+    logout,
     activeTab,
     setActiveTab,
     activeAccountsSubTab,

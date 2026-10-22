@@ -14,6 +14,7 @@ import TasksPage from './pages/TasksPage';
 import GeneralLeadsPage from './pages/GeneralLeadsPage';
 import AccountsPage from './pages/AccountsPage';
 import PlaceholderPage from './pages/PlaceholderPage';
+import AuthPage from './pages/AuthPage';
 
 // Modals
 import AIExtractorModal from './components/AIExtractorModal';
@@ -26,7 +27,16 @@ import SettingsModal from './components/SettingsModal';
 import Toasts from './components/Toasts';
 
 function MainLayout() {
-  const { activeTab } = useCrm();
+  const { activeTab, isAuthenticated } = useCrm();
+
+  if (!isAuthenticated) {
+    return (
+      <>
+        <AuthPage />
+        <Toasts />
+      </>
+    );
+  }
 
   const renderActiveScreen = () => {
     switch (activeTab) {

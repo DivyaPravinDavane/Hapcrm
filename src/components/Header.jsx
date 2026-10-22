@@ -31,7 +31,9 @@ export default function Header() {
     setIsNewItemOpen,
     setIsSettingsOpen,
     setActiveTab,
-    showToast
+    showToast,
+    currentUser,
+    logout
   } = useCrm();
 
   const [showNotifications, setShowNotifications] = useState(false);
@@ -454,9 +456,7 @@ export default function Header() {
 
           {/* Logout Button */}
           <button
-            onClick={() => {
-              showToast('You have logged out. (Demo mode active)', 'info');
-            }}
+            onClick={logout}
             title="Sign Out"
             className="flex items-center gap-1.5 px-2.5 py-1 text-xs text-rose-200 hover:text-white hover:bg-rose-600/40 rounded-md transition-colors"
           >
@@ -466,12 +466,12 @@ export default function Header() {
 
           {/* Staff Profile Avatar */}
           <div className="flex items-center gap-2 pl-1">
-            <div className="w-7 h-7 rounded-full bg-indigo-600 border border-white/40 flex items-center justify-center font-bold text-xs text-white shadow">
-              E
+            <div className={`w-7 h-7 rounded-full ${currentUser?.color || 'bg-indigo-600'} border border-white/40 flex items-center justify-center font-bold text-xs text-white shadow`}>
+              {currentUser?.name ? currentUser.name[0] : 'E'}
             </div>
             <div className="hidden lg:block text-left text-xs leading-tight">
-              <div className="font-semibold text-white">Eshwari</div>
-              <div className="text-[10px] text-blue-200">Sr. Specialist</div>
+              <div className="font-semibold text-white truncate max-w-[100px]">{currentUser?.name || 'Eshwari'}</div>
+              <div className="text-[10px] text-blue-200 truncate max-w-[100px]">{currentUser?.role || 'Sr. Specialist'}</div>
             </div>
           </div>
 
