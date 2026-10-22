@@ -7,10 +7,7 @@ import {
   Eye,
   EyeOff,
   ArrowRight,
-  CheckCircle2,
-  Sparkles,
-  Building,
-  KeyRound
+  Building
 } from 'lucide-react';
 import { useCrm } from '../context/CrmContext';
 
@@ -197,7 +194,6 @@ export default function AuthPage() {
                   />
                   <span>Keep me logged in</span>
                 </label>
-                <span className="text-[11px] text-slate-400">Demo PIN: Any</span>
               </div>
 
               {/* Submit Black Button */}
@@ -307,52 +303,6 @@ export default function AuthPage() {
               </button>
             </form>
           )}
-
-          {/* Quick Demo Staff 1-Click Login Section */}
-          <div className="mt-5 pt-4 border-t border-slate-100">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-amber-500" />
-                Quick 1-Click Staff Login:
-              </span>
-              <span className="text-[10px] text-slate-400">Click to switch</span>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
-              {quickStaffPresets.map((preset) => (
-                <button
-                  key={preset.name}
-                  type="button"
-                  onClick={() => handleQuickLogin(preset)}
-                  className="p-1.5 rounded-lg border border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 text-left transition-all flex items-center gap-1.5 group"
-                >
-                  <div className={`w-5 h-5 rounded-full ${preset.color} text-white flex items-center justify-center font-bold text-[9px]`}>
-                    {preset.name[0]}
-                  </div>
-                  <div className="truncate">
-                    <div className="text-[11px] font-semibold text-slate-800 group-hover:text-blue-700 truncate">{preset.name}</div>
-                    <div className="text-[9px] text-slate-400 truncate">{preset.role.split(' ')[0]}</div>
-                  </div>
-                </button>
-              ))}
-
-              {/* Instant Guest / Demo Bypass */}
-              <button
-                type="button"
-                onClick={() => handleQuickLogin({ name: 'Admin', role: 'Trading Director', email: 'admin@hapenterprise.com', color: 'bg-slate-900' })}
-                className="p-1.5 rounded-lg border border-slate-200 hover:border-slate-400 hover:bg-slate-100 text-left transition-all flex items-center gap-1.5 group"
-              >
-                <div className="w-5 h-5 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold text-[9px]">
-                  A
-                </div>
-                <div className="truncate">
-                  <div className="text-[11px] font-semibold text-slate-800 truncate">Admin</div>
-                  <div className="text-[9px] text-slate-400 truncate">Director</div>
-                </div>
-              </button>
-            </div>
-          </div>
-
         </div>
 
         {/* Footer */}
