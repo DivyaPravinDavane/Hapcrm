@@ -16,7 +16,7 @@ export default function AuthPage() {
 
   const [mode, setMode] = useState('signin'); // 'signin' | 'signup'
   const [email, setEmail] = useState('eshwari@hapenterprise.com');
-  const [password, setPassword] = useState('••••••••••');
+  const [password, setPassword] = useState('admin123');
   const [name, setName] = useState('');
   const [role, setRole] = useState('Sales & Sourcing Specialist');
   const [showPassword, setShowPassword] = useState(false);

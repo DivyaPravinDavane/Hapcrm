@@ -17,8 +17,8 @@ import {
 const CrmContext = createContext(null);
 
 export function CrmProvider({ children }) {
-  // Authentication State
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  // Authentication State (Starts as false so Login/Sign-in page is visible first)
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState({
     name: 'Eshwari',
     email: 'eshwari@hapenterprise.com',
