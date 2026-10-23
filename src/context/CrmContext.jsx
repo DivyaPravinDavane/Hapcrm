@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useMemo } from 'react';
+import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
 import {
   INITIAL_SALES_LEADS,
   INITIAL_PURCHASE_LEADS,
@@ -19,6 +19,7 @@ const CrmContext = createContext(null);
 export function CrmProvider({ children }) {
   // View Mode: 'website' (Informative Product Site) | 'crm' (Internal App) | 'auth' (Sign-in / Register)
   const [viewMode, setViewMode] = useState('website');
+  const [websitePage, setWebsitePage] = useState('home');
 
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -62,15 +63,37 @@ export function CrmProvider({ children }) {
     setViewMode('auth');
   };
 
-  const goToWebsite = () => {
+  const navigateToWebsite = (page = 'home') => {
     setViewMode('website');
+    setWebsitePage(page);
+    window.location.hash = `#/${page}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goToWebsite = () => {
+    navigateToWebsite('home');
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    setViewMode('website');
+    navigateToWebsite('home');
     showToast('Signed out. Returned to Pharma Chemi website.', 'info');
   };
+
+  // Sync hash on initial load and on popstate/hashchange
+  useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '').trim();
+      const validPages = ['home', 'features', 'catalog', 'manufacturing', 'solutions', 'about', 'contact'];
+      if (validPages.includes(hash)) {
+        setWebsitePage(hash);
+      }
+    };
+
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
+    return () => window.removeEventListener('hashchange', syncFromHash);
+  }, []);
 
   // Navigation
   const [activeTab, setActiveTab] = useState('Dashboard');
@@ -390,6 +413,9 @@ export function CrmProvider({ children }) {
   const value = {
     viewMode,
     setViewMode,
+    websitePage,
+    setWebsitePage,
+    navigateToWebsite,
     isDemoModalOpen,
     setIsDemoModalOpen,
     isTrialModalOpen,

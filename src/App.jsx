@@ -15,7 +15,7 @@ import GeneralLeadsPage from './pages/GeneralLeadsPage';
 import AccountsPage from './pages/AccountsPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 import AuthPage from './pages/AuthPage';
-import LandingPage from './pages/LandingPage';
+import WebsiteLayout from './pages/website/WebsiteLayout';
 
 // Modals
 import AIExtractorModal from './components/AIExtractorModal';
@@ -32,11 +32,11 @@ import Toasts from './components/Toasts';
 function MainLayout() {
   const { activeTab, isAuthenticated, viewMode } = useCrm();
 
-  // 1. Informative Marketing & Product Website (Default for pharmachemi.com)
+  // 1. Informative Multi-Page Website for Pharma Chemi Software & Sourcing
   if (viewMode === 'website') {
     return (
       <>
-        <LandingPage />
+        <WebsiteLayout />
         <BookDemoModal />
         <FreeTrialModal />
         <Toasts />
