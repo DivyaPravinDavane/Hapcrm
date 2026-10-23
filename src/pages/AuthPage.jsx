@@ -62,14 +62,14 @@ export default function AuthPage() {
     setTimeout(() => {
       const newUser = {
         name: name,
-        email: email || `${name.toLowerCase().replace(/\s+/g, '.')}@chemipharma.com`,
+        email: email || `${name.toLowerCase().replace(/\s+/g, '.')}@pharmachemi.com`,
         role: role,
         color: 'bg-blue-700'
       };
 
       login(newUser);
       setIsLoading(false);
-      showToast(`Account created for ${newUser.name}! Welcome to CHEMI PHARMA CRM.`, 'success');
+      showToast(`Account created for ${newUser.name}! Welcome to PHARMA CHEMI CRM.`, 'success');
     }, 500);
   };
 
@@ -93,7 +93,7 @@ export default function AuthPage() {
           onClick={goToWebsite}
           className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white/90 hover:bg-white px-3.5 py-1.5 rounded-full shadow-sm border border-slate-200 transition-all"
         >
-          <span>← Back to PharmaChemi Website</span>
+          <span>← Back to Pharma Chemi Website</span>
         </button>
         <span className="text-2xs text-slate-500 font-medium">pharmachemi.com</span>
       </div>
@@ -110,7 +110,7 @@ export default function AuthPage() {
             </svg>
           </div>
           <h1 className="text-xl font-bold tracking-tight text-white flex items-center justify-center gap-1.5">
-            <span>CHEMI PHARMA</span>
+            <span>PHARMA CHEMI</span>
             <span className="text-[10px] font-semibold uppercase tracking-wider bg-blue-600/70 px-1.5 py-0.5 rounded text-blue-200">CRM</span>
           </h1>
           <p className="text-xs text-blue-200 mt-1">Pharma Chemicals & API Trading Platform</p>
@@ -294,7 +294,7 @@ export default function AuthPage() {
 
               <div className="text-[11px] text-slate-500 flex items-start gap-1.5 pt-1">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span>By signing up, you agree to CHEMI PHARMA internal trading compliance and NDA protocols.</span>
+                <span>By signing up, you agree to Pharma Chemi internal trading compliance and NDA protocols.</span>
               </div>
 
               {/* Submit Black Button */}
@@ -318,7 +318,7 @@ export default function AuthPage() {
 
         {/* Footer */}
         <div className="bg-slate-50 px-6 py-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-          <span>CHEMI PHARMA CRM v2.4</span>
+          <span>PHARMA CHEMI CRM v2.4</span>
           <span className="text-emerald-700 font-semibold flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Server Online

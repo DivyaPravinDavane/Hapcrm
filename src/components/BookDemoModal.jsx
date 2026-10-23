@@ -59,7 +59,7 @@ export default function BookDemoModal() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      showToast(`RFQ dispatched to HAP Enterprise Desk for ${formData.product_name}!`, 'success');
+      showToast(`RFQ dispatched to Pharma Chemi Desk for ${formData.product_name}!`, 'success');
     }, 700);
   };
 
@@ -74,7 +74,7 @@ export default function BookDemoModal() {
         className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in zoom-in-95 duration-200 my-8"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Modal Header (HAP Gradient: Royal Blue #004B9B to HAP Red #EE1C25) */}
+        {/* Modal Header (Pharma Chemi Gradient: Royal Blue #004B9B to Vibrant Red #EE1C25) */}
         <div className="bg-gradient-to-r from-[#004B9B] via-[#003875] to-[#EE1C25] text-white p-5 sm:p-6 relative">
           <button
             onClick={handleClose}
@@ -84,15 +84,15 @@ export default function BookDemoModal() {
           </button>
 
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-white text-[#EE1C25] font-extrabold text-base flex items-center justify-center shadow-md">
-              H
+            <div className="w-9 h-9 rounded-lg bg-white text-[#EE1C25] font-extrabold text-sm flex items-center justify-center shadow-md">
+              PC
             </div>
             <div>
               <h2 className="text-lg sm:text-xl font-bold tracking-tight text-white">
                 Commercial Sourcing Inquiry & COA
               </h2>
               <p className="text-2xs sm:text-xs text-blue-100 font-medium">
-                HAP Enterprise • Sourcing & Sourcing Expert Desk
+                Pharma Chemi • Sourcing & Technical Expert Desk
               </p>
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function BookDemoModal() {
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-100">
                 <span className="text-[11px] text-slate-500 flex items-center gap-1">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>Direct Encrypted Dispatch to HAP Sourcing Desk</span>
+                  <span>Direct Encrypted Dispatch to Pharma Chemi Sourcing Desk</span>
                 </span>
 
                 <div className="flex gap-2 w-full sm:w-auto">

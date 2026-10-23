@@ -23,7 +23,7 @@ export default function SettingsModal() {
         <div className="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sliders className="w-4 h-4 text-blue-600" />
-            <h3 className="text-xs font-bold text-slate-800">CHEMI PHARMA CRM Settings</h3>
+            <h3 className="text-xs font-bold text-slate-800">Pharma Chemi CRM Settings</h3>
           </div>
           <button onClick={() => setIsSettingsOpen(false)} className="text-slate-400 hover:text-slate-600">
             <X className="w-4 h-4" />

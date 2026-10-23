@@ -64,7 +64,7 @@ export default function FreeTrialModal() {
 
           <h2 className="text-xl font-bold tracking-tight text-white">Start Your Free Sandbox</h2>
           <p className="text-xs text-slate-300 mt-1">
-            Experience complete PharmaChemi CRM capabilities without any credit card.
+            Experience complete Pharma Chemi CRM capabilities without any credit card.
           </p>
         </div>
 

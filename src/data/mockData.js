@@ -1,4 +1,4 @@
-// Comprehensive Mock Data for CHEMI PHARMA CRM
+// Comprehensive Mock Data for Pharma Chemi CRM
 
 export const STAFF_LIST = [
   { id: 'st-1', name: 'Eshwari', role: 'Sr. Sales & Sourcing Specialist', avatarBg: 'bg-indigo-600', leadsToday: 8 },
@@ -814,7 +814,7 @@ export const INITIAL_TASKS = [
   {
     id: 'tsk-5',
     name: 'Price renegotiation with Calyx for Hydroxyzine HCl bulk contract',
-    customer: 'CHEMI PHARMA Sourcing',
+    customer: 'Pharma Chemi Sourcing',
     status: 'Complete',
     startDate: '14-10-2026',
     dueDate: '19-10-2026',

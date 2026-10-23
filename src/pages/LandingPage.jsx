@@ -111,7 +111,7 @@ export default function LandingPage() {
     setIsDirectSending(true);
     setTimeout(() => {
       setIsDirectSending(false);
-      showToast('Thank you! Your direct RFQ has been forwarded to HAP Enterprise sourcing desk.', 'success');
+      showToast('Thank you! Your direct RFQ has been forwarded to Pharma Chemi sourcing desk.', 'success');
       setDirectForm({ name: '', email: '', message: '' });
     }, 700);
   };
@@ -124,7 +124,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1 bg-[#EE1C25]/20 text-[#FF4D55] px-2 py-0.5 rounded-full text-[10px] font-bold border border-[#EE1C25]/40">
-              HAP ENTERPRISE
+              PHARMA CHEMI
             </span>
             <span className="text-slate-300 font-medium">
               Wholesale Sourcing, Exporter & Importer of Active Pharmaceutical Ingredients (APIs) & Intermediates
@@ -154,13 +154,13 @@ export default function LandingPage() {
           
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#004B9B] to-[#0A66C2] flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-900/20 group-hover:scale-105 transition-transform">
-              H
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#004B9B] to-[#0A66C2] flex items-center justify-center text-white font-extrabold text-sm shadow-md shadow-blue-900/20 group-hover:scale-105 transition-transform">
+              PC
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900">
-                  HAP <span className="text-[#004B9B]">ENTERPRISE</span>
+                  Pharma <span className="text-[#004B9B]">Chemi</span>
                 </span>
               </div>
               <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider -mt-1 hidden sm:block">
@@ -307,7 +307,7 @@ export default function LandingPage() {
               </h2>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                <strong>HAP Enterprise</strong> is a premier supplier, trader, exporter, and importer of Active Pharmaceutical Ingredients (APIs), excipients, and drug intermediates. Over years of intensive commercial expertise, we supply wholesale formulators, research facilities, and multinational pharmaceutical enterprises across India and overseas.
+                <strong>Pharma Chemi</strong> is a premier supplier, trader, exporter, and importer of Active Pharmaceutical Ingredients (APIs), excipients, and drug intermediates. Over years of intensive commercial expertise, we supply wholesale formulators, research facilities, and multinational pharmaceutical enterprises across India and overseas.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -346,7 +346,7 @@ export default function LandingPage() {
             <div className="lg:col-span-5">
               <div className="p-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl shadow-xl border border-slate-800 space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                  <span className="font-bold text-sm">HAP Enterprise Compliance Matrix</span>
+                  <span className="font-bold text-sm">Pharma Chemi Compliance Matrix</span>
                   <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">
                     Audit Verified
                   </span>
@@ -672,14 +672,14 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200">
             
-            {/* Col 1: About HAP Enterprise */}
+            {/* Col 1: About Pharma Chemi */}
             <div className="lg:col-span-4 space-y-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#004B9B] text-white font-extrabold flex items-center justify-center">
-                  H
+                <div className="w-8 h-8 rounded-lg bg-[#004B9B] text-white font-extrabold flex items-center justify-center text-xs">
+                  PC
                 </div>
                 <span className="text-lg font-extrabold text-slate-900">
-                  HAP <span className="text-[#004B9B]">ENTERPRISE</span>
+                  Pharma <span className="text-[#004B9B]">Chemi</span>
                 </span>
               </div>
 
@@ -782,7 +782,7 @@ export default function LandingPage() {
 
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-2xs text-slate-500">
             <div>
-              &copy; 2026 HAP Enterprise. All rights reserved. Active Pharmaceutical Ingredients & Intermediates.
+              &copy; 2026 Pharma Chemi. All rights reserved. Active Pharmaceutical Ingredients & Intermediates.
             </div>
             <div className="flex gap-4">
               <span>WHO-GMP Validated Nodes</span>
@@ -797,10 +797,10 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* 9. FLOATING WHATSAPP BUTTON (from HAP website) */}
+      {/* 9. FLOATING WHATSAPP BUTTON */}
       <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2">
         <a
-          href="https://wa.me/919324265877?text=Hello%20HAP%20Enterprise%2C%20I%20am%20interested%20in%20sourcing%20Active%20Pharmaceutical%20Ingredients%20(APIs)."
+          href="https://wa.me/919324265877?text=Hello%20Pharma%20Chemi%2C%20I%20am%20interested%20in%20sourcing%20Active%20Pharmaceutical%20Ingredients%20(APIs)."
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-105 transition-all relative group"

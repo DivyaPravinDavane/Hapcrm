@@ -24,11 +24,11 @@ export default function PlaceholderPage({ title }) {
 
       <div>
         <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">
-          CHEMI PHARMA CRM Module
+          Pharma Chemi CRM Module
         </span>
         <h2 className="text-xl font-bold text-slate-800 mt-2">{title}</h2>
         <p className="text-xs text-slate-500 max-w-md mx-auto mt-1">
-          {moduleDescriptions[title] || 'This section is fully configured in the core database and operational for CHEMI PHARMA staff.'}
+          {moduleDescriptions[title] || 'This section is fully configured in the core database and operational for Pharma Chemi staff.'}
         </p>
       </div>
 

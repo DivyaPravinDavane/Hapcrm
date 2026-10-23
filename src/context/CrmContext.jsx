@@ -55,7 +55,7 @@ export function CrmProvider({ children }) {
     setIsAuthenticated(true);
     setViewMode('crm');
     setActiveTab('Dashboard');
-    showToast('Launched PharmaChemi CRM Live Demo Workspace!', 'success');
+    showToast('Launched Pharma Chemi CRM Live Demo Workspace!', 'success');
   };
 
   const launchAuth = () => {
@@ -69,7 +69,7 @@ export function CrmProvider({ children }) {
   const logout = () => {
     setIsAuthenticated(false);
     setViewMode('website');
-    showToast('Signed out. Returned to PharmaChemi website.', 'info');
+    showToast('Signed out. Returned to Pharma Chemi website.', 'info');
   };
 
   // Navigation
