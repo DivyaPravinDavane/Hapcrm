@@ -13,6 +13,7 @@ import {
   Users,
   Package,
   Layers,
+  Globe,
   X
 } from 'lucide-react';
 import { useCrm } from '../context/CrmContext';
@@ -33,7 +34,8 @@ export default function Header() {
     setActiveTab,
     showToast,
     currentUser,
-    logout
+    logout,
+    goToWebsite
   } = useCrm();
 
   const [showNotifications, setShowNotifications] = useState(false);
@@ -443,6 +445,16 @@ export default function Header() {
           </div>
 
           <div className="h-5 w-px bg-blue-400/40 mx-1" />
+
+          {/* Back to PharmaChemi Website */}
+          <button
+            onClick={goToWebsite}
+            title="View PharmaChemi Public Website"
+            className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-emerald-100 hover:text-white bg-emerald-600/50 hover:bg-emerald-500/70 border border-emerald-400/40 rounded-md transition-colors shadow-sm"
+          >
+            <Globe className="w-3.5 h-3.5 text-emerald-200" />
+            <span className="hidden sm:inline">PharmaChemi Web</span>
+          </button>
 
           {/* Settings Button */}
           <button

@@ -17,7 +17,10 @@ import {
 const CrmContext = createContext(null);
 
 export function CrmProvider({ children }) {
-  // Authentication State (Starts as false so Login/Sign-in page is visible first)
+  // View Mode: 'website' (Informative Product Site) | 'crm' (Internal App) | 'auth' (Sign-in / Register)
+  const [viewMode, setViewMode] = useState('website');
+
+  // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState({
     name: 'Eshwari',
@@ -25,6 +28,10 @@ export function CrmProvider({ children }) {
     role: 'Sr. Sales & Sourcing Specialist',
     color: 'bg-indigo-600'
   });
+
+  // Demo & Free Trial Modals
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
 
   const login = (user) => {
     setCurrentUser(user || {
@@ -34,12 +41,35 @@ export function CrmProvider({ children }) {
       color: 'bg-indigo-600'
     });
     setIsAuthenticated(true);
+    setViewMode('crm');
     setActiveTab('Dashboard');
+  };
+
+  const launchCrmDemo = () => {
+    setCurrentUser({
+      name: 'Demo Admin',
+      email: 'demo@pharmachemi.com',
+      role: 'Director of Pharma Sales',
+      color: 'bg-emerald-600'
+    });
+    setIsAuthenticated(true);
+    setViewMode('crm');
+    setActiveTab('Dashboard');
+    showToast('Launched PharmaChemi CRM Live Demo Workspace!', 'success');
+  };
+
+  const launchAuth = () => {
+    setViewMode('auth');
+  };
+
+  const goToWebsite = () => {
+    setViewMode('website');
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    showToast('Signed out of CHEMI PHARMA CRM.', 'info');
+    setViewMode('website');
+    showToast('Signed out. Returned to PharmaChemi website.', 'info');
   };
 
   // Navigation
@@ -358,6 +388,15 @@ export function CrmProvider({ children }) {
   };
 
   const value = {
+    viewMode,
+    setViewMode,
+    isDemoModalOpen,
+    setIsDemoModalOpen,
+    isTrialModalOpen,
+    setIsTrialModalOpen,
+    launchCrmDemo,
+    launchAuth,
+    goToWebsite,
     isAuthenticated,
     setIsAuthenticated,
     currentUser,

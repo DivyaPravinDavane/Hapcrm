@@ -15,6 +15,7 @@ import GeneralLeadsPage from './pages/GeneralLeadsPage';
 import AccountsPage from './pages/AccountsPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 import AuthPage from './pages/AuthPage';
+import LandingPage from './pages/LandingPage';
 
 // Modals
 import AIExtractorModal from './components/AIExtractorModal';
@@ -24,12 +25,27 @@ import NewPurchaseModal from './components/NewPurchaseModal';
 import NewCustomerModal from './components/NewCustomerModal';
 import NewItemModal from './components/NewItemModal';
 import SettingsModal from './components/SettingsModal';
+import BookDemoModal from './components/BookDemoModal';
+import FreeTrialModal from './components/FreeTrialModal';
 import Toasts from './components/Toasts';
 
 function MainLayout() {
-  const { activeTab, isAuthenticated } = useCrm();
+  const { activeTab, isAuthenticated, viewMode } = useCrm();
 
-  if (!isAuthenticated) {
+  // 1. Informative Marketing & Product Website (Default for pharmachemi.com)
+  if (viewMode === 'website') {
+    return (
+      <>
+        <LandingPage />
+        <BookDemoModal />
+        <FreeTrialModal />
+        <Toasts />
+      </>
+    );
+  }
+
+  // 2. Authentication view for login/registration
+  if (viewMode === 'auth' || !isAuthenticated) {
     return (
       <>
         <AuthPage />
@@ -88,6 +104,8 @@ function MainLayout() {
       <NewCustomerModal />
       <NewItemModal />
       <SettingsModal />
+      <BookDemoModal />
+      <FreeTrialModal />
       <Toasts />
     </div>
   );

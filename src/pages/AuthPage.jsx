@@ -12,7 +12,7 @@ import {
 import { useCrm } from '../context/CrmContext';
 
 export default function AuthPage() {
-  const { login, STAFF_LIST, showToast } = useCrm();
+  const { login, STAFF_LIST, showToast, goToWebsite } = useCrm();
 
   const [mode, setMode] = useState('signin'); // 'signin' | 'signup'
   const [email, setEmail] = useState('eshwari@chemipharma.com');
@@ -86,6 +86,17 @@ export default function AuthPage() {
       {/* Decorative background chemical elements */}
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Back to Website Button */}
+      <div className="w-full max-w-md mb-3 flex items-center justify-between z-10">
+        <button
+          onClick={goToWebsite}
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white/90 hover:bg-white px-3.5 py-1.5 rounded-full shadow-sm border border-slate-200 transition-all"
+        >
+          <span>← Back to PharmaChemi Website</span>
+        </button>
+        <span className="text-2xs text-slate-500 font-medium">pharmachemi.com</span>
+      </div>
 
       {/* Main Login Card */}
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 overflow-hidden relative z-10 animate-in fade-in zoom-in-95 duration-200">
