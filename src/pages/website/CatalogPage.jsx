@@ -325,29 +325,29 @@ export default function CatalogPage() {
 
       </section>
 
-      {/* 4. SISTER CONCERN HIGHLIGHT */}
+      {/* 4. COMMERCIAL RFQ CTA BANNER */}
       <section className="py-12 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="p-8 rounded-3xl bg-gradient-to-r from-blue-50 via-slate-50 to-red-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EE1C25]/10 text-[#EE1C25] text-2xs font-extrabold uppercase">
-                <Building2 className="w-3.5 h-3.5" />
-                <span>MANUFACTURING PARTNER</span>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#004B9B]/10 text-[#004B9B] text-2xs font-extrabold uppercase">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>COMPENDIAL PURITY ASSURANCE</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900">
-                Looking for Custom Synthesis or Intermediate Synthesis?
+                Need Bulk Commercial Lots or Certificates of Analysis?
               </h3>
               <p className="text-xs text-slate-600 max-w-xl">
-                Explore our sister concern manufacturing plant <strong>Lanco Industries</strong> located in Gujarat Chemical Zone with statutory clearances from the Government of Gujarat and progressive WHO-GMP accreditation.
+                Every batch is dispatched with comprehensive COAs, impurity profiling, and pharmacopeial compliance documentation (USP / BP / EP / IP).
               </p>
             </div>
 
             <div className="flex items-center gap-3">
               <button
-                onClick={() => navigateToWebsite('manufacturing')}
-                className="px-5 py-2.5 bg-[#004B9B] hover:bg-[#003875] text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
+                onClick={() => handleOpenInquiry()}
+                className="px-5 py-2.5 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
               >
-                <span>Inspect Lanco Factory</span>
+                <span>Request Batch RFQ & COA</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

@@ -44,7 +44,7 @@ export default function SolutionsPage() {
         'Instant retrieval of lot-specific Certificate of Analysis (COA) and Open-Part DMF filings',
         'Standardized 150+ APIs catalog pre-indexed by CAS numbers and pharmacopeia standards',
         'Sample request tracking with courier Airway Bill (AWB) integration for QC lab testing',
-        'Uninterrupted supply chain backed by sister-concern plant Lanco Industries Gujarat'
+        'Uninterrupted supply chain backed by validated WHO-GMP manufacturers and buffer stock'
       ]
     },
     {

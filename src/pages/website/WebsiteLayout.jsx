@@ -5,7 +5,6 @@ import WebsiteFooter from './WebsiteFooter';
 import HomePage from './HomePage';
 import FeaturesPage from './FeaturesPage';
 import CatalogPage from './CatalogPage';
-import ManufacturingPage from './ManufacturingPage';
 import SolutionsPage from './SolutionsPage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
@@ -19,8 +18,6 @@ export default function WebsiteLayout() {
         return <FeaturesPage />;
       case 'catalog':
         return <CatalogPage />;
-      case 'manufacturing':
-        return <ManufacturingPage />;
       case 'solutions':
         return <SolutionsPage />;
       case 'about':

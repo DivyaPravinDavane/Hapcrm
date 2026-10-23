@@ -39,7 +39,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Pharma Chemi is a premier supplier, trader, exporter, and importer of Active Pharmaceutical Ingredients (APIs), excipients, and drug intermediates, backed by our proprietary industry software and sister-concern manufacturing factory at Lanco Industries, Gujarat.
+            Pharma Chemi is a premier supplier, trader, exporter, and importer of Active Pharmaceutical Ingredients (APIs), excipients, and drug intermediates, backed by our proprietary industry software and audit-verified WHO-GMP manufacturing network.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
@@ -180,27 +180,27 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Manufacturing Unit Highlight */}
+        {/* Technical Walkthrough Highlight */}
         <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EE1C25]/20 text-red-400 text-2xs font-bold">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>SISTER CONCERN PLANT</span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#004B9B]/20 text-cyan-300 text-2xs font-bold border border-cyan-400/30">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>LIVE SOFTWARE PLATFORM</span>
             </div>
             <h3 className="text-2xl font-bold text-white">
-              Lanco Industries (Chemical Zone, Gujarat)
+              Experience Pharma Chemi Software Live
             </h3>
             <p className="text-xs text-slate-300 max-w-xl">
-              Equipped with glass-lined reactors, analytical HPLC/GC laboratory, statutory Gujarat clearances, and engineered for progressive WHO-GMP accreditation.
+              Inspect real-time inquiry management, 150+ APIs Item Master catalog, chemical document AI extractor, and automated quotation pipelines.
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => navigateToWebsite('manufacturing')}
-              className="px-5 py-2.5 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center gap-1.5"
+              onClick={launchCrmDemo}
+              className="px-5 py-2.5 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
             >
-              <span>View Factory Details</span>
+              <span>Launch Live Software Demo</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

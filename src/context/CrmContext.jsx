@@ -84,7 +84,7 @@ export function CrmProvider({ children }) {
   useEffect(() => {
     const syncFromHash = () => {
       const hash = window.location.hash.replace(/^#\/?/, '').trim();
-      const validPages = ['home', 'features', 'catalog', 'manufacturing', 'solutions', 'about', 'contact'];
+      const validPages = ['home', 'features', 'catalog', 'solutions', 'about', 'contact'];
       if (validPages.includes(hash)) {
         setWebsitePage(hash);
       }

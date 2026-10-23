@@ -34,12 +34,11 @@ export default function WebsiteFooter() {
             </div>
 
             <p className="text-slate-400 leading-relaxed text-xs">
-              The dedicated enterprise software and sourcing platform engineered specifically for the pharmaceuticals and chemical industries. Complete with chemical inquiry CRM, CAS registry matching, batch COA traceability, and direct integration with Lanco Industries Gujarat plant.
+              The dedicated enterprise software and sourcing platform engineered specifically for the pharmaceuticals and chemical industries. Complete with chemical inquiry CRM, CAS registry matching, batch COA traceability, and global supplier workflows.
             </p>
 
             <div className="pt-2 text-[11px] space-y-1 text-slate-400">
               <div>Domain: <span className="font-mono text-cyan-300 font-bold">pharmachemi.com / hapenterprise.com</span></div>
-              <div>Manufacturing Unit: <span className="font-semibold text-slate-300">Lanco Industries (Chemical Zone, Gujarat)</span></div>
             </div>
 
             <div className="pt-2 flex items-center gap-2">
@@ -138,15 +137,6 @@ export default function WebsiteFooter() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToWebsite('manufacturing')}
-                  className="hover:text-emerald-400 transition-colors text-left flex items-center gap-1"
-                >
-                  <span>Lanco Factory</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] animate-pulse" />
-                </button>
-              </li>
-              <li>
-                <button 
                   onClick={() => navigateToWebsite('solutions')}
                   className="hover:text-emerald-400 transition-colors text-left"
                 >
@@ -188,13 +178,6 @@ export default function WebsiteFooter() {
                 </span>
               </div>
 
-              <div className="flex items-start gap-2">
-                <Building2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300 leading-tight">
-                  <strong className="text-white block">Manufacturing Facility:</strong>
-                  Lanco Industries, Chemical Zone, GIDC, Gujarat, INDIA
-                </span>
-              </div>
 
               <div className="flex items-center gap-2 pt-1">
                 <Mail className="w-4 h-4 text-[#EE1C25] shrink-0" />
@@ -219,8 +202,6 @@ export default function WebsiteFooter() {
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <span>WHO-GMP Validated Nodes</span>
-            <span>•</span>
-            <span>Lanco Industries Gujarat</span>
             <span>•</span>
             <button onClick={launchAuth} className="hover:text-white font-semibold">
               Staff Portal

@@ -50,7 +50,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, CAS registry matching, batch COA traceability, and direct integration with Lanco Industries Gujarat manufacturing plant.
+            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, CAS registry matching, batch COA traceability, and automated quotation pipelines.
           </p>
 
           {/* CTA Buttons */}
@@ -216,20 +216,20 @@ export default function HomePage() {
             </div>
 
             <div 
-              onClick={() => navigateToWebsite('manufacturing')}
-              className="p-6 bg-slate-50 hover:bg-white rounded-2xl border border-slate-200 hover:border-[#EE1C25] shadow-xs hover:shadow-md transition-all space-y-3 cursor-pointer group"
+              onClick={() => navigateToWebsite('features')}
+              className="p-6 bg-slate-50 hover:bg-white rounded-2xl border border-slate-200 hover:border-[#004B9B] shadow-xs hover:shadow-md transition-all space-y-3 cursor-pointer group"
             >
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#EE1C25] flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Building2 className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#004B9B] flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Receipt className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 group-hover:text-[#EE1C25] transition-colors">
-                Lanco Industries Factory Sync
+              <h3 className="text-base font-bold text-slate-900 group-hover:text-[#004B9B] transition-colors">
+                Customer Accounts & Aging Analysis
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Direct manufacturing sync with our sister-concern plant in Gujarat Chemical Zone with statutory clearances.
+                Manage statutory drug license numbers (Form 20B/21B), credit limits, and 0-90+ days payment aging analysis.
               </p>
-              <div className="text-2xs font-bold text-[#EE1C25] flex items-center gap-1 pt-1">
-                <span>Inspect Lanco Factory</span>
+              <div className="text-2xs font-bold text-[#004B9B] flex items-center gap-1 pt-1">
+                <span>Explore Accounts Module</span>
                 <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
@@ -266,48 +266,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. LANCO MANUFACTURING FACTORY HIGHLIGHT */}
-      <section className="py-16 bg-gradient-to-r from-blue-50/50 via-slate-50 to-red-50/50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border-2 border-slate-200/80 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-8 space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EE1C25]/10 text-[#EE1C25] text-xs font-bold">
-                <Building2 className="w-3.5 h-3.5" />
-                <span>STATE-OF-THE-ART MANUFACTURING UNIT</span>
-              </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Our Sister Concern Manufacturing Unit: <span className="text-[#004B9B]">Lanco Industries</span>
-              </h3>
-
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                We are proud to establish our new state-of-the-art sister concern manufacturing factory situated at the chemical zone in Gujarat, India, with full statutory clearances from the Government of Gujarat.
-              </p>
-
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                The unit is designed under GMP compliance and is engineered for progressive WHO-GMP accreditation to support escalating domestic and international formulation demand.
-              </p>
-
-              <div className="flex flex-wrap gap-3 pt-2 text-2xs sm:text-xs font-semibold text-slate-700">
-                <span className="px-2.5 py-1 bg-slate-100 rounded-md">✓ Chemical Zone, Gujarat</span>
-                <span className="px-2.5 py-1 bg-slate-100 rounded-md">✓ Govt of Gujarat Clearances</span>
-                <span className="px-2.5 py-1 bg-slate-100 rounded-md">✓ Progressive WHO-GMP Facility</span>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 text-center lg:text-right space-y-3">
-              <button
-                onClick={() => navigateToWebsite('manufacturing')}
-                className="w-full sm:w-auto px-6 py-3.5 bg-[#EE1C25] hover:bg-[#d61921] text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-red-500/20 transition-all active:scale-95 cursor-pointer"
-              >
-                Inspect Factory Portfolio →
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* 4. STATS COUNTER BAR */}
       <section className="py-14 bg-gradient-to-r from-[#004B9B] via-[#003875] to-[#032b57] text-white">

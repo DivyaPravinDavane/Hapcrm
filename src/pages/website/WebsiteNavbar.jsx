@@ -24,7 +24,6 @@ export default function WebsiteNavbar() {
     { id: 'home', label: 'Home' },
     { id: 'features', label: 'Software Features', highlight: true },
     { id: 'catalog', label: '150+ APIs & Chemicals' },
-    { id: 'manufacturing', label: 'Lanco Factory' },
     { id: 'solutions', label: 'Solutions' },
     { id: 'about', label: 'About Us' },
     { id: 'contact', label: 'Contact & RFQ' },
@@ -108,9 +107,6 @@ export default function WebsiteNavbar() {
                 >
                   {link.highlight && <Sparkles className="w-3 h-3 text-cyan-500" />}
                   <span>{link.label}</span>
-                  {link.id === 'manufacturing' && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] animate-ping" />
-                  )}
                   {isActive && (
                     <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#004B9B] rounded-full" />
                   )}

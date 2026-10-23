@@ -120,18 +120,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Gujarat Plant */}
-                <div className="flex items-start gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#004B9B] flex items-center justify-center shrink-0">
-                    <Building2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 text-xs">Manufacturing Unit (Lanco Industries)</h4>
-                    <p className="text-2xs text-slate-600 mt-0.5 leading-relaxed">
-                      Chemical Zone, GIDC, Gujarat, INDIA (Statutory Govt of Gujarat Clearances, Progressive WHO-GMP)
-                    </p>
-                  </div>
-                </div>
 
                 {/* Email Contacts */}
                 <div className="flex items-start gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80">
@@ -281,7 +269,7 @@ export default function ContactPage() {
                         className="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:border-[#004B9B] focus:ring-1 focus:ring-[#004B9B] outline-none transition-all font-medium cursor-pointer"
                       >
                         <option value="API Sourcing RFQ">API Sourcing RFQ</option>
-                        <option value="Lanco Custom Synthesis">Lanco Custom Synthesis</option>
+                        <option value="Custom Chemical Synthesis">Custom Chemical Synthesis</option>
                         <option value="Software CRM Demo">Software CRM Demo</option>
                         <option value="Regulatory / COA / DMF">Regulatory / COA / DMF</option>
                       </select>

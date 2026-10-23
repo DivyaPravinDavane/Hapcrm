@@ -420,25 +420,25 @@ export default function FeaturesPage() {
               );
             })}
 
-            {/* Sister Concern Manufacturing Card */}
+            {/* 150+ APIs Database Card */}
             <div 
-              onClick={() => navigateToWebsite('manufacturing')}
-              className="p-5 bg-gradient-to-br from-[#EE1C25]/10 to-red-100/40 border border-[#EE1C25]/30 rounded-2xl shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group"
+              onClick={() => navigateToWebsite('catalog')}
+              className="p-5 bg-gradient-to-br from-[#004B9B]/10 to-blue-100/40 border border-[#004B9B]/30 rounded-2xl shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group"
             >
               <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-red-100 text-[#EE1C25] flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Building2 className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-blue-100 text-[#004B9B] flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <Database className="w-5 h-5" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#EE1C25] transition-colors">
-                  Lanco Industries Factory Sync
+                <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#004B9B] transition-colors">
+                  150+ APIs Master Catalog
                 </h3>
                 <p className="text-2xs text-slate-600 leading-relaxed">
-                  Real-time production pipeline linked with our sister-concern manufacturing plant in Gujarat chemical zone.
+                  Search pre-indexed compendial active pharmaceutical ingredients by CAS number and therapeutic class.
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-red-200/60 mt-3 flex items-center justify-between text-2xs font-bold text-[#EE1C25]">
-                <span>View Factory Unit →</span>
+              <div className="pt-4 border-t border-blue-200/60 mt-3 flex items-center justify-between text-2xs font-bold text-[#004B9B]">
+                <span>Browse Products Database →</span>
               </div>
             </div>
 
