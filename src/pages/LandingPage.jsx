@@ -23,7 +23,15 @@ import {
   Layers,
   Clock,
   ArrowUpRight,
-  ExternalLink
+  ExternalLink,
+  Cpu,
+  Boxes,
+  FileCheck,
+  BarChart3,
+  Database,
+  Workflow,
+  Shield,
+  Zap
 } from 'lucide-react';
 import { useCrm } from '../context/CrmContext';
 import { HAP_PRODUCTS } from '../data/hapProducts';
@@ -127,7 +135,7 @@ export default function LandingPage() {
               PHARMA CHEMI
             </span>
             <span className="text-slate-300 font-medium">
-              Wholesale Sourcing, Exporter & Importer of Active Pharmaceutical Ingredients (APIs) & Intermediates
+              The Dedicated Software & Enterprise Platform for Pharmaceuticals & Chemical Industries
             </span>
           </div>
 
@@ -164,7 +172,7 @@ export default function LandingPage() {
                 </span>
               </div>
               <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider -mt-1 hidden sm:block">
-                Global API & Pharmaceutical Sourcing
+                Software & Sourcing for Pharma & Chemical Industries
               </p>
             </div>
           </a>
@@ -172,32 +180,35 @@ export default function LandingPage() {
           {/* Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-600">
             <a href="#hero" className="hover:text-[#004B9B] transition-colors">Home</a>
-            <a href="#about" className="hover:text-[#004B9B] transition-colors">About</a>
-            <a href="#strengths" className="hover:text-[#004B9B] transition-colors">Sourcing Nodes</a>
+            <a href="#software" className="hover:text-[#004B9B] transition-colors flex items-center gap-1 text-[#004B9B]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Industry Software</span>
+            </a>
+            <a href="#products" className="hover:text-[#004B9B] transition-colors">150+ APIs & Chemicals</a>
             <a href="#lanco" className="hover:text-[#EE1C25] transition-colors flex items-center gap-1">
               <span>Lanco Factory</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] animate-ping" />
             </a>
-            <a href="#products" className="hover:text-[#004B9B] transition-colors">150+ APIs Catalog</a>
+            <a href="#about" className="hover:text-[#004B9B] transition-colors">Governance</a>
             <a href="#contact" className="hover:text-[#004B9B] transition-colors">Contact</a>
           </nav>
 
           {/* Action Buttons */}
           <div className="flex items-center gap-2.5">
             <button
-              onClick={() => handleOpenInquiry('PARACETAMOL', 'Analgesic / NSAID')}
-              className="px-4 py-2 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs font-bold rounded-xl shadow-md shadow-red-500/20 flex items-center gap-1.5 transition-all active:scale-95"
+              onClick={launchCrmDemo}
+              className="px-3.5 py-2 bg-gradient-to-r from-blue-700 to-[#004B9B] hover:from-blue-800 hover:to-[#003c7d] text-white text-xs font-bold rounded-xl shadow-md shadow-blue-600/20 flex items-center gap-1.5 transition-all active:scale-95"
             >
-              <Send className="w-3.5 h-3.5" />
-              <span>Quick Inquiry</span>
+              <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+              <span>Live Software Demo</span>
             </button>
 
             <button
               onClick={launchAuth}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 bg-[#004B9B] hover:bg-[#003c7d] text-white text-xs font-bold rounded-xl shadow-sm transition-all"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl shadow-sm transition-all"
             >
-              <Lock className="w-3.5 h-3.5" />
-              <span>Staff CRM Portal</span>
+              <Lock className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Staff Portal</span>
             </button>
           </div>
 
@@ -214,28 +225,37 @@ export default function LandingPage() {
           
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#004B9B] text-xs font-bold shadow-xs">
             <ShieldCheck className="w-4 h-4 text-[#004B9B]" />
-            <span>COMPENDIAL PURITY GUARANTEED (USP / BP / EP / IP)</span>
+            <span>PURPOSE-BUILT SOFTWARE FOR PHARMACEUTICALS & CHEMICAL INDUSTRIES</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-            Precision Sourcing for <br />
+            The Dedicated Software & Platform for <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004B9B] via-[#0A66C2] to-[#EE1C25]">
-              Global Pharmaceuticals
+              Pharmaceuticals & Chemical Industries
             </span>
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            We bridge premier global manufacturers with uncompromising quality matrices, supplying high-grade Active Pharmaceutical Ingredients, excipients, and raw materials to market leaders.
+            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, CAS registry matching, batch COA traceability, and direct integration with Lanco Industries Gujarat manufacturing plant.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+            <button
+              onClick={launchCrmDemo}
+              className="px-6 py-3.5 bg-gradient-to-r from-blue-700 via-[#004B9B] to-slate-900 hover:from-blue-800 hover:to-black text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-900/25 flex items-center gap-2 transition-all active:scale-95 border border-blue-400/30"
+            >
+              <Sparkles className="w-4 h-4 text-cyan-300" />
+              <span>Launch Live Software Demo</span>
+              <ArrowRight className="w-3.5 h-3.5 text-cyan-300" />
+            </button>
+
             <a
               href="#products"
-              className="px-6 py-3.5 bg-[#004B9B] hover:bg-[#003c7d] text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-900/20 flex items-center gap-2 transition-all active:scale-95"
+              className="px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs sm:text-sm rounded-xl border border-slate-300 shadow-xs flex items-center gap-2 transition-all active:scale-95"
             >
-              <FlaskConical className="w-4 h-4" />
-              <span>Browse 150+ APIs Catalog</span>
+              <FlaskConical className="w-4 h-4 text-[#004B9B]" />
+              <span>Browse 150+ APIs & Chemicals</span>
             </a>
 
             <button
@@ -244,14 +264,6 @@ export default function LandingPage() {
             >
               <Send className="w-4 h-4" />
               <span>Commercial RFQ & COA</span>
-            </button>
-
-            <button
-              onClick={launchCrmDemo}
-              className="px-5 py-3.5 bg-slate-900 hover:bg-slate-800 text-cyan-300 font-bold text-xs sm:text-sm rounded-xl border border-slate-700 flex items-center gap-1.5 transition-all"
-            >
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>Launch Internal CRM Desk</span>
             </button>
           </div>
 
@@ -285,6 +297,160 @@ export default function LandingPage() {
               <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                 Direct import links across China and export operations spanning Asian and Middle Eastern markets.
               </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. DEDICATED INDUSTRY SOFTWARE FOR PHARMACEUTICALS & CHEMICALS */}
+      <section id="software" className="py-20 bg-gradient-to-b from-white via-blue-50/30 to-white border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-[#004B9B] text-xs font-bold border border-blue-200">
+              <Cpu className="w-3.5 h-3.5" />
+              <span>INDUSTRY-SPECIFIC SOFTWARE ARCHITECTURE</span>
+            </div>
+            
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Why Pharmaceuticals & Chemical Companies Run on <span className="text-[#004B9B]">Pharma Chemi</span>
+            </h2>
+            
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Generic business CRMs fail in chemical and pharmaceutical operations because they lack chemical nomenclature, CAS registry support, batch certificates of analysis (COA), pharmacopeial standards (USP/BP/EP/IP), and hazardous shipping compliance. Pharma Chemi is built natively around chemical and pharmaceutical business logic.
+            </p>
+          </div>
+
+          {/* 6 Core Industry Software Modules */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {/* Card 1 */}
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 hover:border-[#004B9B] shadow-xs hover:shadow-md transition-all space-y-3 group">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#004B9B] flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Database className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Chemical & API Master Catalog</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Pre-indexed with 150+ compendial APIs, CAS numbers, chemical synonyms, molecular formulas, therapeutic categories, and storage specifications.
+              </p>
+              <div className="text-2xs font-semibold text-[#004B9B] flex items-center gap-1 pt-1">
+                <span>CAS Registry & Synonyms Mapped</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 hover:border-[#EE1C25] shadow-xs hover:shadow-md transition-all space-y-3 group">
+              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#EE1C25] flex items-center justify-center group-hover:scale-105 transition-transform">
+                <FileCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">AI Chemical Document Extractor</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Upload scanned purchase orders, handwritten customer inquiries, or vendor rate sheets. Our AI fuzzy-matches chemical names against catalog items in seconds.
+              </p>
+              <div className="text-2xs font-semibold text-[#EE1C25] flex items-center gap-1 pt-1">
+                <span>OCR & Chemical Name Extraction</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 hover:border-[#004B9B] shadow-xs hover:shadow-md transition-all space-y-3 group">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#004B9B] flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Shield className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Batch Quality & COA Vault</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Manage lot-by-lot Certificates of Analysis (COA), Drug Master Files (DMF Open Part), Written Confirmation (WC), and MSDS safety data sheets.
+              </p>
+              <div className="text-2xs font-semibold text-[#004B9B] flex items-center gap-1 pt-1">
+                <span>USP / BP / EP / IP Standards</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 hover:border-slate-800 shadow-xs hover:shadow-md transition-all space-y-3 group">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <BarChart3 className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Multi-Currency Landed Costing</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Calculate international chemical landed costs instantly in USD, EUR, RMB, and INR with customs tariffs, port clearing, and freight margins.
+              </p>
+              <div className="text-2xs font-semibold text-slate-700 flex items-center gap-1 pt-1">
+                <span>Automated Forex & Customs Tariff</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              </div>
+            </div>
+
+            {/* Card 5 */}
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 hover:border-[#EE1C25] shadow-xs hover:shadow-md transition-all space-y-3 group">
+              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#EE1C25] flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Building2 className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Lanco Industries Factory Sync</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Direct manufacturing sync with our sister-concern plant in Gujarat Chemical Zone with statutory clearances and progressive WHO-GMP accreditation.
+              </p>
+              <div className="text-2xs font-semibold text-[#EE1C25] flex items-center gap-1 pt-1">
+                <span>Gujarat Chemical Zone Clearance</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              </div>
+            </div>
+
+            {/* Card 6 */}
+            <div className="p-6 bg-gradient-to-br from-[#004B9B] to-slate-900 rounded-2xl text-white shadow-md space-y-3 relative overflow-hidden group">
+              <div className="w-12 h-12 rounded-xl bg-white/20 text-cyan-300 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white">Live Software Demo Sandbox</h3>
+              <p className="text-xs text-blue-100 leading-relaxed">
+                Experience the full CRM in action with preloaded pharmaceutical inquiries, purchase leads, customer quotations, and AI extraction tools.
+              </p>
+              <button
+                onClick={launchCrmDemo}
+                className="w-full mt-2 py-2 px-3 bg-white hover:bg-slate-100 text-[#004B9B] text-xs font-bold rounded-lg shadow-sm flex items-center justify-center gap-1.5 transition-all"
+              >
+                <span>Launch Interactive Demo</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+          </div>
+
+          {/* Banner: Test Drive the Software */}
+          <div className="mt-12 p-6 sm:p-8 bg-slate-900 text-white rounded-3xl border border-slate-800 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center lg:text-left">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-2xs font-bold border border-emerald-500/30">
+                <Sparkles className="w-3 h-3" />
+                <span>INTERACTIVE WORKSPACE READY</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+                Ready to Experience Pharma Chemi in Action?
+              </h3>
+              <p className="text-xs text-slate-300 max-w-xl">
+                Test drive the CRM software engineered specifically for pharmaceuticals and chemicals. Explore real lead pipelines, customer accounts, chemical catalog, and AI document parser.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                onClick={launchCrmDemo}
+                className="px-6 py-3 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-red-500/30 flex items-center gap-2 transition-all active:scale-95"
+              >
+                <Sparkles className="w-4 h-4" />
+                <span>Test Drive Software Now</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <button
+                onClick={launchAuth}
+                className="px-5 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold rounded-xl border border-slate-700 transition-all"
+              >
+                <span>Staff Sign In</span>
+              </button>
             </div>
           </div>
 
@@ -684,7 +850,7 @@ export default function LandingPage() {
               </div>
 
               <p className="text-slate-600 leading-relaxed text-xs">
-                Premier supplier, trader, exporter, and importer of Active Pharmaceutical Ingredients, excipients, and drug intermediates. Supplying regulated markets worldwide with full GMP documentation.
+                The dedicated software and sourcing platform engineered specifically for the pharmaceuticals and chemical industries. Powering API sourcing, chemical catalog management, batch traceability, and Lanco Industries manufacturing integration.
               </p>
 
               <div className="pt-2 text-2xs space-y-1 text-slate-500">
@@ -782,7 +948,7 @@ export default function LandingPage() {
 
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-2xs text-slate-500">
             <div>
-              &copy; 2026 Pharma Chemi. All rights reserved. Active Pharmaceutical Ingredients & Intermediates.
+              &copy; 2026 Pharma Chemi. Dedicated Software & Platform for Pharmaceuticals & Chemical Industries. All rights reserved.
             </div>
             <div className="flex gap-4">
               <span>WHO-GMP Validated Nodes</span>

@@ -121,7 +121,7 @@ export default function Header() {
               <span className="font-bold text-lg tracking-tight text-white">PHARMA CHEMI</span>
               <span className="text-[10px] font-semibold uppercase tracking-wider bg-blue-600/60 px-1.5 py-0.5 rounded text-blue-200">CRM</span>
             </div>
-            <p className="text-[10px] text-blue-200 -mt-0.5 tracking-tight hidden sm:block">Pharma Chemicals & API Trading</p>
+            <p className="text-[10px] text-blue-200 -mt-0.5 tracking-tight hidden sm:block">Software for Pharmaceuticals & Chemical Industries</p>
           </div>
         </div>
 

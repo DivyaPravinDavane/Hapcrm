@@ -113,7 +113,7 @@ export default function AuthPage() {
             <span>PHARMA CHEMI</span>
             <span className="text-[10px] font-semibold uppercase tracking-wider bg-blue-600/70 px-1.5 py-0.5 rounded text-blue-200">CRM</span>
           </h1>
-          <p className="text-xs text-blue-200 mt-1">Pharma Chemicals & API Trading Platform</p>
+          <p className="text-xs text-blue-200 mt-1">Software Platform for Pharmaceuticals & Chemical Industries</p>
 
           {/* Mode Switcher Tabs */}
           <div className="mt-5 bg-[#2D3282] p-1 rounded-lg grid grid-cols-2 text-xs font-semibold">
