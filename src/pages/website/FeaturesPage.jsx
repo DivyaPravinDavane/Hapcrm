@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Sparkles,
   ArrowRight,
   CheckCircle2,
   Cpu,
@@ -213,7 +212,6 @@ export default function FeaturesPage() {
               onClick={launchCrmDemo}
               className="px-6 py-3.5 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-red-500/30 flex items-center gap-2 transition-all active:scale-95"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Test Drive All Features Live</span>
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -362,7 +360,6 @@ export default function FeaturesPage() {
                     onClick={launchCrmDemo}
                     className="w-full py-2.5 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs font-bold rounded-xl shadow-md shadow-red-500/20 flex items-center justify-center gap-2 transition-all active:scale-95"
                   >
-                    <Sparkles className="w-3.5 h-3.5" />
                     <span>Launch Live Interactive Demo for {currentModule.title}</span>
                   </button>
                 </div>
@@ -461,7 +458,6 @@ export default function FeaturesPage() {
               onClick={launchCrmDemo}
               className="px-6 py-3 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-red-500/30 flex items-center gap-2 transition-all active:scale-95"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Launch Live Software Demo Sandbox</span>
             </button>
             <button

@@ -8,7 +8,6 @@ import {
   MapPin,
   Mail,
   Phone,
-  Sparkles,
   ArrowRight,
   FlaskConical,
   Send,
@@ -55,7 +54,6 @@ export default function AboutPage() {
               onClick={launchCrmDemo}
               className="px-6 py-3.5 bg-slate-900 hover:bg-black text-cyan-300 text-xs sm:text-sm font-bold rounded-xl border border-white/20 transition-all flex items-center gap-2"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Launch Live Software Demo</span>
             </button>
           </div>
@@ -184,7 +182,6 @@ export default function AboutPage() {
         <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#004B9B]/20 text-cyan-300 text-2xs font-bold border border-cyan-400/30">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>LIVE SOFTWARE PLATFORM</span>
             </div>
             <h3 className="text-2xl font-bold text-white">

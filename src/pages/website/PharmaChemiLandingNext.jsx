@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import {
-  Sparkles,
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
@@ -157,7 +156,6 @@ export default function PharmaChemiLandingNext({
               onClick={onLaunchDemo}
               className="px-6 py-3.5 bg-gradient-to-r from-blue-700 via-[#004B9B] to-slate-900 hover:from-blue-800 hover:to-black text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-900/25 flex items-center gap-2 transition-all active:scale-95 border border-blue-400/30 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-cyan-300" />
               <span>Launch Live Software Demo</span>
               <ArrowRight className="w-3.5 h-3.5 text-cyan-300" />
             </button>

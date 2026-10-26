@@ -7,7 +7,6 @@ import {
   Building2,
   CheckCircle2,
   ShieldCheck,
-  Sparkles,
   ArrowRight,
   Clock,
   FlaskConical
@@ -83,7 +82,6 @@ export default function ContactPage() {
               onClick={launchCrmDemo}
               className="px-6 py-3.5 bg-slate-900 hover:bg-black text-cyan-300 text-xs sm:text-sm font-bold rounded-xl border border-white/20 transition-all flex items-center gap-2"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Launch Live CRM Sandbox</span>
             </button>
           </div>

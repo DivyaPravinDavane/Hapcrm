@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import {
-  Sparkles,
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
@@ -163,7 +162,6 @@ export default function HomePage() {
               onClick={launchCrmDemo}
               className="px-6 py-3.5 bg-gradient-to-r from-blue-700 via-[#004B9B] to-slate-900 hover:from-blue-800 hover:to-black text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-900/25 flex items-center gap-2 transition-all active:scale-95 border border-blue-400/30 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-cyan-300" />
               <span>Launch Live Software Demo</span>
               <ArrowRight className="w-3.5 h-3.5 text-cyan-300" />
             </button>
@@ -329,7 +327,6 @@ export default function HomePage() {
                 onClick={launchCrmDemo}
                 className="px-5 py-2.5 bg-[#004B9B] hover:bg-[#003875] text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
               >
-                <Sparkles className="w-3.5 h-3.5" />
                 <span>Try this in Live Demo</span>
               </button>
             </div>
@@ -1115,7 +1112,6 @@ export default function HomePage() {
                 onClick={launchCrmDemo}
                 className="px-7 py-4 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-red-500/30 flex items-center gap-2 transition-all active:scale-95 cursor-pointer"
               >
-                <Sparkles className="w-4 h-4" />
                 <span>Launch Live Demo Sandbox</span>
                 <ArrowRight className="w-4 h-4" />
               </button>

@@ -6,7 +6,6 @@ import {
   Database,
   ArrowRight,
   Layers,
-  Sparkles,
   RefreshCw
 } from 'lucide-react';
 import { generateCompanyItems } from '../data/mockData';

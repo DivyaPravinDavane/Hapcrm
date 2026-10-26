@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, ArrowLeft, ArrowRight, Sparkles, Building, FileText, CheckCircle2 } from 'lucide-react';
+import { Layers, ArrowLeft, ArrowRight, Building, FileText, CheckCircle2 } from 'lucide-react';
 import { useCrm } from '../context/CrmContext';
 
 export default function PlaceholderPage({ title }) {

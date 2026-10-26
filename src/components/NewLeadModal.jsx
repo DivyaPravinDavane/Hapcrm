@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Plus, Sparkles } from 'lucide-react';
+import { X, Plus, FileText } from 'lucide-react';
 import { useCrm } from '../context/CrmContext';
 
 export default function NewLeadModal() {
@@ -85,7 +85,7 @@ export default function NewLeadModal() {
             }}
             className="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline flex items-center gap-1"
           >
-            <Sparkles className="w-3 h-3 text-purple-600" />
+            <FileText className="w-3 h-3 text-purple-600" />
             Use AI Extractor
           </button>
         </div>

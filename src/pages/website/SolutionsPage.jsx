@@ -5,7 +5,6 @@ import {
   Building2,
   Globe,
   CheckCircle2,
-  Sparkles,
   ArrowRight,
   ShieldCheck,
   Cpu,
@@ -103,7 +102,6 @@ export default function SolutionsPage() {
               onClick={launchCrmDemo}
               className="px-6 py-3.5 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-red-500/30 flex items-center gap-2 transition-all active:scale-95"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Launch Live Software Demo</span>
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -188,7 +186,6 @@ export default function SolutionsPage() {
                       onClick={launchCrmDemo}
                       className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-cyan-300 text-xs font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 transition-all cursor-pointer"
                     >
-                      <Sparkles className="w-3.5 h-3.5" />
                       <span>Test Drive Workflow in Live CRM</span>
                     </button>
                   </div>
@@ -214,7 +211,6 @@ export default function SolutionsPage() {
               onClick={launchCrmDemo}
               className="px-6 py-3 bg-[#EE1C25] hover:bg-[#d61921] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-red-500/30 flex items-center gap-2 transition-all active:scale-95"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Launch Live Software Demo</span>
             </button>
             <button

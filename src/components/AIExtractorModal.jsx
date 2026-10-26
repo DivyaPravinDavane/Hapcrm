@@ -5,7 +5,7 @@ import {
   FileText,
   CheckCircle2,
   AlertTriangle,
-  Sparkles,
+  Cpu,
   ArrowRight,
   Plus,
   Trash2,
@@ -206,7 +206,7 @@ export default function AIExtractorModal() {
         <div className="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow">
-              <Sparkles className="w-4 h-4" />
+              <Cpu className="w-4 h-4" />
             </div>
             <div>
               <h2 className="text-sm font-bold text-slate-800 flex items-center gap-2">
@@ -334,7 +334,7 @@ export default function AIExtractorModal() {
               <div className="relative w-16 h-16 mx-auto">
                 <div className="absolute inset-0 rounded-full border-4 border-blue-100 animate-pulse" />
                 <div className="w-16 h-16 rounded-full border-4 border-blue-600 border-t-transparent animate-spin flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-blue-600" />
+                  <Cpu className="w-6 h-6 text-blue-600" />
                 </div>
               </div>
 
