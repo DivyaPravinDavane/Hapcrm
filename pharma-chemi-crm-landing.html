@@ -1,0 +1,4219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Social Meta -->
+  <title>Pharma Chemi CRM | Software for Pharmaceuticals & Chemical Industries</title>
+  <meta name="description" content="Purpose-built B2B CRM and trading desk for pharma chemicals and API trading. Manage inquiries from WhatsApp & email, match stock by CAS number, quote rates, and confirm orders in one workspace.">
+  <meta name="keywords" content="pharma CRM, chemical trading CRM, API sourcing software, CAS number search, pharmaceutical sales desk, chemical broker software">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pharmachemi.com">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pharmachemi.com">
+  <meta property="og:title" content="Pharma Chemi CRM | Software for Pharmaceuticals & Chemical Industries">
+  <meta property="og:description" content="Streamline pharmaceutical inquiries, stock matching by CAS number, WhatsApp & email quoting, and order confirmation in one unified CRM.">
+  <meta property="og:site_name" content="Pharma Chemi CRM">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pharmachemi.com">
+  <meta name="twitter:title" content="Pharma Chemi CRM | Software for Pharmaceuticals & Chemical Industries">
+  <meta name="twitter:description" content="Purpose-built B2B sales and sourcing desk for pharmaceutical chemicals and API traders.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pharma Chemi CRM",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web browser, Mobile Web",
+    "description": "B2B pharmaceutical CRM and sourcing desk for pharma chemicals, active pharmaceutical ingredients (APIs), and chemical trading.",
+    "url": "https://pharmachemi.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Product Demonstration on Request"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS
+       ===================================================================== */
+    :root {
+      /* Base Color Palette (Light Mode) */
+      --bg-primary: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #ffffff;
+      --bg-muted: #f1f5f9;
+      --bg-subtle: #e2e8f0;
+      
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+      --border: #e2e8f0;
+      --border-focus: #0284c7;
+
+      /* Primary Brand: Deep Blue & Technical Teal */
+      --primary-navy: #0f172a;
+      --primary-blue: #0284c7;
+      --primary-blue-hover: #0369a1;
+      --primary-light: #e0f2fe;
+
+      --teal-accent: #0d9488;
+      --teal-light: #ccfbf1;
+      --teal-dark: #115e59;
+
+      /* Accent Colors */
+      --amber: #f59e0b;
+      --amber-light: #fef3c7;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+
+      /* Status Badge Colors */
+      --status-sent: #0284c7;
+      --status-sent-bg: #e0f2fe;
+      --status-pending: #d97706;
+      --status-pending-bg: #fef3c7;
+      --status-confirm: #059669;
+      --status-confirm-bg: #d1fae5;
+      --status-won: #16a34a;
+      --status-won-bg: #dcfce7;
+      --status-reject: #dc2626;
+      --status-reject-bg: #fee2e2;
+      --status-nooffer: #64748b;
+      --status-nooffer-bg: #f1f5f9;
+      --status-junk: #94a3b8;
+      --status-junk-bg: #f8fafc;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+      /* Typography */
+      --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Radii */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      /* Layout */
+      --max-width: 1240px;
+      --nav-height: 72px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #090d16;
+      --bg-surface: #111827;
+      --bg-surface-elevated: #1e293b;
+      --bg-muted: #1e293b;
+      --bg-subtle: #334155;
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --border: #334155;
+      --border-focus: #38bdf8;
+
+      --primary-navy: #f8fafc;
+      --primary-blue: #38bdf8;
+      --primary-blue-hover: #0ea5e9;
+      --primary-light: #082f49;
+
+      --teal-accent: #2dd4bf;
+      --teal-light: #134e4a;
+      --teal-dark: #5eead4;
+
+      --amber-light: #451a03;
+      --rose-light: #4c0519;
+      --purple-light: #2e1065;
+
+      --status-sent-bg: #082f49;
+      --status-pending-bg: #451a03;
+      --status-confirm-bg: #064e3b;
+      --status-won-bg: #052e16;
+      --status-reject-bg: #450a0a;
+      --status-nooffer-bg: #1e293b;
+      --status-junk-bg: #0f172a;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+    }
+
+    /* =====================================================================
+       GLOBAL RESET & BASE STYLES
+       ===================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-main);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-muted);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 3.5rem 0;
+      }
+    }
+
+    /* Badges & Pills */
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.775rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      background: var(--primary-light);
+      color: var(--primary-blue);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    .pill-badge .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal-accent);
+      box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(13, 148, 136, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+      }
+    }
+
+    .sample-label {
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      padding: 0.2rem 0.55rem;
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-subtle);
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border: 1px dashed var(--border);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--border-focus);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #115e59 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-muted);
+      border-color: var(--text-subtle);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Scroll Progress Bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-blue), var(--teal-accent), var(--amber));
+      z-index: 1100;
+      transition: width 0.1s ease-out;
+    }
+
+    /* =====================================================================
+       1. STICKY NAVBAR
+       ===================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    [data-theme="dark"] .navbar {
+      background: rgba(17, 24, 39, 0.85);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #0284c7, #0d9488);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+    }
+
+    .logo-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.925rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--primary-blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .theme-toggle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--bg-muted);
+      color: var(--text-main);
+    }
+
+    .theme-toggle-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    @media (max-width: 992px) {
+      .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1rem;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-120%);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 999;
+      }
+      .nav-links.active {
+        transform: translateY(0);
+      }
+      .nav-links a {
+        font-size: 1.05rem;
+        padding: 0.5rem 0;
+        width: 100%;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .nav-actions .btn-primary {
+        display: none;
+      }
+      .nav-links .mobile-demo-btn {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 993px) {
+      .nav-links .mobile-demo-btn {
+        display: none;
+      }
+    }
+
+    /* =====================================================================
+       2. HERO SECTION
+       ===================================================================== */
+    .hero {
+      position: relative;
+      padding: 4.5rem 0 5rem 0;
+      background: radial-gradient(circle at 50% 15%, rgba(2, 132, 199, 0.08), transparent 70%);
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .hero {
+      background: radial-gradient(circle at 50% 15%, rgba(56, 189, 248, 0.1), transparent 75%);
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .hero-badge-wrap {
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #0284c7 20%, #0d9488 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="dark"] .hero-title .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 20%, #2dd4bf 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Floating Mock Dashboard */
+    .hero-mock-wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .mock-browser-window {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xl), 0 0 0 1px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .mock-window-header {
+      background: var(--bg-muted);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .window-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .window-address {
+      font-size: 0.775rem;
+      font-family: var(--font-mono);
+      color: var(--text-subtle);
+      background: var(--bg-surface);
+      padding: 0.25rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mock-body {
+      padding: 1.5rem;
+      background: var(--bg-primary);
+    }
+
+    /* Mini Dashboard Layout */
+    .mini-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .mini-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .kpi-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .kpi-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .kpi-title {
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .kpi-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .kpi-delta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.35rem;
+    }
+
+    .delta-up { color: #16a34a; }
+    .delta-amber { color: #d97706; }
+    .delta-blue { color: #0284c7; }
+
+    .mini-chart-row {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .mini-chart-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .chart-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .chart-box-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    /* Donut chart SVG */
+    .donut-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+
+    .donut-svg-wrap {
+      position: relative;
+      width: 110px;
+      height: 110px;
+    }
+
+    .donut-svg {
+      transform: rotate(-90deg);
+    }
+
+    .donut-center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .donut-center-num {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .donut-center-sub {
+      font-size: 0.65rem;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+    }
+
+    .donut-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.775rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+
+    /* Staff Bar Chart */
+    .staff-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .staff-bar-row {
+      display: grid;
+      grid-template-columns: 100px 1fr 45px;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    .staff-name {
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .bar-track {
+      background: var(--bg-muted);
+      height: 8px;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--primary-blue), var(--teal-accent));
+      transition: width 1s ease-in-out;
+    }
+
+    .staff-val {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* =====================================================================
+       3. PROBLEM STRIP
+       ===================================================================== */
+    .problem-strip {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .problem-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(225, 29, 72, 0.4);
+    }
+
+    .problem-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--rose-light);
+      color: var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .problem-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .problem-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* =====================================================================
+       4. HOW IT WORKS (5-STEP ANIMATED FLOW)
+       ===================================================================== */
+    .flow-wrapper {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .flow-steps-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .flow-steps-nav {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .flow-step-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: left;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .flow-step-btn:hover {
+      border-color: var(--primary-blue);
+      transform: translateY(-2px);
+    }
+
+    .flow-step-btn.active {
+      background: var(--primary-light);
+      border-color: var(--primary-blue);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+    }
+
+    [data-theme="dark"] .flow-step-btn.active {
+      background: var(--bg-surface-elevated);
+      border-color: var(--primary-blue);
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .step-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .flow-detail-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 860px) {
+      .flow-detail-box {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+
+    .flow-detail-text h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .flow-detail-text p {
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .flow-meta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .flow-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .flow-meta-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--teal-accent);
+      flex-shrink: 0;
+    }
+
+    .flow-interactive-preview {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    /* =====================================================================
+       5. FEATURE SECTIONS (6 GROUPS, ALTERNATING)
+       ===================================================================== */
+    .feature-group {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature-group:last-child {
+      border-bottom: none;
+    }
+
+    .feature-group.reverse {
+      grid-template-columns: 1.05fr 1fr;
+    }
+
+    .feature-group.reverse .feature-info {
+      order: 2;
+    }
+
+    .feature-group.reverse .feature-visual {
+      order: 1;
+    }
+
+    @media (max-width: 900px) {
+      .feature-group,
+      .feature-group.reverse {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3rem 0;
+      }
+      .feature-group.reverse .feature-info {
+        order: 1;
+      }
+      .feature-group.reverse .feature-visual {
+        order: 2;
+      }
+    }
+
+    .feature-info h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      margin-top: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-info p {
+      font-size: 1.05rem;
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    [data-theme="dark"] .check-icon {
+      background: #134e4a;
+      color: #2dd4bf;
+    }
+
+    .check-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke-width: 3;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .feature-visual {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* UI Mocks within feature sections */
+    /* Mock 1: Leads Tab + Upload */
+    .mock-tabs-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      overflow-x: auto;
+    }
+
+    .mock-tab {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      color: var(--text-subtle);
+      background: var(--bg-muted);
+      white-space: nowrap;
+    }
+
+    .mock-tab.active {
+      background: var(--primary-light);
+      color: var(--primary-blue);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    .mock-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.825rem;
+    }
+
+    .mock-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      color: var(--text-subtle);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mock-table td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-sent { background: var(--status-sent-bg); color: var(--status-sent); }
+    .badge-pending { background: var(--status-pending-bg); color: var(--status-pending); }
+    .badge-confirm { background: var(--status-confirm-bg); color: var(--status-confirm); }
+    .badge-won { background: var(--status-won-bg); color: var(--status-won); }
+    .badge-reject { background: var(--status-reject-bg); color: var(--status-reject); }
+    .badge-nooffer { background: var(--status-nooffer-bg); color: var(--status-nooffer); }
+    .badge-junk { background: var(--status-junk-bg); color: var(--status-junk); }
+
+    .upload-box {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      background: var(--bg-primary);
+    }
+
+    /* Mock 2: CAS Search & Quote */
+    .mock-search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .mock-search-bar input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      color: var(--text-main);
+      font-size: 0.875rem;
+    }
+
+    .search-result-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cas-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Mock 3: WhatsApp + Email Split */
+    .chat-email-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .chat-email-split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .wa-card {
+      background: #efeae2;
+      border-radius: var(--radius-md);
+      padding: 0.85rem;
+      border: 1px solid #dcd7cf;
+    }
+
+    [data-theme="dark"] .wa-card {
+      background: #111b21;
+      border-color: #222e35;
+    }
+
+    .wa-bubble {
+      background: #ffffff;
+      border-radius: 8px 8px 8px 0;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.775rem;
+      color: #111b21;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 0.5rem;
+    }
+
+    [data-theme="dark"] .wa-bubble {
+      background: #202c33;
+      color: #e9edef;
+    }
+
+    .email-thread {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem;
+      font-size: 0.775rem;
+    }
+
+    /* Mock 4: Task Planner */
+    .task-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .task-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.85rem;
+      background: var(--bg-primary);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--primary-blue);
+      font-size: 0.825rem;
+    }
+
+    .task-row.urgent {
+      border-left-color: var(--rose);
+    }
+
+    /* =====================================================================
+       6. INTERACTIVE LEAD STATUS DEMO
+       ===================================================================== */
+    .interactive-demo-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .status-chips-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .status-chip {
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .status-chip:hover {
+      border-color: var(--primary-blue);
+      transform: translateY(-1px);
+    }
+
+    .status-chip.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="dark"] .status-chip.active {
+      background: var(--primary-blue);
+      color: #090d16;
+      border-color: var(--primary-blue);
+    }
+
+    .interactive-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .interactive-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .table-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .demo-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .demo-data-table th {
+      background: var(--bg-muted);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.775rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-subtle);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .demo-data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .demo-data-table tr:hover td {
+      background: var(--bg-muted);
+    }
+
+    /* Live Donut Card */
+    .live-chart-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+
+    .donut-dynamic-container {
+      margin: 1.5rem auto;
+      position: relative;
+      width: 180px;
+      height: 180px;
+    }
+
+    .donut-dynamic-container svg {
+      transform: rotate(-90deg);
+    }
+
+    /* =====================================================================
+       7. DASHBOARD PREVIEW (FULL 6 KPI CARDS + CHARTS + MATRIX)
+       ===================================================================== */
+    .full-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 1100px) {
+      .full-kpi-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .full-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .dashboard-preview-window {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .dashboard-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .dashboard-top-bar h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .matrix-grid {
+      margin-top: 2rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.825rem;
+    }
+
+    .matrix-table th, .matrix-table td {
+      padding: 0.6rem 0.85rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .matrix-table th:first-child, .matrix-table td:first-child {
+      text-align: left;
+    }
+
+    .top-performer-tag {
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      margin-left: 0.5rem;
+    }
+
+    /* =====================================================================
+       8. MODULES GRID (10 MODULES)
+       ===================================================================== */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 1024px) {
+      .modules-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .module-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.25rem;
+      text-align: left;
+      position: relative;
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-blue);
+    }
+
+    .module-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .module-card:hover .module-card-icon {
+      background: var(--teal-accent);
+      color: #ffffff;
+    }
+
+    .module-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .module-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .module-card p {
+      font-size: 0.825rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+    }
+
+    /* =====================================================================
+       9. WHO IT'S FOR (TABS)
+       ===================================================================== */
+    .role-tabs-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .role-tabs-nav {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .role-tab-btn {
+      padding: 0.65rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .role-tab-btn:hover {
+      border-color: var(--primary-blue);
+      color: var(--text-main);
+    }
+
+    .role-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary-blue), var(--teal-accent));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .role-card-content {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .role-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .role-avatar-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .role-avatar-badge svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .role-card-header h3 {
+      font-size: 1.45rem;
+    }
+
+    .role-benefits-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    @media (max-width: 640px) {
+      .role-benefits-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .role-benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* =====================================================================
+       10. WHY PHARMA CHEMI (COMPARISON TABLE)
+       ===================================================================== */
+    .comparison-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow-x: auto;
+      box-shadow: var(--shadow-md);
+      margin-top: 2rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+      min-width: 720px;
+    }
+
+    .comparison-table th {
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th.highlight-col {
+      background: var(--primary-light);
+      color: var(--primary-blue);
+      border-bottom: 2px solid var(--primary-blue);
+    }
+
+    [data-theme="dark"] .comparison-table th.highlight-col {
+      background: #082f49;
+    }
+
+    .comparison-table td {
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .comparison-table td.highlight-col {
+      background: rgba(2, 132, 199, 0.03);
+      color: var(--text-main);
+      font-weight: 600;
+      border-left: 1px solid rgba(2, 132, 199, 0.15);
+      border-right: 1px solid rgba(2, 132, 199, 0.15);
+    }
+
+    .verify-badge {
+      font-size: 0.65rem;
+      font-family: var(--font-mono);
+      background: var(--amber-light);
+      color: #92400e;
+      padding: 0.1rem 0.4rem;
+      border-radius: var(--radius-sm);
+      margin-left: 0.4rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* =====================================================================
+       11. FAQ ACCORDION
+       ===================================================================== */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-focus);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: var(--text-subtle);
+      stroke-width: 2.2;
+      fill: none;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+      stroke: var(--primary-blue);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding: 0 1.5rem 1.25rem 1.5rem;
+    }
+
+    /* =====================================================================
+       12. CTA & BOOK DEMO FORM
+       ===================================================================== */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92)), radial-gradient(circle at top right, #0284c7, #0d9488);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 4rem 2.5rem;
+      margin: 3rem auto;
+      box-shadow: var(--shadow-xl);
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .cta-section {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem;
+        gap: 2.5rem;
+      }
+    }
+
+    .cta-text h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: #ffffff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .cta-text p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    .contact-info-item svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--teal-accent);
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .form-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      color: var(--text-main);
+    }
+
+    @media (max-width: 480px) {
+      .form-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .form-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-main);
+    }
+
+    .form-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 540px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.825rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text-main);
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 0.75rem 0.95rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    /* =====================================================================
+       13. FOOTER
+       ===================================================================== */
+    .site-footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem 0;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    /* =====================================================================
+       FLOATING ELEMENTS (WHATSAPP & BACK TO TOP)
+       ===================================================================== */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      background: #25d366;
+      color: #ffffff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+      z-index: 990;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+    }
+
+    .floating-whatsapp svg {
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 5.75rem;
+      right: 2.1rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 989;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--bg-muted);
+      transform: translateY(-3px);
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+    }
+
+    /* Tooltip */
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 10;
+    }
+
+    .tooltip:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- 1. STICKY NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="brand-logo" aria-label="Pharma Chemi CRM Home">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M10 2v7.31L4.2 18.2a2 2 0 0 0 1.66 2.8h12.28a2 2 0 0 0 1.66-2.8L14 9.31V2"/>
+            <path d="M8.5 2h7"/>
+            <path d="M14 9.3h-4"/>
+          </svg>
+        </div>
+        <span>Pharma Chemi CRM</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How it works</a></li>
+        <li><a href="#interactive-demo" class="nav-link">Lead Demo</a></li>
+        <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+        <li><a href="#modules" class="nav-link">Modules</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" class="btn btn-primary mobile-demo-btn">Book a Demo</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light or dark theme">
+          <svg class="sun-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-primary">Book a Demo</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge-wrap">
+          <span class="pill-badge">
+            <span class="pulse-dot"></span>
+            Software for Pharmaceuticals & Chemical Industries
+          </span>
+        </div>
+        <h1 class="hero-title">
+          Manage Every Pharma Inquiry, Stock Match & Quote in <span class="gradient-text">One Place</span>
+        </h1>
+        <p class="hero-subtitle">
+          The purpose-built sales and sourcing desk for chemical traders, API suppliers, and exporters. Replace scattered WhatsApp chats and spreadsheets with a single, synchronized workflow.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Book a Demo</a>
+          <a href="#how-it-works" class="btn btn-secondary">See How it Works</a>
+        </div>
+      </div>
+
+      <!-- Floating Mock Dashboard (HTML/CSS) -->
+      <div class="hero-mock-wrapper">
+        <div class="mock-browser-window">
+          <div class="mock-window-header">
+            <div class="window-dots">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="window-address">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>app.pharmachemi.com/desk/trading</span>
+            </div>
+            <div>
+              <span class="sample-label">Sample Data</span>
+            </div>
+          </div>
+
+          <div class="mock-body">
+            <!-- Hero Mini KPI Cards -->
+            <div class="mini-kpi-grid">
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <span class="kpi-title">New Leads</span>
+                  <span class="sample-label">Today</span>
+                </div>
+                <div class="kpi-value" data-counter="12">12</div>
+                <div class="kpi-delta delta-up">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                  +3 vs yesterday
+                </div>
+              </div>
+
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <span class="kpi-title">Won Leads</span>
+                  <span class="sample-label">Confirmed</span>
+                </div>
+                <div class="kpi-value" data-counter="4">4</div>
+                <div class="kpi-delta delta-up">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                  +1 vs yesterday
+                </div>
+              </div>
+
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <span class="kpi-title">Pending Leads</span>
+                  <span class="sample-label">In Sourcing</span>
+                </div>
+                <div class="kpi-value" data-counter="3">3</div>
+                <div class="kpi-delta delta-amber">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  Awaiting supplier rate
+                </div>
+              </div>
+
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <span class="kpi-title">Tasks Due</span>
+                  <span class="sample-label">Follow-up</span>
+                </div>
+                <div class="kpi-value" data-counter="9">9</div>
+                <div class="kpi-delta delta-blue">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Due before 6:30 PM
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Chart Row -->
+            <div class="mini-chart-row">
+              <!-- Mini Donut -->
+              <div class="chart-box">
+                <div class="chart-box-title">
+                  <span>Leads by Status</span>
+                  <span class="sample-label">Live Snapshot</span>
+                </div>
+                <div class="donut-layout">
+                  <div class="donut-svg-wrap">
+                    <svg class="donut-svg" width="110" height="110" viewBox="0 0 36 36">
+                      <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e2e8f0" stroke-width="3.8"/>
+                      <!-- Sent (40%) -->
+                      <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#0284c7" stroke-width="4" stroke-dasharray="40, 100"/>
+                      <!-- Won (25%) -->
+                      <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#16a34a" stroke-width="4" stroke-dasharray="25, 100" stroke-dashoffset="-40"/>
+                      <!-- Pending (20%) -->
+                      <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#d97706" stroke-width="4" stroke-dasharray="20, 100" stroke-dashoffset="-65"/>
+                      <!-- Others (15%) -->
+                      <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="15, 100" stroke-dashoffset="-85"/>
+                    </svg>
+                    <div class="donut-center-text">
+                      <div class="donut-center-num">28</div>
+                      <div class="donut-center-sub">Total</div>
+                    </div>
+                  </div>
+                  <div class="donut-legend">
+                    <div class="legend-item"><span class="legend-color" style="background:#0284c7"></span> Sent (11)</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#16a34a"></span> Won (7)</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#d97706"></span> Pending (6)</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#94a3b8"></span> Others (4)</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Staff Bar Chart -->
+              <div class="chart-box">
+                <div class="chart-box-title">
+                  <span>Leads per Staff Member</span>
+                  <span class="sample-label">Active Shift</span>
+                </div>
+                <div class="staff-bars">
+                  <div class="staff-bar-row">
+                    <span class="staff-name">Rajesh K.</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 85%;"></div></div>
+                    <span class="staff-val">17 leads</span>
+                  </div>
+                  <div class="staff-bar-row">
+                    <span class="staff-name">Priya S.</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 65%;"></div></div>
+                    <span class="staff-val">13 leads</span>
+                  </div>
+                  <div class="staff-bar-row">
+                    <span class="staff-name">Amit V.</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 50%;"></div></div>
+                    <span class="staff-val">10 leads</span>
+                  </div>
+                  <div class="staff-bar-row">
+                    <span class="staff-name">Ananya M.</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 40%;"></div></div>
+                    <span class="staff-val">8 leads</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. PROBLEM STRIP -->
+  <section class="section-padding problem-strip" id="problems">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">The Trading Bottleneck</span>
+        <h2 class="section-title">Why Pharma Trading Gets Messy</h2>
+        <p class="section-sub">Pharma chemicals and API inquiries move fast. When inquiries live in five different places, sales slip away.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3>Scattered Inquiries</h3>
+          <p>Requirements land across WhatsApp, personal emails, agent notes, and phone calls. Leads get lost before anyone logs them.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          </div>
+          <h3>Manual Stock Checks</h3>
+          <p>Sales reps scramble through outdated spreadsheets or call the warehouse just to check if an API or chemical is available.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>Slow Quotations</h3>
+          <p>Calculating freight, supplier rates, and delivery margins takes hours. Buyers move to faster traders before your quote is sent.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <h3>Lost Follow-ups</h3>
+          <p>Without centralized status tracking and daily reminders, quotes sit without follow-up and pending orders fall through the cracks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS (5-STEP ANIMATED HORIZONTAL FLOW) -->
+  <section class="section-padding" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Streamlined Workflow</span>
+        <h2 class="section-title">How Pharma Chemi CRM Works</h2>
+        <p class="section-sub">From the moment an inquiry arrives to confirmed delivery, follow 5 structured steps.</p>
+      </div>
+
+      <div class="flow-wrapper">
+        <!-- 5 Clickable Step Navigation Tabs -->
+        <div class="flow-steps-nav" id="flow-steps-nav" role="tablist">
+          <button class="flow-step-btn active" data-step="0" role="tab" aria-selected="true" aria-controls="flow-panel">
+            <span class="step-number">STEP 01</span>
+            <span class="step-title">Record Inquiry</span>
+          </button>
+          <button class="flow-step-btn" data-step="1" role="tab" aria-selected="false" aria-controls="flow-panel">
+            <span class="step-number">STEP 02</span>
+            <span class="step-title">Match Stock</span>
+          </button>
+          <button class="flow-step-btn" data-step="2" role="tab" aria-selected="false" aria-controls="flow-panel">
+            <span class="step-number">STEP 03</span>
+            <span class="step-title">Give Quote</span>
+          </button>
+          <button class="flow-step-btn" data-step="3" role="tab" aria-selected="false" aria-controls="flow-panel">
+            <span class="step-number">STEP 04</span>
+            <span class="step-title">Send via WhatsApp/Email</span>
+          </button>
+          <button class="flow-step-btn" data-step="4" role="tab" aria-selected="false" aria-controls="flow-panel">
+            <span class="step-number">STEP 05</span>
+            <span class="step-title">Confirm Order</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Content Box -->
+        <div class="flow-detail-box" id="flow-panel" role="tabpanel">
+          <div class="flow-detail-text">
+            <span class="pill-badge" id="flow-step-badge">Phase 1: Ingestion</span>
+            <h3 id="flow-step-title">Record inquiry from clients, brokers, and agents</h3>
+            <p id="flow-step-desc">
+              Log incoming requests seamlessly. Reps can type in leads or upload documents/scanned inquiry papers directly. Categorize instantly into Leads, My Leads, Purchase Leads, or Mobile Leads.
+            </p>
+            <ul class="flow-meta-list" id="flow-step-bullets">
+              <li class="flow-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Support for direct client, broker, and channel partner inquiries</span>
+              </li>
+              <li class="flow-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Paper document & PDF inquiry upload to lead converter</span>
+              </li>
+              <li class="flow-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Immediate assignment to dedicated sales reps</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flow-interactive-preview" id="flow-step-visual">
+            <!-- Simulated dynamic step graphic -->
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-md); border:1px solid var(--border);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+                <strong style="font-size:0.85rem;" id="step-preview-tag">Lead Ingestion Desk</strong>
+                <span class="status-badge badge-pending" id="step-preview-badge">Pending Match</span>
+              </div>
+              <div style="font-size:0.8rem; font-family:var(--font-mono); color:var(--text-muted); background:var(--bg-muted); padding:0.75rem; border-radius:var(--radius-sm); line-height:1.6;" id="step-preview-code">
+                Inquiry #PC-9402<br>
+                Item: Paracetamol DC 90% (CAS: 103-90-2)<br>
+                Client: Global Pharma Labs | Broker: Apex Chem<br>
+                Quantity: 5,000 KG | Delivery: CIF Nhava Sheva
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FEATURE SECTIONS (ALL 6 GROUPS, ALTERNATING LEFT / RIGHT) -->
+  <section class="section-padding" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Feature Deep Dive</span>
+        <h2 class="section-title">Built Specially for Chemical & API Traders</h2>
+        <p class="section-sub">Every module is tailored to the exact realities of active pharmaceutical ingredients, chemical batches, and trade brokerage.</p>
+      </div>
+
+      <!-- Feature Group 1: Lead and Inquiry Management -->
+      <div class="feature-group">
+        <div class="feature-info">
+          <span class="pill-badge">Module 01</span>
+          <h2>Lead and Inquiry Management</h2>
+          <p>
+            Capture every chemical lead from all channels without friction. Organize your desk with separated views so sales teams and procurement agents never mix up inquiries.
+          </p>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Record lead inquiries from multiple clients, brokers, and trade agents</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Upload enquiry or paper (document) to create leads instantly</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Separate dedicated tabs: Leads, My Leads, Purchase Leads, and Mobile Leads</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>7 lifecycle statuses: Sent, Pending, Confirm, WON, Reject, NoOffer, Junk</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="mock-tabs-nav">
+            <span class="mock-tab active">All Leads (42)</span>
+            <span class="mock-tab">My Leads (14)</span>
+            <span class="mock-tab">Purchase Leads (18)</span>
+            <span class="mock-tab">Mobile Leads (10)</span>
+          </div>
+          <table class="mock-table">
+            <thead>
+              <tr>
+                <th>Customer / Agent</th>
+                <th>Chemical / API</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sun Health Care (Broker)</td>
+                <td>Metformin HCl IP</td>
+                <td><span class="status-badge badge-sent">Sent</span></td>
+              </tr>
+              <tr>
+                <td>Zydex Laboratories</td>
+                <td>Ibuprofen 25 Ep</td>
+                <td><span class="status-badge badge-pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>Apex Pharma Chem</td>
+                <td>Amoxicillin Trihydrate</td>
+                <td><span class="status-badge badge-won">WON</span></td>
+              </tr>
+              <tr>
+                <td>BioCore Trading</td>
+                <td>Ciprofloxacin HCl</td>
+                <td><span class="status-badge badge-confirm">Confirm</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="upload-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary-blue); margin-bottom:0.25rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            <div style="font-size:0.775rem; font-weight:600;">Upload Enquiry Paper or PDF</div>
+            <div style="font-size:0.7rem; color:var(--text-subtle);">Extract and auto-create leads from scanned inquiry letters</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Group 2: Stock Matching and Quoting (Reversed) -->
+      <div class="feature-group reverse">
+        <div class="feature-info">
+          <span class="pill-badge">Module 02</span>
+          <h2>Stock Matching & Fast Quoting</h2>
+          <p>
+            Connect customer demand with active inventory and regular supplier catalogs in seconds. Eliminate guesswork on pricing and delivery schedules.
+          </p>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Match inquiries directly with current warehouse stock and regular items</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Item master management: Company Items and standard Items database</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Global instant search by customer name, chemical item, supplier, or CAS number</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Structured quote logging: customer, item, rate, payment terms, and delivery time</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Seamless order confirmation with Purchase Order (PO) details captured</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="mock-search-bar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" value="CAS: 50-78-2 (Aspirin)" readonly aria-label="Sample search query">
+            <span class="sample-label">Global Search</span>
+          </div>
+          <div class="search-result-card">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+              <div>
+                <strong>Acetylsalicylic Acid (Aspirin) USP</strong>
+                <div style="font-size:0.75rem; color:var(--text-subtle);">Item Master: #API-1029</div>
+              </div>
+              <span class="cas-tag">CAS 50-78-2</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; font-size:0.75rem; background:var(--bg-primary); padding:0.5rem; border-radius:var(--radius-sm); margin-top:0.5rem;">
+              <div><span style="color:var(--text-subtle);">Stock Available:</span> <strong>3,200 KG</strong></div>
+              <div><span style="color:var(--text-subtle);">Last Quoted:</span> <strong>$4.85 / KG</strong></div>
+              <div><span style="color:var(--text-subtle);">Delivery:</span> <strong>Ready Stock</strong></div>
+            </div>
+            <div style="margin-top:0.75rem; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.75rem; color:#16a34a; font-weight:600;">Matched with Regular Supplier</span>
+              <button class="btn btn-primary" style="padding:0.35rem 0.75rem; font-size:0.75rem;">Generate Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Group 3: Communication -->
+      <div class="feature-group">
+        <div class="feature-info">
+          <span class="pill-badge">Module 03</span>
+          <h2>Integrated Communication Desk</h2>
+          <p>
+            Keep negotiations synchronized. Connect WhatsApp chats and formal emails directly to customer files so no partner update gets forgotten.
+          </p>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Native WhatsApp integration for quotes, specs, and fast negotiation</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Full email integration to log client responses and formal inquiries</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Recent updates feed tracking every status change across the team</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Internal comments stream for team discussion on pricing and terms</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Automated desktop and mobile notifications for urgent tasks</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="chat-email-split">
+            <!-- WhatsApp preview -->
+            <div class="wa-card">
+              <div style="font-weight:700; font-size:0.775rem; color:#115e59; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+                WhatsApp Thread
+              </div>
+              <div class="wa-bubble">
+                "Hi, please quote rate for 2 MT Pregabalin IP with COA and delivery to Hyderabad."
+                <div style="font-size:0.65rem; color:#8696a0; text-align:right;">11:42 AM</div>
+              </div>
+              <div class="wa-bubble" style="background:#d9fdd3; align-self:flex-end;">
+                "Quoted $34.50/KG. Ready stock, COA attached from our QA lab."
+                <div style="font-size:0.65rem; color:#8696a0; text-align:right;">11:45 AM</div>
+              </div>
+            </div>
+
+            <!-- Email & Internal comments -->
+            <div class="email-thread">
+              <div style="font-weight:700; font-size:0.775rem; color:var(--text-main); margin-bottom:0.5rem;">
+                Internal Team Comments
+              </div>
+              <div style="background:var(--bg-primary); padding:0.5rem; border-radius:var(--radius-sm); margin-bottom:0.5rem;">
+                <strong style="color:var(--primary-blue);">Procurement Desk:</strong>
+                <p style="margin:0; font-size:0.725rem;">"Confirmed 2 MT batch with Gujarat supplier. Margin approved at 6%."</p>
+              </div>
+              <div style="font-size:0.7rem; color:var(--text-subtle);">
+                🔔 Notification: Sent quote logged to Client File #C-804.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Group 4: Dashboard and Reporting (Reversed) -->
+      <div class="feature-group reverse">
+        <div class="feature-info">
+          <span class="pill-badge">Module 04</span>
+          <h2>Executive Dashboard & Reporting</h2>
+          <p>
+            Gain complete visibility into your desk's operational pulse. Track daily lead movements, cash outstanding, and individual broker volumes without spreadsheets.
+          </p>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Daily KPI cards: new leads, sent leads, won leads, pending leads, total outstanding, and tasks due</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Period comparison: instant delta comparison against yesterday or last week</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Interactive Leads by Status chart for instant pipeline health checks</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Leads per staff member chart featuring top performer tags and daily activity matrix</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Comprehensive Reports module for executive and financial audits</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <strong style="font-size:0.9rem;">Daily Pipeline Overview</strong>
+            <span class="sample-label">Sample Data</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-primary); padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+              <div style="font-size:0.7rem; color:var(--text-subtle);">TOTAL OUTSTANDING</div>
+              <div style="font-size:1.25rem; font-weight:800; color:var(--text-main);">$428,500</div>
+              <div style="font-size:0.7rem; color:#16a34a;">-$34,000 cleared this week</div>
+            </div>
+            <div style="background:var(--bg-primary); padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+              <div style="font-size:0.7rem; color:var(--text-subtle);">PENDING QUOTES</div>
+              <div style="font-size:1.25rem; font-weight:800; color:var(--text-main);">18 Inquiries</div>
+              <div style="font-size:0.7rem; color:#d97706;">6 awaiting supplier COA</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; font-weight:600; margin-bottom:0.35rem;">Staff Quota Leaderboard</div>
+          <div style="background:var(--bg-primary); border-radius:var(--radius-sm); padding:0.6rem; border:1px solid var(--border); font-size:0.75rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+              <span>🏆 Rajesh Kumar (Top Performer)</span>
+              <strong>17 Leads (9 won)</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-subtle);">
+              <span>Priya Sharma</span>
+              <span>13 Leads (6 won)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Group 5: Team and Productivity -->
+      <div class="feature-group">
+        <div class="feature-info">
+          <span class="pill-badge">Module 05</span>
+          <h2>Team & Productivity Tracking</h2>
+          <p>
+            Structure your staff's trading hours. Ensure complete discipline across follow-ups, field visits, and mobile entries from morning shift to evening sign-off.
+          </p>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Tasks & task-due tracking with automated urgency color-coding</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Visual Planner for scheduling trade calls and supplier factory checks</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Daily Work log for transparent end-of-day reviews</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Staff activity tracking (9:30 AM to 6:30 PM working hours)</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Fast Mobile Leads entry for sales agents on the road or in market clusters</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Secure User Login with granular permission settings and session logout</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <strong style="font-size:0.9rem;">Daily Work & Shift Tracker</strong>
+            <span class="pill-badge" style="font-size:0.65rem;">9:30 AM – 6:30 PM Shift</span>
+          </div>
+          <div class="task-timeline">
+            <div class="task-row urgent">
+              <div>
+                <strong>Follow up PO confirmation</strong>
+                <div style="font-size:0.7rem; color:var(--text-subtle);">Client: Torrent Bio | Due: 2:00 PM</div>
+              </div>
+              <span class="status-badge badge-reject">Urgent</span>
+            </div>
+            <div class="task-row">
+              <div>
+                <strong>Verify COA Batch #B-902</strong>
+                <div style="font-size:0.7rem; color:var(--text-subtle);">Supplier: Aarti Chem | Due: 4:30 PM</div>
+              </div>
+              <span class="status-badge badge-pending">Pending</span>
+            </div>
+            <div class="task-row">
+              <div>
+                <strong>Mobile lead entry: Expo visit</strong>
+                <div style="font-size:0.7rem; color:var(--text-subtle);">Agent: Vikram | Logged from Phone</div>
+              </div>
+              <span class="status-badge badge-won">Logged</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Group 6: Business Modules (Reversed) -->
+      <div class="feature-group reverse">
+        <div class="feature-info">
+          <span class="pill-badge">Module 06</span>
+          <h2>Integrated Business Modules</h2>
+          <p>
+            Trade operations go beyond CRM. Run your complete trading house with integrated customer accounts, ledger balances, and expense controls.
+          </p>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Customers: verified pharma buyer profiles, GST/tax IDs, and payment terms</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Accounts & Sales: closed contract values, sales ledgers, and billing</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Expenses: sample testing fees, freight costs, and broker commissions</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Outstanding balance tracking: aging buckets to safeguard working capital</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Support, Utilities & Setup: company masters, user roles, and system tools</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div style="font-weight:700; font-size:0.9rem; margin-bottom:0.75rem;">Business Desk Ledger</div>
+          <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.75rem; font-size:0.8rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-primary); padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+              <div style="color:var(--text-subtle); font-size:0.7rem;">Active Customers</div>
+              <div style="font-size:1.2rem; font-weight:700;">148 Accounts</div>
+            </div>
+            <div style="background:var(--bg-primary); padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+              <div style="color:var(--text-subtle); font-size:0.7rem;">Trade Expenses</div>
+              <div style="font-size:1.2rem; font-weight:700;">$14,280 / mo</div>
+            </div>
+          </div>
+          <div style="background:var(--bg-primary); border-radius:var(--radius-sm); padding:0.75rem; border:1px solid var(--border); font-size:0.75rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+              <span>Total Overdue (&gt;30 Days)</span>
+              <strong style="color:var(--rose);">$42,900</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-subtle);">
+              <span>Utilities & System Status</span>
+              <span style="color:#16a34a; font-weight:600;">Operational</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INTERACTIVE LEAD STATUS DEMO -->
+  <section class="section-padding interactive-demo-section" id="interactive-demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Interactive Simulation</span>
+        <h2 class="section-title">Test the Lead Lifecycle Engine</h2>
+        <p class="section-sub">Click any status chip below to filter the live trade table and watch the status distribution chart update automatically.</p>
+      </div>
+
+      <!-- Clickable Status Chips -->
+      <div class="status-chips-nav" id="status-chips" role="group" aria-label="Filter leads by status">
+        <button class="status-chip active" data-filter="all">All (7)</button>
+        <button class="status-chip" data-filter="Sent"><span class="legend-color" style="background:#0284c7"></span> Sent</button>
+        <button class="status-chip" data-filter="Pending"><span class="legend-color" style="background:#d97706"></span> Pending</button>
+        <button class="status-chip" data-filter="Confirm"><span class="legend-color" style="background:#059669"></span> Confirm</button>
+        <button class="status-chip" data-filter="WON"><span class="legend-color" style="background:#16a34a"></span> WON</button>
+        <button class="status-chip" data-filter="Reject"><span class="legend-color" style="background:#dc2626"></span> Reject</button>
+        <button class="status-chip" data-filter="NoOffer"><span class="legend-color" style="background:#64748b"></span> NoOffer</button>
+        <button class="status-chip" data-filter="Junk"><span class="legend-color" style="background:#94a3b8"></span> Junk</button>
+      </div>
+
+      <div class="interactive-grid">
+        <!-- Interactive Leads Table -->
+        <div class="table-container">
+          <table class="demo-data-table" id="interactive-table">
+            <thead>
+              <tr>
+                <th>Lead ID</th>
+                <th>Client / Broker</th>
+                <th>Chemical / CAS</th>
+                <th>Qty</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="interactive-table-body">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Live Updating Donut Chart -->
+        <div class="live-chart-card">
+          <div style="font-weight:700; font-size:1rem; margin-bottom:0.25rem;">Live Distribution</div>
+          <div style="font-size:0.8rem; color:var(--text-subtle);"><span id="filtered-count-label">Showing 7</span> Leads in Scope</div>
+
+          <div class="donut-dynamic-container">
+            <svg width="180" height="180" viewBox="0 0 36 36">
+              <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--bg-muted)" stroke-width="4.5"/>
+              <path id="dynamic-donut-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--primary-blue)" stroke-width="4.5" stroke-dasharray="100, 100"/>
+            </svg>
+            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;">
+              <div id="dynamic-donut-pct" style="font-size:1.6rem; font-weight:800; color:var(--text-main);">100%</div>
+              <div id="dynamic-donut-status" style="font-size:0.7rem; color:var(--text-subtle); text-transform:uppercase;">All Statuses</div>
+            </div>
+          </div>
+
+          <p style="font-size:0.825rem; color:var(--text-muted); margin-top:1rem;">
+            Each status change triggers audit logging, updating team analytics and daily KPI counters in real-time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DASHBOARD PREVIEW (EXPANDED 6 KPI CARDS + CHARTS + MATRIX) -->
+  <section class="section-padding" id="dashboard">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Management Oversight</span>
+        <h2 class="section-title">The Complete Desk Dashboard</h2>
+        <p class="section-sub">Monitor daily performance across inquiries, sales wins, and outstanding balances with real-time indicators.</p>
+      </div>
+
+      <div class="dashboard-preview-window">
+        <div class="dashboard-top-bar">
+          <div>
+            <h3>
+              <span>Daily Operations Pulse</span>
+              <span class="sample-label">Sample Data</span>
+            </h3>
+            <p style="font-size:0.85rem; margin:0;">Shift Schedule: 9:30 AM to 6:30 PM</p>
+          </div>
+          <div>
+            <span class="pill-badge" style="background:var(--teal-light); color:var(--teal-dark);">System Status: Live & Synced</span>
+          </div>
+        </div>
+
+        <!-- 6 KPI CARDS (Exact match to brief) -->
+        <div class="full-kpi-grid">
+          <!-- 1. New Leads -->
+          <div class="kpi-card tooltip" data-tooltip="Logged across direct, brokers & agents today">
+            <div class="kpi-title">New Leads</div>
+            <div class="kpi-value" data-counter="12">12</div>
+            <div class="kpi-delta delta-up">+4 vs yesterday</div>
+          </div>
+
+          <!-- 2. Sent Leads -->
+          <div class="kpi-card tooltip" data-tooltip="Quotes delivered to client via WhatsApp or email">
+            <div class="kpi-title">Sent Leads</div>
+            <div class="kpi-value" data-counter="19">19</div>
+            <div class="kpi-delta delta-up">+6 vs last week</div>
+          </div>
+
+          <!-- 3. Won Leads -->
+          <div class="kpi-card tooltip" data-tooltip="Orders finalized with buyer PO confirmation">
+            <div class="kpi-title">Won Leads</div>
+            <div class="kpi-value" data-counter="4">4</div>
+            <div class="kpi-delta delta-up">+1 vs yesterday</div>
+          </div>
+
+          <!-- 4. Pending Leads -->
+          <div class="kpi-card tooltip" data-tooltip="Inquiries currently in stock match or sourcing">
+            <div class="kpi-title">Pending Leads</div>
+            <div class="kpi-value" data-counter="3">3</div>
+            <div class="kpi-delta delta-amber">-2 vs last week</div>
+          </div>
+
+          <!-- 5. Total Outstanding -->
+          <div class="kpi-card tooltip" data-tooltip="Total receivables balance across customer accounts">
+            <div class="kpi-title">Outstanding</div>
+            <div class="kpi-value">$248k</div>
+            <div class="kpi-delta delta-blue">-12k collected</div>
+          </div>
+
+          <!-- 6. Tasks Due -->
+          <div class="kpi-card tooltip" data-tooltip="Follow-up calls, COA requests & quote deadlines">
+            <div class="kpi-title">Tasks Due</div>
+            <div class="kpi-value" data-counter="9">9</div>
+            <div class="kpi-delta delta-blue">All due today</div>
+          </div>
+        </div>
+
+        <!-- 2 Chart Columns -->
+        <div class="mini-chart-row">
+          <!-- Chart A: Leads by Status -->
+          <div class="chart-box">
+            <div class="chart-box-title">
+              <span>Leads by Status (Current Pipeline)</span>
+              <span class="sample-label">Updated 5m ago</span>
+            </div>
+            <div class="donut-layout">
+              <div class="donut-svg-wrap">
+                <svg class="donut-svg" width="120" height="120" viewBox="0 0 36 36">
+                  <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e2e8f0" stroke-width="4"/>
+                  <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#0284c7" stroke-width="4.2" stroke-dasharray="35, 100"/>
+                  <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#16a34a" stroke-width="4.2" stroke-dasharray="28, 100" stroke-dashoffset="-35"/>
+                  <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#d97706" stroke-width="4.2" stroke-dasharray="22, 100" stroke-dashoffset="-63"/>
+                  <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#dc2626" stroke-width="4.2" stroke-dasharray="15, 100" stroke-dashoffset="-85"/>
+                </svg>
+                <div class="donut-center-text">
+                  <div class="donut-center-num">47</div>
+                  <div class="donut-center-sub">Active</div>
+                </div>
+              </div>
+              <div class="donut-legend">
+                <div class="legend-item"><span class="legend-color" style="background:#0284c7"></span> Sent (19)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#16a34a"></span> WON (13)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#d97706"></span> Pending (9)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#dc2626"></span> Rejected/Junk (6)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart B: Leads per Staff Member with Top Performer -->
+          <div class="chart-box">
+            <div class="chart-box-title">
+              <span>Leads per Staff Member</span>
+              <span class="sample-label">Daily Matrix</span>
+            </div>
+            <div class="staff-bars">
+              <div class="staff-bar-row">
+                <span class="staff-name">Rajesh K. <span class="top-performer-tag">Top Performer</span></span>
+                <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+                <span class="staff-val">17</span>
+              </div>
+              <div class="staff-bar-row">
+                <span class="staff-name">Priya S.</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 68%;"></div></div>
+                <span class="staff-val">13</span>
+              </div>
+              <div class="staff-bar-row">
+                <span class="staff-name">Amit V.</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 52%;"></div></div>
+                <span class="staff-val">10</span>
+              </div>
+              <div class="staff-bar-row">
+                <span class="staff-name">Ananya M.</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 36%;"></div></div>
+                <span class="staff-val">7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Matrix Table -->
+        <div class="matrix-grid">
+          <div style="font-size:0.85rem; font-weight:700; margin-bottom:0.75rem; color:var(--text-main);">
+            Staff Daily Activity Matrix (9:30 AM to 6:30 PM Shift)
+          </div>
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>Staff Member</th>
+                <th>New Inquiries</th>
+                <th>Quotes Sent</th>
+                <th>Orders Confirmed</th>
+                <th>Tasks Completed</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rajesh Kumar</strong> <span class="top-performer-tag">Top</span></td>
+                <td>6</td>
+                <td>8</td>
+                <td>3 Won</td>
+                <td>100% (6/6)</td>
+                <td><span class="status-badge badge-confirm">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>Priya Sharma</strong></td>
+                <td>4</td>
+                <td>5</td>
+                <td>1 Won</td>
+                <td>80% (4/5)</td>
+                <td><span class="status-badge badge-confirm">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>Amit Verma</strong></td>
+                <td>2</td>
+                <td>4</td>
+                <td>0 Won (2 Pending)</td>
+                <td>75% (3/4)</td>
+                <td><span class="status-badge badge-pending">In Call</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. MODULES GRID (10 MODULES) -->
+  <section class="section-padding" id="modules">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Full Suite Architecture</span>
+        <h2 class="section-title">10 Integrated Modules for Your Trading Desk</h2>
+        <p class="section-sub">Hover over any module card to reveal its exact business function.</p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- 1. Customers -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3>Customers</h3>
+          <p>Verified pharma customer master, tax details, and payment histories.</p>
+        </div>
+
+        <!-- 2. Accounts -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          </div>
+          <h3>Accounts</h3>
+          <p>Customer trade ledgers, statement generation, and credit limit tracking.</p>
+        </div>
+
+        <!-- 3. Sales -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          </div>
+          <h3>Sales</h3>
+          <p>Complete trade contracts, delivery commitments, and billings.</p>
+        </div>
+
+        <!-- 4. Expenses -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3>Expenses</h3>
+          <p>Track chemical lab testing, transport freight, and broker commissions.</p>
+        </div>
+
+        <!-- 5. Support -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </div>
+          <h3>Support</h3>
+          <p>Client ticket management for COA re-checks, batch delays, or claims.</p>
+        </div>
+
+        <!-- 6. Utilities -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <h3>Utilities</h3>
+          <p>Unit converters, CAS search utilities, bulk export, and backup tools.</p>
+        </div>
+
+        <!-- 7. Setup -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          <h3>Setup</h3>
+          <p>Configure company items, tax rules, user permissions, and office shifts.</p>
+        </div>
+
+        <!-- 8. Reports -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <h3>Reports</h3>
+          <p>Sales conversion ratios, pending inquiry logs, and brokerage audit sheets.</p>
+        </div>
+
+        <!-- 9. Planner -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <h3>Planner</h3>
+          <p>Calendar views of expected shipments, customer calls, and delivery runs.</p>
+        </div>
+
+        <!-- 10. Tasks -->
+        <div class="module-card">
+          <div class="module-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>Tasks</h3>
+          <p>Action items, quote follow-ups, and rate renegotiation deadlines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. WHO IT'S FOR (TABS) -->
+  <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);" id="who-its-for">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Role-Tailored Value</span>
+        <h2 class="section-title">Built for Every Desk in Your Business</h2>
+        <p class="section-sub">Select your team role to see how Pharma Chemi speeds up daily operations.</p>
+      </div>
+
+      <div class="role-tabs-wrap">
+        <div class="role-tabs-nav" id="role-nav" role="tablist">
+          <button class="role-tab-btn active" data-role="sales" role="tab" aria-selected="true">Sales Team</button>
+          <button class="role-tab-btn" data-role="sourcing" role="tab" aria-selected="false">Sourcing Team</button>
+          <button class="role-tab-btn" data-role="management" role="tab" aria-selected="false">Management</button>
+          <button class="role-tab-btn" data-role="accounts" role="tab" aria-selected="false">Accounts Team</button>
+        </div>
+
+        <div class="role-card-content" id="role-content-box">
+          <div class="role-card-header">
+            <div class="role-avatar-badge" id="role-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+            </div>
+            <div>
+              <h3 id="role-heading">For Sales & Marketing Executives</h3>
+              <p id="role-sub" style="margin:0;">Turn inquiries into quotes in under 2 minutes.</p>
+            </div>
+          </div>
+
+          <ul class="role-benefits-list" id="role-bullets">
+            <li class="role-benefit-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Never lose an inquiry from WhatsApp or phone conversations</span>
+            </li>
+            <li class="role-benefit-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Instant stock check without waiting on warehouse staff</span>
+            </li>
+            <li class="role-benefit-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Log quotations with exact rate, delivery terms, and customer note</span>
+            </li>
+            <li class="role-benefit-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Automated task reminders for quote follow-ups</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. WHY PHARMA CHEMI (COMPARISON TABLE) -->
+  <section class="section-padding" id="why-pharma-chemi">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Honest Comparison</span>
+        <h2 class="section-title">Why Generic Tools Fail Chemical Traders</h2>
+        <p class="section-sub">Compare specialized pharma workflow capability against spreadsheets and generic chat apps.</p>
+      </div>
+
+      <div class="comparison-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 34%;">Feature / Capability</th>
+              <th style="width: 22%;">Spreadsheets</th>
+              <th style="width: 22%;">Chat Apps (WhatsApp)</th>
+              <th class="highlight-col" style="width: 22%;">Pharma Chemi CRM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Inquiry Intake by Document/Paper</strong></td>
+              <td>Manual re-typing</td>
+              <td>Scattered photo files</td>
+              <td class="highlight-col">Document upload to lead</td>
+            </tr>
+            <tr>
+              <td><strong>CAS Number & Chemical Search</strong></td>
+              <td>Slow text filter</td>
+              <td>No search by CAS</td>
+              <td class="highlight-col">Global CAS item search</td>
+            </tr>
+            <tr>
+              <td><strong>Stock & Regular Item Matching</strong></td>
+              <td>Outdated static sheet</td>
+              <td>Call warehouse staff</td>
+              <td class="highlight-col">Direct real-time match</td>
+            </tr>
+            <tr>
+              <td><strong>Quote Logging with Rate & Delivery</strong></td>
+              <td>Easily overwritten</td>
+              <td>Buried in chat history</td>
+              <td class="highlight-col">Structured logged quotes</td>
+            </tr>
+            <tr>
+              <td><strong>7 Lifecycle Lead Statuses</strong></td>
+              <td>Color cells manually</td>
+              <td>None</td>
+              <td class="highlight-col">Dedicated workflow engine</td>
+            </tr>
+            <tr>
+              <td><strong>Staff Tracking (9:30 AM – 6:30 PM)</strong></td>
+              <td>Not possible</td>
+              <td>Online/offline only</td>
+              <td class="highlight-col">Activity matrix & daily work</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Ledger & Outstanding Balance</strong></td>
+              <td>Complex formula breakdown</td>
+              <td>None</td>
+              <td class="highlight-col">Integrated balance tracking</td>
+            </tr>
+            <tr>
+              <td><strong>Multi-User Permission & Roles</strong></td>
+              <td>Risky file permissions <span class="verify-badge">[verify]</span></td>
+              <td>No role restrictions</td>
+              <td class="highlight-col">Secure role logins</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FAQ ACCORDION -->
+  <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill-badge">Clear Answers</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Practical answers about deploying Pharma Chemi CRM in your organization.</p>
+      </div>
+
+      <div class="faq-container" id="faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How are inquiries recorded into the CRM?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Inquiries can be created manually by sales reps, entered on mobile during customer visits, or created by uploading scanned paper inquiries or digital documents. Inquiries can be categorized into Leads, My Leads, Purchase Leads, and Mobile Leads.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does the WhatsApp and Email integration work?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Pharma Chemi connects with your communication channels so reps can send structured quotes and COA documents directly to clients on WhatsApp and email. Inbound messages and team comment feeds keep the entire desk aligned on ongoing negotiations.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can we match inquiries against current inventory and regular supplier items?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Yes. The platform includes an Item Master (Company Items and Standard Items) with global search by chemical name, supplier, customer, or CAS number. Reps can immediately see whether the product is in current warehouse stock or available from regular suppliers.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Who can see what data? Can we protect sensitive customer lists?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Yes. The User Setup module allows administrators to define strict roles. Sales staff can be limited to "My Leads" and their assigned accounts, while sourcing teams, accounts personnel, and management have access to their respective modules and overall ledgers.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can sales representatives enter leads from their mobile phones?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Yes. The Mobile Leads entry view is optimized for phone browsers, allowing field executives visiting chemical clusters, expos, or client plants to log inquiries and upload documents immediately.
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long does onboarding and data migration take?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            [Add your answer: typical deployment takes 2 to 5 business days, including migration of your existing chemical item master, supplier list, and customer database].
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What support and training are provided?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            [Add your answer: dedicated phone, WhatsApp, and remote screen-share training for your sales, sourcing, and accounts personnel, with ongoing help desk support].
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FINAL CALL TO ACTION + BOOK A DEMO FORM -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="cta-section">
+        <div class="cta-text">
+          <span class="pill-badge" style="background:rgba(255,255,255,0.15); color:#ffffff; border-color:rgba(255,255,255,0.3);">Get Started</span>
+          <h2>Ready to Run an Organized Pharma Sales Desk?</h2>
+          <p>
+            Schedule a personalized 20-minute demonstration. We will show you how to organize inquiries, speed up quotes, and track customer balances in Pharma Chemi CRM.
+          </p>
+
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Email: <strong id="cfg-email">[email]</strong></span>
+            </li>
+            <li class="contact-info-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Phone / WhatsApp: <strong id="cfg-phone">[phone / WhatsApp number]</strong></span>
+            </li>
+            <li class="contact-info-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Office: <strong id="cfg-address">[address / city]</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Book a Demo Form -->
+        <div class="form-card">
+          <h3>Book a Product Demo</h3>
+          <p>Fill out the form below. Since this is a static demonstration, submission opens a prefilled message directly on WhatsApp or Email.</p>
+
+          <form id="demo-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Full Name *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Rajesh Shah" required>
+              </div>
+              <div class="form-group">
+                <label for="form-company" class="form-label">Company Name *</label>
+                <input type="text" id="form-company" class="form-input" placeholder="e.g. Apex Pharma Chem" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-email" class="form-label">Business Email *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="name@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="form-phone" class="form-label">Phone / WhatsApp *</label>
+                <input type="tel" id="form-phone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-interest" class="form-label">Primary Interest *</label>
+              <select id="form-interest" class="form-select" required>
+                <option value="">Select your desk priority...</option>
+                <option value="Lead and Inquiry Tracking">Lead and Inquiry Tracking</option>
+                <option value="Stock Matching by CAS Number">Stock Matching by CAS Number</option>
+                <option value="Fast Quotation & WhatsApp Desk">Fast Quotation & WhatsApp Desk</option>
+                <option value="Staff Activity & Daily Work Tracking">Staff Activity & Daily Work Tracking</option>
+                <option value="Complete Trading House ERP & Ledger">Complete Trading House ERP & Ledger</option>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" style="width:100%;" id="submit-email-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Book via Email Request
+              </button>
+              <button type="button" class="btn btn-whatsapp" style="width:100%;" id="submit-wa-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+                Book Instantly via WhatsApp
+              </button>
+            </div>
+            <div id="form-status" style="font-size:0.775rem; margin-top:0.75rem; text-align:center; display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M10 2v7.31L4.2 18.2a2 2 0 0 0 1.66 2.8h12.28a2 2 0 0 0 1.66-2.8L14 9.31V2"/>
+                <path d="M8.5 2h7"/>
+                <path d="M14 9.3h-4"/>
+              </svg>
+            </div>
+            <span>Pharma Chemi CRM</span>
+          </div>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+            Software for Pharmaceuticals & Chemical Industries. Built specifically for API distributors, chemical brokers, and international trading desks.
+          </p>
+          <div class="sample-label">Single-file zero-build distribution</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Lead Management</a></li>
+            <li><a href="#features">Stock & CAS Search</a></li>
+            <li><a href="#features">Quotation Desk</a></li>
+            <li><a href="#dashboard">KPI Dashboard</a></li>
+            <li><a href="#modules">Business Modules</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#interactive-demo">Live Lead Demo</a></li>
+            <li><a href="#who-its-for">Role Benefits</a></li>
+            <li><a href="#why-pharma-chemi">Comparison</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <p style="font-size:0.875rem; margin-bottom:0.5rem;">Website: <a href="https://pharmachemi.com" style="color:var(--primary-blue);">pharmachemi.com</a></p>
+          <p style="font-size:0.875rem; margin-bottom:0.5rem;">Email: <span class="footer-cfg-email">[email]</span></p>
+          <p style="font-size:0.875rem; margin-bottom:0.5rem;">WhatsApp: <span class="footer-cfg-phone">[phone / WhatsApp number]</span></p>
+          <p style="font-size:0.875rem;">Address: <span class="footer-cfg-address">[address / city]</span></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="current-year">2026</span> Pharma Chemi CRM. All rights reserved.
+        </div>
+        <div style="font-size:0.8rem; color:var(--text-subtle);">
+          Software for Pharmaceuticals & Chemical Industries
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WIDGETS -->
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/[WhatsAppNumber]" class="floating-whatsapp" id="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat with our sales desk on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top of page">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- =====================================================================
+       JAVASCRIPT APPLICATION LOGIC
+       ===================================================================== -->
+  <script>
+    /**
+     * CONFIG OBJECT
+     * Centralized editable configuration for content, contact details, and links.
+     */
+    const CONFIG = {
+      productName: "Pharma Chemi CRM",
+      tagline: "Software for Pharmaceuticals & Chemical Industries",
+      websiteUrl: "https://pharmachemi.com",
+      contact: {
+        email: "[email]", // Replace with actual support/sales email
+        phone: "[phone / WhatsApp number]", // Replace with actual phone
+        whatsAppRawNumber: "919876543210", // Clean digits for WhatsApp URL
+        address: "[address / city]" // Replace with city / office address
+      },
+      shiftTiming: "9:30 AM to 6:30 PM",
+      themeStorageKey: "pharmachemi_theme_pref"
+    };
+
+    /**
+     * SAFE STORAGE WRAPPER (Local Storage with In-Memory Fallback)
+     */
+    const SafeStorage = {
+      memoryStore: {},
+      getItem(key) {
+        try {
+          return localStorage.getItem(key);
+        } catch (e) {
+          return this.memoryStore[key] || null;
+        }
+      },
+      setItem(key, value) {
+        try {
+          localStorage.setItem(key, value);
+        } catch (e) {
+          this.memoryStore[key] = String(value);
+        }
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Initialize placeholders from CONFIG
+      applyConfigValues();
+
+      // 2. Setup Light/Dark Theme Toggle
+      initTheme();
+
+      // 3. Setup Scroll Progress & Back to Top
+      initScrollInteractions();
+
+      // 4. Setup Mobile Navigation Menu
+      initMobileNav();
+
+      // 5. Setup How it Works Horizontal Flow Tabs
+      initHowItWorksFlow();
+
+      // 6. Setup Interactive Lead Status Demo & Dynamic SVG Donut
+      initLeadStatusDemo();
+
+      // 7. Setup Role Value Tabs
+      initRoleTabs();
+
+      // 8. Setup FAQ Accordion
+      initFaqAccordion();
+
+      // 9. Setup Book a Demo Form Handling
+      initDemoForm();
+
+      // 10. Setup Animated Counters on Scroll
+      initAnimatedCounters();
+    });
+
+    /**
+     * 1. Apply Config Values to DOM
+     */
+    function applyConfigValues() {
+      // Dynamic Year
+      const yearEl = document.getElementById("current-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Update Contact Placeholders
+      const emailEl = document.getElementById("cfg-email");
+      const phoneEl = document.getElementById("cfg-phone");
+      const addressEl = document.getElementById("cfg-address");
+      if (emailEl) emailEl.textContent = CONFIG.contact.email;
+      if (phoneEl) phoneEl.textContent = CONFIG.contact.phone;
+      if (addressEl) addressEl.textContent = CONFIG.contact.address;
+
+      document.querySelectorAll(".footer-cfg-email").forEach(el => el.textContent = CONFIG.contact.email);
+      document.querySelectorAll(".footer-cfg-phone").forEach(el => el.textContent = CONFIG.contact.phone);
+      document.querySelectorAll(".footer-cfg-address").forEach(el => el.textContent = CONFIG.contact.address);
+
+      // WhatsApp floating button href
+      const floatingWa = document.getElementById("floating-wa");
+      if (floatingWa) {
+        floatingWa.href = `https://wa.me/${CONFIG.contact.whatsAppRawNumber}?text=${encodeURIComponent("Hello Pharma Chemi team, I would like to book a CRM demo.")}`;
+      }
+    }
+
+    /**
+     * 2. Theme Toggle (Light / Dark)
+     */
+    function initTheme() {
+      const toggleBtn = document.getElementById("theme-toggle");
+      const htmlEl = document.documentElement;
+
+      // Check stored preference or system default
+      const savedTheme = SafeStorage.getItem(CONFIG.themeStorageKey);
+      if (savedTheme) {
+        htmlEl.setAttribute("data-theme", savedTheme);
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        htmlEl.setAttribute("data-theme", "dark");
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        const currentTheme = htmlEl.getAttribute("data-theme");
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        htmlEl.setAttribute("data-theme", nextTheme);
+        SafeStorage.setItem(CONFIG.themeStorageKey, nextTheme);
+      });
+    }
+
+    /**
+     * 3. Scroll Interactions (Progress Bar & Back To Top)
+     */
+    function initScrollInteractions() {
+      const progressBar = document.getElementById("scroll-progress");
+      const backToTopBtn = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+        if (progressBar) {
+          progressBar.style.width = `${progress}%`;
+        }
+
+        if (backToTopBtn) {
+          if (scrollTop > 450) {
+            backToTopBtn.classList.add("visible");
+          } else {
+            backToTopBtn.classList.remove("visible");
+          }
+        }
+      }, { passive: true });
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    }
+
+    /**
+     * 4. Mobile Menu Navigation
+     */
+    function initMobileNav() {
+      const toggle = document.getElementById("mobile-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      if (!toggle || !navLinks) return;
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Close menu on link click
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+    }
+
+    /**
+     * 5. How It Works 5-Step Horizontal Flow
+     */
+    const FLOW_STEPS_DATA = [
+      {
+        badge: "Phase 1: Ingestion",
+        title: "Record inquiry from clients, brokers, and agents",
+        desc: "Log incoming requests instantly. Reps can type in leads manually or upload paper documents/scanned letters. Categorize into Leads, My Leads, Purchase Leads, or Mobile Leads.",
+        bullets: [
+          "Direct capture from clients, brokers, and trading agents",
+          "Paper inquiry or document upload to lead converter",
+          "Mobile lead creation for on-the-road executives"
+        ],
+        tag: "Inquiry Desk Intake",
+        status: "Pending Match",
+        statusBadgeClass: "badge-pending",
+        preview: "Inquiry #PC-9402\nItem: Paracetamol DC 90% (CAS: 103-90-2)\nClient: Global Pharma Labs | Broker: Apex Chem\nQuantity: 5,000 KG | Delivery: CIF Nhava Sheva"
+      },
+      {
+        badge: "Phase 2: Inventory & Catalog Matching",
+        title: "Match with current stock and regular supplier items",
+        desc: "Our Item Master and global CAS search instantly crosses customer demand against available warehouse lots or verified supplier partner catalogs.",
+        bullets: [
+          "Global search by customer, chemical item, supplier, or CAS number",
+          "Instant visibility of Company Items and warehouse balances",
+          "Batch purity and COA availability indicators"
+        ],
+        tag: "CAS Stock Matcher",
+        status: "Stock Matched",
+        statusBadgeClass: "badge-confirm",
+        preview: "Match Found: Lot #WH-048\nItem: Paracetamol DC 90% (CAS: 103-90-2)\nBatch Available: 6,200 KG (Solvent grade approved)\nSupplier Catalog: Regular Partner Grade A"
+      },
+      {
+        badge: "Phase 3: Rate Calculation",
+        title: "Give the quote price with delivery schedule",
+        desc: "Calculate margins, freight, and tax. The CRM logs customer, item, rate, delivery timeframe, and payment terms in an unalterable quote trail.",
+        bullets: [
+          "Comprehensive quote logging: rate, item, customer, and transit days",
+          "One-click margin approval from desk supervisors",
+          "Full historical rate audit to prevent underquoting"
+        ],
+        tag: "Quote Calculator",
+        status: "Quote Generated",
+        statusBadgeClass: "badge-sent",
+        preview: "Quotation #QT-8120\nRate: $4.45 / KG Net CIF\nDelivery Time: 7 Business Days\nPayment Term: 30 Days LC / Advance against BL"
+      },
+      {
+        badge: "Phase 4: Instant Multi-Channel Dispatch",
+        title: "Send instantly via WhatsApp or Email",
+        desc: "Dispatch formal PDF quotes and COA documentation directly into the buyer's WhatsApp chat or email inbox. Keep negotiations logged in the team comments feed.",
+        bullets: [
+          "1-Click WhatsApp delivery to buyer purchasing managers",
+          "Full email dispatch with automated specs attachment",
+          "Live team discussion comments on customer response"
+        ],
+        tag: "Communication Dispatch",
+        status: "Sent to Client",
+        statusBadgeClass: "badge-sent",
+        preview: "WhatsApp Message Sent to +91 98200 XXXXX\nStatus: Delivered & Read\nNotification: Buyer requested COA copy (Auto-sent via email)"
+      },
+      {
+        badge: "Phase 5: PO Finalization",
+        title: "Confirm order with Purchase Order (PO) details",
+        desc: "Convert won quotes into confirmed sales. Record buyer PO numbers, payment confirmations, and initiate delivery scheduling with warehouse and accounts.",
+        bullets: [
+          "Capture buyer Purchase Order (PO) number & advance receipt",
+          "Automatic transition of lead status to WON",
+          "Direct transmission to Accounts and Outstanding Balance ledger"
+        ],
+        tag: "Order Confirmation",
+        status: "WON / Confirmed",
+        statusBadgeClass: "badge-won",
+        preview: "Order Confirmed: #ORD-5011\nPO Reference: PO-GL-2026-88\nLead Status: WON | Value: $22,250\nSent to: Accounts & Dispatch Warehouse"
+      }
+    ];
+
+    function initHowItWorksFlow() {
+      const stepBtns = document.querySelectorAll(".flow-step-btn");
+      const badgeEl = document.getElementById("flow-step-badge");
+      const titleEl = document.getElementById("flow-step-title");
+      const descEl = document.getElementById("flow-step-desc");
+      const bulletsEl = document.getElementById("flow-step-bullets");
+      const tagEl = document.getElementById("step-preview-tag");
+      const statusEl = document.getElementById("step-preview-badge");
+      const codeEl = document.getElementById("step-preview-code");
+
+      stepBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const stepIndex = parseInt(btn.getAttribute("data-step"), 10);
+          stepBtns.forEach(b => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+
+          const data = FLOW_STEPS_DATA[stepIndex];
+          if (!data) return;
+
+          badgeEl.textContent = data.badge;
+          titleEl.textContent = data.title;
+          descEl.textContent = data.desc;
+
+          // Render bullets
+          bulletsEl.innerHTML = data.bullets.map(b => `
+            <li class="flow-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>${b}</span>
+            </li>
+          `).join("");
+
+          tagEl.textContent = data.tag;
+          statusEl.textContent = data.status;
+          statusEl.className = `status-badge ${data.statusBadgeClass}`;
+          codeEl.innerHTML = data.preview.replace(/\n/g, "<br>");
+        });
+      });
+    }
+
+    /**
+     * 6. Interactive Lead Status Demo
+     * Live filtering and dynamic SVG Donut Chart calculation
+     */
+    const SAMPLE_LEADS_DATA = [
+      { id: "LD-101", client: "Sun Healthcare (Broker)", item: "Metformin HCl IP", cas: "1115-70-4", qty: "2,000 KG", status: "Sent" },
+      { id: "LD-102", client: "Zydex Chemical Labs", item: "Ibuprofen 25 EP", cas: "15687-27-1", qty: "1,500 KG", status: "Pending" },
+      { id: "LD-103", client: "BioCore Trade Corp", item: "Ciprofloxacin HCl", cas: "86393-32-0", qty: "500 KG", status: "Confirm" },
+      { id: "LD-104", client: "Apex Pharma Global", item: "Amoxicillin Trihydrate", cas: "61336-70-7", qty: "4,000 KG", status: "WON" },
+      { id: "LD-105", client: "Raman Chemicals", item: "Paracetamol Fine Powder", cas: "103-90-2", qty: "10,000 KG", status: "Reject" },
+      { id: "LD-106", client: "Krupa Intermediates", item: "Dextromethorphan HBr", cas: "6700-34-1", qty: "300 KG", status: "NoOffer" },
+      { id: "LD-107", client: "Unknown Sender (Spam)", item: "Unspecified Solvents", cas: "N/A", qty: "10 KG", status: "Junk" }
+    ];
+
+    function initLeadStatusDemo() {
+      const tableBody = document.getElementById("interactive-table-body");
+      const chips = document.querySelectorAll(".status-chip");
+      const countLabel = document.getElementById("filtered-count-label");
+      const donutCircle = document.getElementById("dynamic-donut-circle");
+      const donutPct = document.getElementById("dynamic-donut-pct");
+      const donutStatus = document.getElementById("dynamic-donut-status");
+
+      function renderTable(filter) {
+        const filtered = filter === "all" 
+          ? SAMPLE_LEADS_DATA 
+          : SAMPLE_LEADS_DATA.filter(l => l.status.toLowerCase() === filter.toLowerCase());
+
+        tableBody.innerHTML = filtered.map(lead => {
+          const badgeClass = `badge-${lead.status.toLowerCase()}`;
+          return `
+            <tr>
+              <td><span style="font-family:var(--font-mono); font-weight:600;">${lead.id}</span></td>
+              <td>${lead.client}</td>
+              <td>
+                <div><strong>${lead.item}</strong></div>
+                <div style="font-size:0.725rem; color:var(--text-subtle);">CAS: ${lead.cas}</div>
+              </td>
+              <td>${lead.qty}</td>
+              <td><span class="status-badge ${badgeClass}">${lead.status}</span></td>
+            </tr>
+          `;
+        }).join("");
+
+        // Update count label
+        countLabel.textContent = `Showing ${filtered.length}`;
+
+        // Update SVG Donut Math
+        const total = SAMPLE_LEADS_DATA.length;
+        const count = filtered.length;
+        const percentage = Math.round((count / total) * 100);
+
+        donutPct.textContent = `${percentage}%`;
+        donutStatus.textContent = filter === "all" ? "All Statuses" : filter;
+
+        // Animate stroke-dasharray (length is 100 on 36px diameter circle)
+        donutCircle.setAttribute("stroke-dasharray", `${percentage}, 100`);
+      }
+
+      // Initial Render
+      renderTable("all");
+
+      // Chip click handlers
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          chips.forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          const filter = chip.getAttribute("data-filter");
+          renderTable(filter);
+        });
+      });
+    }
+
+    /**
+     * 7. Role Value Tabs
+     */
+    const ROLE_DATA = {
+      sales: {
+        heading: "For Sales & Trading Executives",
+        sub: "Turn inquiries into signed contracts in minutes.",
+        bullets: [
+          "Never lose an inquiry from WhatsApp or phone conversations",
+          "Instant stock check without waiting on warehouse staff",
+          "Log quotations with exact rate, delivery terms, and customer note",
+          "Automated task reminders for quote follow-ups"
+        ],
+        icon: '<svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>'
+      },
+      sourcing: {
+        heading: "For Sourcing & Procurement Desk",
+        sub: "Match chemical demands with verified suppliers quickly.",
+        bullets: [
+          "Instant global search across regular suppliers and CAS numbers",
+          "Maintain active catalog of approved pharmaceutical API items",
+          "Log procurement rates and supplier transit schedules accurately",
+          "Coordinate directly with sales reps on pending inquiries"
+        ],
+        icon: '<svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>'
+      },
+      management: {
+        heading: "For Business Owners & Directors",
+        sub: "Complete transparency into desk margins and staff output.",
+        bullets: [
+          "Real-time KPI dashboard tracking win rates and pending deals",
+          "Staff activity monitoring from 9:30 AM to 6:30 PM working shifts",
+          "Daily Work summaries and top performer matrix",
+          "Eliminate customer data theft with secure role logins"
+        ],
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>'
+      },
+      accounts: {
+        heading: "For Finance & Accounts Officers",
+        sub: "Total control over receivables, aging balances, and expenses.",
+        bullets: [
+          "Outstanding balance tracking by customer ledger",
+          "Log advance payments and link with Purchase Order (PO) records",
+          "Track lab testing fees, shipping freight, and broker commissions",
+          "Audit trail of every confirmed trade order and customer invoice"
+        ],
+        icon: '<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>'
+      }
+    };
+
+    function initRoleTabs() {
+      const roleBtns = document.querySelectorAll(".role-tab-btn");
+      const headingEl = document.getElementById("role-heading");
+      const subEl = document.getElementById("role-sub");
+      const bulletsEl = document.getElementById("role-bullets");
+      const iconEl = document.getElementById("role-icon");
+
+      roleBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          roleBtns.forEach(b => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+
+          const roleKey = btn.getAttribute("data-role");
+          const data = ROLE_DATA[roleKey];
+          if (!data) return;
+
+          headingEl.textContent = data.heading;
+          subEl.textContent = data.sub;
+          iconEl.innerHTML = data.icon;
+          bulletsEl.innerHTML = data.bullets.map(b => `
+            <li class="role-benefit-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>${b}</span>
+            </li>
+          `).join("");
+        });
+      });
+    }
+
+    /**
+     * 8. FAQ Accordion
+     */
+    function initFaqAccordion() {
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach(item => {
+        const questionBtn = item.querySelector(".faq-question");
+        questionBtn.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+
+          // Close all
+          faqItems.forEach(i => {
+            i.classList.remove("active");
+            i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          });
+
+          // Toggle current
+          if (!isActive) {
+            item.classList.add("active");
+            questionBtn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+    }
+
+    /**
+     * 9. Book a Demo Form Handling (Prefills mailto: or WhatsApp URL)
+     */
+    function initDemoForm() {
+      const form = document.getElementById("demo-form");
+      const waBtn = document.getElementById("submit-wa-btn");
+      const statusDiv = document.getElementById("form-status");
+
+      function getFormData() {
+        const name = document.getElementById("form-name").value.trim();
+        const company = document.getElementById("form-company").value.trim();
+        const email = document.getElementById("form-email").value.trim();
+        const phone = document.getElementById("form-phone").value.trim();
+        const interest = document.getElementById("form-interest").value;
+
+        if (!name || !company || !email || !phone || !interest) {
+          statusDiv.style.display = "block";
+          statusDiv.style.color = "var(--rose)";
+          statusDiv.textContent = "Please fill in all required fields before proceeding.";
+          return null;
+        }
+
+        return { name, company, email, phone, interest };
+      }
+
+      // Email Submission (mailto:)
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = getFormData();
+        if (!data) return;
+
+        const subject = encodeURIComponent(`Product Demo Request: ${data.company} - Pharma Chemi CRM`);
+        const body = encodeURIComponent(
+          `Hello Pharma Chemi Team,\n\n` +
+          `I would like to request a product demonstration of Pharma Chemi CRM.\n\n` +
+          `Name: ${data.name}\n` +
+          `Company: ${data.company}\n` +
+          `Email: ${data.email}\n` +
+          `Phone: ${data.phone}\n` +
+          `Primary Interest: ${data.interest}\n\n` +
+          `Looking forward to scheduling the session.\n`
+        );
+
+        statusDiv.style.display = "block";
+        statusDiv.style.color = "#16a34a";
+        statusDiv.textContent = "Opening your email client to send the demo request...";
+
+        window.location.href = `mailto:${CONFIG.contact.email}?subject=${subject}&body=${body}`;
+      });
+
+      // WhatsApp Submission
+      if (waBtn) {
+        waBtn.addEventListener("click", () => {
+          const data = getFormData();
+          if (!data) return;
+
+          const message = encodeURIComponent(
+            `*Demo Request: Pharma Chemi CRM*\n\n` +
+            `*Name:* ${data.name}\n` +
+            `*Company:* ${data.company}\n` +
+            `*Email:* ${data.email}\n` +
+            `*Phone:* ${data.phone}\n` +
+            `*Focus:* ${data.interest}\n\n` +
+            `Hi, please schedule a demo for our trading desk.`
+          );
+
+          statusDiv.style.display = "block";
+          statusDiv.style.color = "#16a34a";
+          statusDiv.textContent = "Redirecting to WhatsApp to send your request...";
+
+          window.open(`https://wa.me/${CONFIG.contact.whatsAppRawNumber}?text=${message}`, "_blank");
+        });
+      }
+    }
+
+    /**
+     * 10. Animated Counters on Scroll
+     */
+    function initAnimatedCounters() {
+      const counters = document.querySelectorAll("[data-counter]");
+      if (!counters.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            const finalVal = parseInt(target.getAttribute("data-counter"), 10);
+            if (!isNaN(finalVal)) {
+              let start = 0;
+              const duration = 1200;
+              const stepTime = Math.max(16, Math.floor(duration / finalVal));
+
+              const timer = setInterval(() => {
+                start += 1;
+                target.textContent = start;
+                if (start >= finalVal) {
+                  target.textContent = finalVal;
+                  clearInterval(timer);
+                }
+              }, stepTime);
+            }
+            obs.unobserve(target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => observer.observe(counter));
+    }
+  </script>
+</body>
+</html>
