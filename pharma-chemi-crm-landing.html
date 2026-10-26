@@ -6,8 +6,8 @@
   
   <!-- SEO & Social Meta -->
   <title>Pharma Chemi CRM — Specialized Software for Pharmaceuticals & Chemical Industries</title>
-  <meta name="description" content="Next-generation sales and sourcing desk CRM for pharmaceutical chemical traders, API suppliers, and exporters. Ingest paper inquiries, match stock by CAS number, quote on WhatsApp, and track daily shifts in one workspace.">
-  <meta name="keywords" content="pharma CRM, chemical trading CRM, API sourcing platform, CAS number search, pharmaceutical sales desk, chemical broker software">
+  <meta name="description" content="Next-generation sales and sourcing desk CRM for pharmaceutical chemical traders, API suppliers, and exporters. Ingest paper inquiries, match stock by item code, quote on WhatsApp, and track daily shifts in one workspace.">
+  <meta name="keywords" content="pharma CRM, chemical trading CRM, API sourcing platform, item code search, pharmaceutical sales desk, chemical broker software">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://pharmachemi.com">
 
@@ -1163,7 +1163,7 @@
       border-color: var(--primary);
     }
 
-    /* Search & CAS tags */
+    /* Search & Code tags */
     .cas-pill {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -2220,7 +2220,7 @@
           </div>
           <div style="font-family:var(--font-mono); font-size:0.825rem; background:rgba(0,0,0,0.3); padding:1rem; border-radius:var(--radius-sm); border:1px solid var(--border); line-height:1.7;" id="flow-mock-code">
             Inquiry #PC-9402<br>
-            Chemical: Paracetamol DC 90% (CAS: 103-90-2)<br>
+            Chemical: Paracetamol DC 90% (Code: API-1039)<br>
             Buyer: Global Pharma Laboratories Ltd.<br>
             Broker: Apex Chem Brokers | Volume: 5,000 KG<br>
             Port: CIF Nhava Sheva (Immediate dispatch)
@@ -2238,7 +2238,7 @@
       <div class="section-head">
         <span class="glow-tag">Comprehensive Architecture</span>
         <h2>Built Specifically for Pharma & Chemical Desks</h2>
-        <p>Every feature is designed around chemical CAS numbers, supplier batches, broker commissions, and operational trading realities.</p>
+        <p>Every feature is designed around item master codes, supplier batches, broker commissions, and operational trading realities.</p>
       </div>
 
       <!-- Feature Group 1: Lead and Inquiry Management -->
@@ -2279,7 +2279,7 @@
             <thead>
               <tr>
                 <th>Customer / Agent</th>
-                <th>Chemical / CAS</th>
+                <th>Product / Item Code</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -2320,7 +2320,7 @@
           <span class="glow-tag">Module 02</span>
           <h2>Stock Matching & Fast Quoting</h2>
           <p>
-            Connect incoming requests with current warehouse lots or pre-vetted supplier catalogs in seconds. Eliminate stock check delays with global CAS search.
+            Connect incoming requests with current warehouse lots or pre-vetted supplier catalogs in seconds. Eliminate stock check delays with global item code search.
           </p>
           <ul class="feat-checklist">
             <li class="feat-check-item">
@@ -2333,7 +2333,7 @@
             </li>
             <li class="feat-check-item">
               <span class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Global search by customer, item, supplier or CAS number</span>
+              <span>Global search by customer, item, supplier or product code</span>
             </li>
             <li class="feat-check-item">
               <span class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -2348,8 +2348,8 @@
         <div class="feat-mock">
           <div style="background:var(--bg-base); border:1px solid var(--border); border-radius:var(--radius-md); padding:0.75rem 1rem; display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" value="CAS: 50-78-2 (Aspirin USP)" readonly style="border:none; background:none; outline:none; color:var(--text-main); font-size:0.9rem; width:100%;">
-            <span class="cas-pill">CAS Search</span>
+            <input type="text" value="Code: API-5078 (Aspirin USP)" readonly style="border:none; background:none; outline:none; color:var(--text-main); font-size:0.9rem; width:100%;">
+            <span class="cas-pill">Item Matcher</span>
           </div>
 
           <div style="background:var(--bg-surface-elevated); border:1px solid var(--border); border-radius:var(--radius-md); padding:1rem; margin-bottom:1rem;">
@@ -2358,7 +2358,7 @@
                 <strong style="font-size:0.95rem;">Acetylsalicylic Acid (Aspirin) USP</strong>
                 <div style="font-size:0.75rem; color:var(--text-dim);">Company Master ID: #API-1029</div>
               </div>
-              <span class="cas-pill">CAS 50-78-2</span>
+              <span class="cas-pill">Code API-5078</span>
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; font-size:0.775rem; background:rgba(0,0,0,0.25); padding:0.65rem; border-radius:var(--radius-sm); margin-top:0.65rem;">
               <div><span style="color:var(--text-dim);">Current Stock:</span> <strong>3,200 KG</strong></div>
@@ -2653,7 +2653,7 @@
               <tr>
                 <th>Lead ID</th>
                 <th>Client / Broker</th>
-                <th>Chemical / CAS</th>
+                <th>Product / Item Code</th>
                 <th>Quantity</th>
                 <th>Status</th>
               </tr>
@@ -2923,7 +2923,7 @@
             <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
           </div>
           <h3>Utilities</h3>
-          <p>Unit converters, CAS search utilities, bulk export, and backup tools.</p>
+          <p>Unit converters, bulk export, and backup tools.</p>
         </div>
 
         <!-- 7. Setup -->
@@ -3047,10 +3047,10 @@
               <td class="col-glow">Document upload to lead</td>
             </tr>
             <tr>
-              <td><strong>CAS Number & Chemical Search</strong></td>
+              <td><strong>Item Master & Product Code Search</strong></td>
               <td>Slow text filter</td>
-              <td>No CAS search</td>
-              <td class="col-glow">Global CAS item search</td>
+              <td>No item code search</td>
+              <td class="col-glow">Global item master search</td>
             </tr>
             <tr>
               <td><strong>Stock & Regular Item Matching</strong></td>
@@ -3135,7 +3135,7 @@
             <svg class="faq-icon-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="faq-body-collapse">
-            Yes. The platform includes an Item Master (Company Items and Standard Items) with global search by chemical name, supplier, customer, or CAS number. Reps can immediately see whether the product is in current warehouse stock or available from regular suppliers.
+            Yes. The platform includes an Item Master (Company Items and Standard Items) with global search by chemical name, supplier, customer, or product code. Reps can immediately see whether the product is in current warehouse stock or available from regular suppliers.
           </div>
         </div>
 
@@ -3196,7 +3196,7 @@
           <span class="glow-tag">Schedule a Session</span>
           <h2>Ready to Run an Organized Pharma Sales Desk?</h2>
           <p>
-            Schedule a personalized 20-minute demonstration. We will walk you through live inquiry intake, instant CAS matching, quote logging, and ledger tracking in Pharma Chemi CRM.
+            Schedule a personalized 20-minute demonstration. We will walk you through live inquiry intake, instant item master matching, quote logging, and ledger tracking in Pharma Chemi CRM.
           </p>
 
           <div>
@@ -3248,7 +3248,7 @@
               <select class="form-ctrl" id="inp-interest" required>
                 <option value="">Select priority focus...</option>
                 <option value="Lead and Inquiry Tracking">Lead and Inquiry Tracking</option>
-                <option value="Stock Matching by CAS Number">Stock Matching by CAS Number</option>
+                <option value="Stock Matching by Item Code">Stock Matching by Item Code</option>
                 <option value="Fast Quotation & WhatsApp Desk">Fast Quotation & WhatsApp Desk</option>
                 <option value="Staff Activity & Daily Work Tracking">Staff Activity & Daily Work Tracking</option>
                 <option value="Complete Trading House ERP & Ledger">Complete Trading House ERP & Ledger</option>
@@ -3541,21 +3541,21 @@
         mockTitle: "Inquiry Intake Log",
         status: "Pending Match",
         badgeClass: "badge-pending",
-        code: "Inquiry #PC-9402\nChemical: Paracetamol DC 90% (CAS: 103-90-2)\nBuyer: Global Pharma Laboratories Ltd.\nBroker: Apex Chem Brokers | Volume: 5,000 KG\nPort: CIF Nhava Sheva (Immediate dispatch)"
+        code: "Inquiry #PC-9402\nChemical: Paracetamol DC 90% (Code: API-1039)\nBuyer: Global Pharma Laboratories Ltd.\nBroker: Apex Chem Brokers | Volume: 5,000 KG\nPort: CIF Nhava Sheva (Immediate dispatch)"
       },
       {
         pill: "Stage 02: Inventory Matching",
         heading: "Match with current stock and regular supplier items",
-        desc: "Instantly cross-check demand against available warehouse lots or verified regular supplier items using the Item Master and global CAS search.",
+        desc: "Instantly cross-check demand against available warehouse lots or verified regular supplier items using the Item Master and global item search.",
         bullets: [
-          "Global search by customer, chemical, supplier or CAS number",
+          "Global search by customer, chemical, supplier or product code",
           "Real-time visibility into Company Items and regular items",
           "Automated batch purity and COA validation"
         ],
-        mockTitle: "CAS Stock Matcher",
+        mockTitle: "Item Stock Matcher",
         status: "Stock Matched",
         badgeClass: "badge-confirm",
-        code: "Stock Match Found: Warehouse Lot #WH-048\nItem: Paracetamol DC 90% (CAS: 103-90-2)\nAvailable Quantity: 6,200 KG | Grade: Pharma USP\nSupplier: Regular Approved Partner (Gujarat Plant)"
+        code: "Stock Match Found: Warehouse Lot #WH-048\nItem: Paracetamol DC 90% (Code: API-1039)\nAvailable Quantity: 6,200 KG | Grade: Pharma USP\nSupplier: Regular Approved Partner (Gujarat Plant)"
       },
       {
         pill: "Stage 03: Rate Calculation",
@@ -3674,7 +3674,7 @@
             <td>${lead.client}</td>
             <td>
               <div><strong>${lead.item}</strong></div>
-              <div style="font-size:0.75rem; color:var(--text-dim);">CAS: ${lead.cas}</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">Code: ${lead.cas}</div>
             </td>
             <td>${lead.qty}</td>
             <td><span class="status-badge badge-${lead.status.toLowerCase()}">${lead.status}</span></td>
@@ -3722,7 +3722,7 @@
         sub: "Match chemical demands with verified suppliers quickly.",
         icon: '<svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>',
         bullets: [
-          "Instant global search across regular suppliers and CAS numbers",
+          "Instant global search across regular suppliers and item codes",
           "Maintain active catalog of approved pharmaceutical API items",
           "Log procurement rates and supplier transit schedules accurately",
           "Coordinate directly with sales reps on pending inquiries"

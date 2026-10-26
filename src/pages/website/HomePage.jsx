@@ -51,7 +51,7 @@ export default function HomePage() {
   // Interactive Demo State inside Landing Page
   const [activeLeadTab, setActiveLeadTab] = useState('all');
   const [selectedStatusFilter, setSelectedStatusFilter] = useState('all');
-  const [casSearchQuery, setCasSearchQuery] = useState('103-90-2');
+  const [itemSearchQuery, setItemSearchQuery] = useState('API-1039');
   const [activeFeatureCategory, setActiveFeatureCategory] = useState('leads');
   const [activeWorkflowStep, setActiveWorkflowStep] = useState(0);
   const [activeRoleTab, setActiveRoleTab] = useState('sales');
@@ -59,23 +59,23 @@ export default function HomePage() {
   const [quoteLoggedNotice, setQuoteLoggedNotice] = useState(false);
   const [paperUploadNotice, setPaperUploadNotice] = useState(false);
 
-  // Sample Leads Dataset matching specification
+  // Sample B2B Leads Dataset matching specification
   const sampleLeads = [
-    { id: 'LD-901', client: 'Sun Healthcare (Broker)', item: 'Metformin HCl IP', cas: '1115-70-4', qty: '2,000 KG', status: 'Sent', tab: 'leads' },
-    { id: 'LD-902', client: 'Zydex Chemical Labs', item: 'Ibuprofen 25 EP', cas: '15687-27-1', qty: '1,500 KG', status: 'Pending', tab: 'myLeads' },
-    { id: 'LD-903', client: 'BioCore Trade Corp', item: 'Ciprofloxacin HCl', cas: '86393-32-0', qty: '500 KG', status: 'Confirm', tab: 'purchase' },
-    { id: 'LD-904', client: 'Apex Pharma Global', item: 'Amoxicillin Trihydrate', cas: '61336-70-7', qty: '4,000 KG', status: 'WON', tab: 'myLeads' },
-    { id: 'LD-905', client: 'Raman Chemical Traders', item: 'Paracetamol DC 90%', cas: '103-90-2', qty: '10,000 KG', status: 'Reject', tab: 'mobile' },
-    { id: 'LD-906', client: 'Krupa Intermediates', item: 'Dextromethorphan HBr', cas: '6700-34-1', qty: '300 KG', status: 'NoOffer', tab: 'leads' },
-    { id: 'LD-907', client: 'Inquiry Lead via Expo', item: 'Unspecified Solvents', cas: 'N/A', qty: '25 Drums', status: 'Junk', tab: 'mobile' }
+    { id: 'LD-901', client: 'Sun Healthcare (Broker)', item: 'Metformin HCl IP', code: 'API-1115', qty: '2,000 KG', status: 'Sent', tab: 'leads' },
+    { id: 'LD-902', client: 'Zydex Chemical Labs', item: 'Ibuprofen 25 EP', code: 'API-1568', qty: '1,500 KG', status: 'Pending', tab: 'myLeads' },
+    { id: 'LD-903', client: 'BioCore Trade Corp', item: 'Ciprofloxacin HCl', code: 'API-8639', qty: '500 KG', status: 'Confirm', tab: 'purchase' },
+    { id: 'LD-904', client: 'Apex Pharma Global', item: 'Amoxicillin Trihydrate', code: 'API-6133', qty: '4,000 KG', status: 'WON', tab: 'myLeads' },
+    { id: 'LD-905', client: 'Raman Chemical Traders', item: 'Paracetamol DC 90%', code: 'API-1039', qty: '10,000 KG', status: 'Reject', tab: 'mobile' },
+    { id: 'LD-906', client: 'Krupa Intermediates', item: 'Dextromethorphan HBr', code: 'API-6700', qty: '300 KG', status: 'NoOffer', tab: 'leads' },
+    { id: 'LD-907', client: 'Inquiry Lead via Expo', item: 'Unspecified Solvents', code: 'N/A', qty: '25 Drums', status: 'Junk', tab: 'mobile' }
   ];
 
-  // Chemical Items Master catalog matching CAS search
+  // B2B Items Master catalog matching product code search
   const chemicalCatalog = {
-    '103-90-2': { name: 'Paracetamol Fine Powder / DC 90%', cas: '103-90-2', stock: '8,400 KG', rate: '$4.45 / KG', supplier: 'Gujarat Synthesis Node', regularItem: true },
-    '15687-27-1': { name: 'Ibuprofen 25 EP / USP', cas: '15687-27-1', stock: '4,200 KG', rate: '$13.20 / KG', supplier: 'Panoli API Cluster', regularItem: true },
-    '1115-70-4': { name: 'Metformin Hydrochloride IP', cas: '1115-70-4', stock: '12,500 KG', rate: '$3.80 / KG', supplier: 'Aarti Chem Node', regularItem: true },
-    '50-78-2': { name: 'Acetylsalicylic Acid (Aspirin USP)', cas: '50-78-2', stock: '3,200 KG', rate: '$4.85 / KG', supplier: 'Zydex Bulk Depot', regularItem: true }
+    'API-1039': { name: 'Paracetamol Fine Powder / DC 90%', code: 'API-1039', stock: '8,400 KG', rate: '$4.45 / KG', supplier: 'Gujarat Synthesis Node', regularItem: true },
+    'API-1568': { name: 'Ibuprofen 25 EP / USP', code: 'API-1568', stock: '4,200 KG', rate: '$13.20 / KG', supplier: 'Panoli API Cluster', regularItem: true },
+    'API-1115': { name: 'Metformin Hydrochloride IP', code: 'API-1115', stock: '12,500 KG', rate: '$3.80 / KG', supplier: 'Aarti Chem Node', regularItem: true },
+    'API-5078': { name: 'Acetylsalicylic Acid (Aspirin USP)', code: 'API-5078', stock: '3,200 KG', rate: '$4.85 / KG', supplier: 'Zydex Bulk Depot', regularItem: true }
   };
 
   const filteredLeads = sampleLeads.filter(l => {
@@ -107,8 +107,8 @@ export default function HomePage() {
     {
       no: '02',
       title: 'Match Stock',
-      desc: 'Cross-check inquiries instantly against current warehouse lots or approved regular items in the Item Master via CAS number.',
-      badge: 'CAS Registry Match'
+      desc: 'Cross-check inquiries instantly against current warehouse lots or approved regular items in the Item Master via Item Code.',
+      badge: 'Item Master Match'
     },
     {
       no: '03',
@@ -154,7 +154,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, CAS registry matching, batch COA traceability, and automated quotation pipelines.
+            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, item master matching, batch COA traceability, and automated quotation pipelines.
           </p>
 
           {/* Hero CTA Buttons */}
@@ -472,7 +472,7 @@ export default function HomePage() {
                     <tr>
                       <th className="p-2.5">ID</th>
                       <th className="p-2.5">Customer / Broker</th>
-                      <th className="p-2.5">Chemical / CAS</th>
+                      <th className="p-2.5">Product / Item Code</th>
                       <th className="p-2.5">Qty</th>
                       <th className="p-2.5">Status</th>
                     </tr>
@@ -484,7 +484,7 @@ export default function HomePage() {
                         <td className="p-2.5 font-medium">{lead.client}</td>
                         <td className="p-2.5">
                           <div className="font-bold text-slate-800">{lead.item}</div>
-                          <div className="text-[10px] text-slate-400 font-mono">CAS: {lead.cas}</div>
+                          <div className="text-[10px] text-slate-400 font-mono">Code: {lead.code}</div>
                         </td>
                         <td className="p-2.5">{lead.qty}</td>
                         <td className="p-2.5">
@@ -505,44 +505,44 @@ export default function HomePage() {
               FEATURE 2: STOCK MATCHING AND QUOTING
              ================================================================= */}
           <div className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Interactive CAS Stock Search */}
+            {/* Interactive Item Stock Search */}
             <div className="lg:col-span-7 bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4 order-2 lg:order-1">
               <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-xl border border-slate-300 shadow-xs">
                 <Search className="w-4 h-4 text-[#004B9B]" />
                 <input
                   type="text"
-                  value={casSearchQuery}
-                  onChange={(e) => setCasSearchQuery(e.target.value)}
-                  placeholder="Global search by CAS, item, customer, or supplier..."
+                  value={itemSearchQuery}
+                  onChange={(e) => setItemSearchQuery(e.target.value)}
+                  placeholder="Global search by item code, product, customer, or supplier..."
                   className="w-full text-xs outline-none bg-transparent text-slate-800 font-medium"
                 />
                 <span className="text-[10px] font-mono px-2 py-0.5 bg-blue-50 text-[#004B9B] rounded font-bold border border-blue-200">
-                  CAS Matcher
+                  Item Matcher
                 </span>
               </div>
 
-              {/* Sample CAS tags to click */}
+              {/* Sample item code tags to click */}
               <div className="flex flex-wrap items-center gap-1.5 text-xs">
-                <span className="text-slate-400 font-bold mr-1">Quick CAS:</span>
-                {['103-90-2', '15687-27-1', '1115-70-4', '50-78-2'].map(cas => (
+                <span className="text-slate-400 font-bold mr-1">Quick Code:</span>
+                {['API-1039', 'API-1568', 'API-1115', 'API-5078'].map(code => (
                   <button
-                    key={cas}
-                    onClick={() => setCasSearchQuery(cas)}
+                    key={code}
+                    onClick={() => setItemSearchQuery(code)}
                     className="px-2 py-0.5 bg-white hover:bg-blue-50 text-slate-700 text-[11px] font-mono rounded border border-slate-200 cursor-pointer"
                   >
-                    CAS {cas}
+                    Code {code}
                   </button>
                 ))}
               </div>
 
-              {/* Matched Chemical Result */}
-              {chemicalCatalog[casSearchQuery] ? (
+              {/* Matched Product Result */}
+              {chemicalCatalog[itemSearchQuery] ? (
                 <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs space-y-3">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-xs font-mono font-bold text-[#004B9B]">CAS {chemicalCatalog[casSearchQuery].cas}</span>
-                      <h4 className="text-sm font-bold text-slate-900 mt-0.5">{chemicalCatalog[casSearchQuery].name}</h4>
-                      <p className="text-xs text-slate-500">Regular Supplier: {chemicalCatalog[casSearchQuery].supplier}</p>
+                      <span className="text-xs font-mono font-bold text-[#004B9B]">Code: {chemicalCatalog[itemSearchQuery].code}</span>
+                      <h4 className="text-sm font-bold text-slate-900 mt-0.5">{chemicalCatalog[itemSearchQuery].name}</h4>
+                      <p className="text-xs text-slate-500">Regular Supplier: {chemicalCatalog[itemSearchQuery].supplier}</p>
                     </div>
                     <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
                       ✓ In Current Stock
@@ -552,11 +552,11 @@ export default function HomePage() {
                   <div className="grid grid-cols-3 gap-3 p-2.5 bg-slate-50 rounded-lg text-xs">
                     <div>
                       <span className="text-slate-500 text-[11px] block">Stock Lot:</span>
-                      <strong className="text-slate-900">{chemicalCatalog[casSearchQuery].stock}</strong>
+                      <strong className="text-slate-900">{chemicalCatalog[itemSearchQuery].stock}</strong>
                     </div>
                     <div>
                       <span className="text-slate-500 text-[11px] block">Quote Price:</span>
-                      <strong className="text-[#004B9B] font-bold">{chemicalCatalog[casSearchQuery].rate}</strong>
+                      <strong className="text-[#004B9B] font-bold">{chemicalCatalog[itemSearchQuery].rate}</strong>
                     </div>
                     <div>
                       <span className="text-slate-500 text-[11px] block">Delivery Time:</span>
@@ -579,7 +579,7 @@ export default function HomePage() {
                 </div>
               ) : (
                 <div className="p-4 bg-white rounded-xl border border-slate-200 text-center text-xs text-slate-500">
-                  No direct CAS match found for query. Try clicking one of the sample CAS tags above!
+                  No direct product match found for query. Try clicking one of the sample item code tags above!
                 </div>
               )}
 
@@ -614,7 +614,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#EE1C25] shrink-0 mt-0.5" />
-                  <span><strong>Global Search:</strong> Find by customer, item, supplier, or CAS number.</span>
+                  <span><strong>Global Search:</strong> Find by customer, item, supplier, or product code.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#EE1C25] shrink-0 mt-0.5" />
@@ -997,7 +997,7 @@ export default function HomePage() {
                   <SlidersHorizontal className="w-4 h-4" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900">Utilities</h4>
-                <p className="text-[11px] text-slate-600">CAS conversion tools, bulk item import/export, and system health tools.</p>
+                <p className="text-[11px] text-slate-600">Unit conversion tools, bulk item import/export, and system health tools.</p>
               </div>
 
               <div className="p-4 bg-slate-50 hover:bg-blue-50/50 rounded-2xl border border-slate-200 transition-all space-y-1.5">
@@ -1047,10 +1047,10 @@ export default function HomePage() {
                   <td className="p-4 bg-blue-50/30 text-[#004B9B] font-bold border-l border-blue-200">Document upload to lead</td>
                 </tr>
                 <tr>
-                  <td className="p-4 font-bold text-slate-900">CAS Number & Chemical Search</td>
+                  <td className="p-4 font-bold text-slate-900">Item Master & Product Code Search</td>
                   <td className="p-4 text-slate-500">Slow text filter</td>
-                  <td className="p-4 text-slate-500">No CAS search</td>
-                  <td className="p-4 bg-blue-50/30 text-[#004B9B] font-bold border-l border-blue-200">Global CAS item search</td>
+                  <td className="p-4 text-slate-500">No item code search</td>
+                  <td className="p-4 bg-blue-50/30 text-[#004B9B] font-bold border-l border-blue-200">Global item master search</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-bold text-slate-900">Stock & Regular Item Matching</td>
@@ -1106,7 +1106,7 @@ export default function HomePage() {
                 Ready to Run an Organized Pharma Sales Desk?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Experience all 6 feature groups in action: record leads, match stock by CAS number, quote via WhatsApp, and track customer balances in Pharma Chemi CRM.
+                Experience all 6 feature groups in action: record leads, match stock by item code, quote via WhatsApp, and track customer balances in Pharma Chemi CRM.
               </p>
             </div>
 

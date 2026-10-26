@@ -1,5 +1,5 @@
-// AI Chemical Extractor Utility
-// Simulates OCR / LLM extraction of chemical names, CAS, grades, quantities from documents
+// AI Product Extractor Utility
+// Simulates OCR / LLM extraction of product descriptions, codes, grades, quantities from documents
 
 import { ITEMS_MASTER } from '../data/mockData';
 
@@ -23,15 +23,15 @@ export function calculateSimilarity(s1, s2) {
   return 0.3;
 }
 
-// Function to match extracted chemical name against Items Master
+// Function to match extracted product name against Items Master
 export function matchChemicalToItems(rawName, rawCas) {
   if (!rawName) return { status: 'New item', matchedItem: null, suggestions: [] };
 
   const cleanName = rawName.trim().toLowerCase();
 
-  // 1. Direct CAS match
+  // 1. Direct code match
   if (rawCas) {
-    const casMatch = ITEMS_MASTER.find(item => item.casNo === rawCas);
+    const casMatch = ITEMS_MASTER.find(item => item.casNo === rawCas || item.code === rawCas);
     if (casMatch) {
       return {
         status: 'Matched',

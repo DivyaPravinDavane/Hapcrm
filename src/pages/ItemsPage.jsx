@@ -63,7 +63,7 @@ export default function ItemsPage() {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search product description, CAS, code..."
+              placeholder="Search product description, item code..."
               className="w-full pl-8 pr-2.5 py-1.5 bg-slate-50 border border-slate-300 rounded text-xs focus:bg-white"
             />
           </div>
@@ -114,7 +114,7 @@ export default function ItemsPage() {
             <thead className="bg-[#f8fafc] text-slate-700 text-xs">
               <tr>
                 <th className="min-w-[160px]">Description</th>
-                <th className="w-28">Item Code / CAS</th>
+                <th className="w-28">Item Code</th>
                 <th className="w-20">Rate (₹)</th>
                 <th className="w-18">5KG</th>
                 <th className="w-18">10KG</th>
@@ -138,10 +138,9 @@ export default function ItemsPage() {
                     <div className="text-[10px] text-slate-500">Make: {item.make}</div>
                   </td>
 
-                  {/* Code & CAS */}
+                  {/* Code */}
                   <td>
                     <div className="font-mono text-slate-700 text-[11px] font-semibold">{item.code}</div>
-                    <div className="font-mono text-[10px] text-slate-400">CAS: {item.casNo}</div>
                   </td>
 
                   {/* Rate */}

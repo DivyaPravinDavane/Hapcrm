@@ -34,7 +34,7 @@ export default function WebsiteFooter() {
             </div>
 
             <p className="text-slate-400 leading-relaxed text-xs">
-              The dedicated enterprise software and sourcing platform engineered specifically for the pharmaceuticals and chemical industries. Complete with chemical inquiry CRM, CAS registry matching, batch COA traceability, and global supplier workflows.
+              The dedicated enterprise software and sourcing platform engineered specifically for the pharmaceuticals and chemical industries. Complete with chemical inquiry CRM, item master stock matching, batch COA traceability, and global supplier workflows.
             </p>
 
             <div className="pt-2 text-[11px] space-y-1 text-slate-400">

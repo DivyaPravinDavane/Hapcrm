@@ -51,28 +51,28 @@ export default function PharmaChemiLandingNext({
   // Interactive Simulator State
   const [activeLeadTab, setActiveLeadTab] = useState('all');
   const [selectedStatusFilter, setSelectedStatusFilter] = useState('all');
-  const [casSearchQuery, setCasSearchQuery] = useState('103-90-2');
+  const [itemSearchQuery, setItemSearchQuery] = useState('API-1039');
   const [activeWorkflowStep, setActiveWorkflowStep] = useState(0);
   const [quoteLoggedNotice, setQuoteLoggedNotice] = useState(false);
   const [paperUploadNotice, setPaperUploadNotice] = useState(false);
 
   // Sample Leads Dataset matching specification
   const sampleLeads = [
-    { id: 'LD-901', client: 'Sun Healthcare (Broker)', item: 'Metformin HCl IP', cas: '1115-70-4', qty: '2,000 KG', status: 'Sent', tab: 'leads' },
-    { id: 'LD-902', client: 'Zydex Chemical Labs', item: 'Ibuprofen 25 EP', cas: '15687-27-1', qty: '1,500 KG', status: 'Pending', tab: 'myLeads' },
-    { id: 'LD-903', client: 'BioCore Trade Corp', item: 'Ciprofloxacin HCl', cas: '86393-32-0', qty: '500 KG', status: 'Confirm', tab: 'purchase' },
-    { id: 'LD-904', client: 'Apex Pharma Global', item: 'Amoxicillin Trihydrate', cas: '61336-70-7', qty: '4,000 KG', status: 'WON', tab: 'myLeads' },
-    { id: 'LD-905', client: 'Raman Chemical Traders', item: 'Paracetamol DC 90%', cas: '103-90-2', qty: '10,000 KG', status: 'Reject', tab: 'mobile' },
-    { id: 'LD-906', client: 'Krupa Intermediates', item: 'Dextromethorphan HBr', cas: '6700-34-1', qty: '300 KG', status: 'NoOffer', tab: 'leads' },
-    { id: 'LD-907', client: 'Inquiry Lead via Expo', item: 'Unspecified Solvents', cas: 'N/A', qty: '25 Drums', status: 'Junk', tab: 'mobile' }
+    { id: 'LD-901', client: 'Sun Healthcare (Broker)', item: 'Metformin HCl IP', code: 'API-1115', qty: '2,000 KG', status: 'Sent', tab: 'leads' },
+    { id: 'LD-902', client: 'Zydex Chemical Labs', item: 'Ibuprofen 25 EP', code: 'API-1568', qty: '1,500 KG', status: 'Pending', tab: 'myLeads' },
+    { id: 'LD-903', client: 'BioCore Trade Corp', item: 'Ciprofloxacin HCl', code: 'API-8639', qty: '500 KG', status: 'Confirm', tab: 'purchase' },
+    { id: 'LD-904', client: 'Apex Pharma Global', item: 'Amoxicillin Trihydrate', code: 'API-6133', qty: '4,000 KG', status: 'WON', tab: 'myLeads' },
+    { id: 'LD-905', client: 'Raman Chemical Traders', item: 'Paracetamol DC 90%', code: 'API-1039', qty: '10,000 KG', status: 'Reject', tab: 'mobile' },
+    { id: 'LD-906', client: 'Krupa Intermediates', item: 'Dextromethorphan HBr', code: 'API-6700', qty: '300 KG', status: 'NoOffer', tab: 'leads' },
+    { id: 'LD-907', client: 'Inquiry Lead via Expo', item: 'Unspecified Solvents', code: 'N/A', qty: '25 Drums', status: 'Junk', tab: 'mobile' }
   ];
 
-  // Chemical Items Master catalog matching CAS search
+  // Chemical Items Master catalog matching item code search
   const chemicalCatalog = {
-    '103-90-2': { name: 'Paracetamol Fine Powder / DC 90%', cas: '103-90-2', stock: '8,400 KG', rate: '$4.45 / KG', supplier: 'Gujarat Synthesis Node', regularItem: true },
-    '15687-27-1': { name: 'Ibuprofen 25 EP / USP', cas: '15687-27-1', stock: '4,200 KG', rate: '$13.20 / KG', supplier: 'Panoli API Cluster', regularItem: true },
-    '1115-70-4': { name: 'Metformin Hydrochloride IP', cas: '1115-70-4', stock: '12,500 KG', rate: '$3.80 / KG', supplier: 'Aarti Chem Node', regularItem: true },
-    '50-78-2': { name: 'Acetylsalicylic Acid (Aspirin USP)', cas: '50-78-2', stock: '3,200 KG', rate: '$4.85 / KG', supplier: 'Zydex Bulk Depot', regularItem: true }
+    'API-1039': { name: 'Paracetamol Fine Powder / DC 90%', code: 'API-1039', stock: '8,400 KG', rate: '$4.45 / KG', supplier: 'Gujarat Synthesis Node', regularItem: true },
+    'API-1568': { name: 'Ibuprofen 25 EP / USP', code: 'API-1568', stock: '4,200 KG', rate: '$13.20 / KG', supplier: 'Panoli API Cluster', regularItem: true },
+    'API-1115': { name: 'Metformin Hydrochloride IP', code: 'API-1115', stock: '12,500 KG', rate: '$3.80 / KG', supplier: 'Aarti Chem Node', regularItem: true },
+    'API-5078': { name: 'Acetylsalicylic Acid (Aspirin USP)', code: 'API-5078', stock: '3,200 KG', rate: '$4.85 / KG', supplier: 'Zydex Bulk Depot', regularItem: true }
   };
 
   const filteredLeads = sampleLeads.filter(l => {
@@ -104,8 +104,8 @@ export default function PharmaChemiLandingNext({
     {
       no: '02',
       title: 'Match Stock',
-      desc: 'Cross-check inquiries instantly against current warehouse lots or approved regular items in the Item Master via CAS number.',
-      badge: 'CAS Registry Match'
+      desc: 'Cross-check inquiries instantly against current warehouse lots or approved regular items in the Item Master via Item Code.',
+      badge: 'Item Master Match'
     },
     {
       no: '03',
@@ -149,7 +149,7 @@ export default function PharmaChemiLandingNext({
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, CAS registry matching, batch COA traceability, and automated quotation pipelines.
+            Pharma Chemi is engineered from the ground up to solve the exact operational, regulatory, and commercial complexities of chemical manufacturers, API traders, bulk drug importers, and pharma distributors. Powered by 150+ compendial APIs, item master matching, batch COA traceability, and automated quotation pipelines.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
@@ -276,12 +276,12 @@ export default function PharmaChemiLandingNext({
               <Boxes className="w-4 h-4" />
               <span>2. Stock Matching and Quoting</span>
             </div>
-            <h3 className="text-xl font-bold text-slate-900">CAS Registry Search & Quote Price Logging</h3>
+            <h3 className="text-xl font-bold text-slate-900">Item Master Search & Quote Price Logging</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700">
               <div className="space-y-2">
                 <p>• Match inquiries with current stock and regular items</p>
                 <p>• Item master (Items and Company Items)</p>
-                <p>• Global search by customer, item, supplier or CAS number</p>
+                <p>• Global search by customer, item, supplier or product code</p>
               </div>
               <div className="space-y-2">
                 <p>• Give the quote price, logged with customer, item, rate and delivery time</p>

@@ -42,7 +42,7 @@ export default function SolutionsPage() {
       solution: 'Pharma Chemi connects formulators directly with pre-vetted WHO-GMP manufacturers, stores digital batch-specific COAs in an encrypted compliance vault, and maintains an unbroken audit trail.',
       benefits: [
         'Instant retrieval of lot-specific Certificate of Analysis (COA) and Open-Part DMF filings',
-        'Standardized 150+ APIs catalog pre-indexed by CAS numbers and pharmacopeia standards',
+        'Standardized 150+ APIs catalog pre-indexed by item codes and pharmacopeia standards',
         'Sample request tracking with courier Airway Bill (AWB) integration for QC lab testing',
         'Uninterrupted supply chain backed by validated WHO-GMP manufacturers and buffer stock'
       ]

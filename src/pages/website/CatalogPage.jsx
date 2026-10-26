@@ -44,7 +44,7 @@ export default function CatalogPage() {
         !q ||
         prod.name.toLowerCase().includes(q) ||
         prod.category.toLowerCase().includes(q) ||
-        (prod.cas && prod.cas.toLowerCase().includes(q));
+        (prod.code && prod.code.toLowerCase().includes(q));
 
       const matchesCategory =
         !selectedCategory || prod.category === selectedCategory;
@@ -94,7 +94,7 @@ export default function CatalogPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Every product in the Pharma Chemi catalog conforms to international pharmacopeial standards (USP, BP, EP, IP). Search by chemical name, CAS registry number, or filter by therapeutic classification.
+            Every product in the Pharma Chemi catalog conforms to international pharmacopeial standards (USP, BP, EP, IP). Search by product name, item code, or filter by therapeutic classification.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
@@ -128,7 +128,7 @@ export default function CatalogPage() {
             {/* Keyword Search */}
             <div className="md:col-span-6">
               <label className="block text-2xs font-extrabold uppercase tracking-wider text-slate-600 mb-1">
-                Search API Name / CAS Number
+                Search API Name / Item Code
               </label>
               <div className="relative">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -203,7 +203,7 @@ export default function CatalogPage() {
                 <tr>
                   <th className="py-3 px-4 w-12 text-center">#</th>
                   <th className="py-3 px-4">Chemical / API Product Name</th>
-                  <th className="py-3 px-4">CAS Registry No.</th>
+                  <th className="py-3 px-4">Item Code</th>
                   <th className="py-3 px-4">Therapeutic Category</th>
                   <th className="py-3 px-4">Pharmacopeia</th>
                   <th className="py-3 px-4 text-center">Action</th>
@@ -243,13 +243,9 @@ export default function CatalogPage() {
                           </div>
                         </td>
                         <td className="py-3.5 px-4 font-mono text-xs text-slate-600">
-                          {prod.cas ? (
-                            <span className="bg-slate-100 px-2 py-0.5 rounded text-[11px] font-semibold text-slate-700 border border-slate-200">
-                              {prod.cas}
-                            </span>
-                          ) : (
-                            <span className="text-slate-400 italic">Available on Request</span>
-                          )}
+                          <span className="bg-slate-100 px-2 py-0.5 rounded text-[11px] font-semibold text-slate-700 border border-slate-200">
+                            {prod.code || `#API-${String(prod.id).padStart(4, '0')}`}
+                          </span>
                         </td>
                         <td className="py-3.5 px-4">
                           <span className="inline-block px-2.5 py-0.5 bg-blue-50 text-[#004B9B] rounded-full text-2xs font-bold border border-blue-100">

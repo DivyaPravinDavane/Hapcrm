@@ -363,7 +363,7 @@ export function CrmProvider({ children }) {
           unit: c.unit || 'KG',
           rate: rate,
           status: 'Pending',
-          info: `Extracted from RFQ doc. CAS: ${c.casNo || 'N/A'}. Grade: ${c.grade || 'IP'}. Purity: ${c.purity || 'Standard'}.`,
+          info: `Extracted from RFQ doc. Code: ${c.casNo || 'N/A'}. Grade: ${c.grade || 'IP'}. Purity: ${c.purity || 'Standard'}.`,
           staff: staffName || 'Eshwari',
           stock: matchedItem && matchedItem.stock > 0 ? 'In Stock' : 'No Stock',
           comments: [

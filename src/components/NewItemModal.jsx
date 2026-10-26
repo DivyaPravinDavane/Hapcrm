@@ -62,12 +62,12 @@ export default function NewItemModal() {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-[11px] font-bold text-slate-700 mb-1">CAS Number</label>
+              <label className="block text-[11px] font-bold text-slate-700 mb-1">Item Code / HSN</label>
               <input
                 type="text"
                 value={casNo}
                 onChange={(e) => setCasNo(e.target.value)}
-                placeholder="165800-06-6"
+                placeholder="API-1039"
                 className="w-full text-xs border border-slate-300 rounded px-2.5 py-1.5 font-mono"
               />
             </div>

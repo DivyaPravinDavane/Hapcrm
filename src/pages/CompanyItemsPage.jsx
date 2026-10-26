@@ -90,7 +90,7 @@ export default function CompanyItemsPage() {
       make: item.make,
       qty: 50,
       rate: item.price,
-      info: `Generated from Supplier Catalogue. Type: ${item.type}, CAS: ${item.casNo}`
+      info: `Generated from Supplier Catalogue. Type: ${item.type}, Code: ${item.casNo}`
     });
     setActiveTab('My Leads');
   };
@@ -170,7 +170,7 @@ export default function CompanyItemsPage() {
             <div className="col-span-1">Make</div>
             <div className="col-span-1">Type</div>
             <div className="col-span-1">Strength</div>
-            <div className="col-span-2">CAS Number</div>
+            <div className="col-span-2">Item Code / HSN</div>
             <div className="col-span-1 text-center">Action</div>
           </div>
 
@@ -233,7 +233,7 @@ export default function CompanyItemsPage() {
             <div className="col-span-2">
               <input
                 type="text"
-                placeholder="CAS No..."
+                placeholder="Item / HSN..."
                 value={filters.casNo}
                 onChange={(e) => handleFilterChange('casNo', e.target.value)}
                 className="w-full text-[11px] py-1 px-1.5 border border-slate-300 rounded bg-white font-mono"

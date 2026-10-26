@@ -69,7 +69,7 @@ export default function AIExtractorModal() {
     // Progress updates
     const t1 = setTimeout(() => {
       setProcessingProgress(45);
-      setProcessingStatusText('Detecting pharmaceutical chemical nomenclature & CAS numbers...');
+      setProcessingStatusText('Detecting product descriptions & item codes...');
     }, 600);
 
     const t2 = setTimeout(() => {
@@ -319,7 +319,7 @@ export default function AIExtractorModal() {
                     </div>
                     <div>
                       <div className="font-semibold text-xs text-slate-800">Mihika_Bulk_Order.png</div>
-                      <div className="text-[11px] text-slate-500">Scanned purchase requirement slip with CAS</div>
+                      <div className="text-[11px] text-slate-500">Scanned purchase requirement slip with codes</div>
                       <div className="text-[10px] text-blue-600 font-medium mt-1">Click to analyze →</div>
                     </div>
                   </div>
@@ -426,7 +426,7 @@ export default function AIExtractorModal() {
                           <div className="col-span-1">{i + 1}.</div>
                           <div className="col-span-7">
                             <span className="font-semibold">{r.chemicalName}</span>
-                            {r.casNo && <span className="text-[9px] text-slate-500 font-mono block">CAS: {r.casNo}</span>}
+                            {r.casNo && <span className="text-[9px] text-slate-500 font-mono block">Code: {r.casNo}</span>}
                           </div>
                           <div className="col-span-4 text-right font-mono font-semibold">
                             {r.quantity} {r.unit}
@@ -490,8 +490,8 @@ export default function AIExtractorModal() {
                               className="rounded text-blue-600"
                             />
                           </th>
-                          <th className="p-2">Chemical Name</th>
-                          <th className="p-2 w-28">CAS No</th>
+                          <th className="p-2">Product Name</th>
+                          <th className="p-2 w-28">Item Code</th>
                           <th className="p-2 w-16">Grade</th>
                           <th className="p-2 w-20">Qty/Unit</th>
                           <th className="p-2 w-24">Make</th>
@@ -530,14 +530,14 @@ export default function AIExtractorModal() {
                                 />
                               </td>
 
-                              {/* CAS No */}
+                              {/* Item Code */}
                               <td className="p-2">
                                 <input
                                   type="text"
                                   value={row.casNo}
                                   onChange={(e) => handleCellChange(row.id, 'casNo', e.target.value)}
                                   className="w-full px-1.5 py-0.5 border border-slate-200 rounded text-[11px] font-mono focus:ring-1 focus:ring-blue-400"
-                                  placeholder="e.g. 98-92-0"
+                                  placeholder="e.g. API-1039"
                                 />
                               </td>
 

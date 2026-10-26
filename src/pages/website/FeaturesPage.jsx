@@ -45,7 +45,7 @@ export default function FeaturesPage() {
       ],
       stats: { metric: '< 3 Mins', label: 'Average Quotation Turnaround' },
       workflowSteps: [
-        { step: '01', title: 'Inquiry Intake', desc: 'Customer submits inquiry with CAS number, pharmacopeial grade, and quantity.' },
+        { step: '01', title: 'Inquiry Intake', desc: 'Customer submits inquiry with item code, pharmacopeial grade, and quantity.' },
         { step: '02', title: 'Margin & Tax Engine', desc: 'System calculates profit margin, local tax, packaging drum costs, and delivery freight.' },
         { step: '03', title: 'Quote Generation', desc: 'One-click generates commercial quote with COA specs and validity period.' },
         { step: '04', title: 'Follow-up Cadence', desc: 'Automated CRM reminders alert the sales specialist to close the order.' }
@@ -77,11 +77,11 @@ export default function FeaturesPage() {
       title: 'AI Chemical Document Extractor',
       icon: Cpu,
       badge: 'PROPRIETARY AI PARSER',
-      shortDesc: 'Instantly extract chemical names, CAS numbers, and quantities from scanned POs and handwritten RFQs.',
+      shortDesc: 'Instantly extract chemical names, item codes, and quantities from scanned POs and handwritten RFQs.',
       heroStatement: 'Eliminate hours of manual data entry from messy chemical customer requisitions.',
       highlights: [
         'Proprietary pharmaceutical OCR engine: Reads scanned PDF Purchase Orders, vendor rate lists, and customer inquiry sheets',
-        'Chemical entity recognition: Identifies chemical names, IUPAC nomenclature, CAS Registry numbers, and pharmacopeial standards',
+        'Chemical entity recognition: Identifies chemical names, product codes, and pharmacopeial standards',
         'Fuzzy matching against Item Master: Maps messy chemical synonyms to official stock catalog items automatically',
         'Bulk extraction review: Edit, verify, and generate CRM leads with a single click'
       ],
@@ -98,17 +98,17 @@ export default function FeaturesPage() {
       title: 'Chemical & API Master Catalog',
       icon: Database,
       badge: 'STANDARDIZED CHEMICAL REGISTRY',
-      shortDesc: 'Pre-indexed repository of 150+ compendial APIs with CAS numbers, synonyms, and storage specs.',
+      shortDesc: 'Pre-indexed repository of 150+ compendial APIs with item codes, synonyms, and storage specs.',
       heroStatement: 'A standardized single source of truth for all pharmaceutical chemical inventory.',
       highlights: [
         '150+ Pre-mapped Active Pharmaceutical Ingredients across all major therapeutic categories',
-        'CAS Registry Numbers, molecular formulas, IUPAC synonyms, and commercial trade names',
+        'Standardized item codes, molecular formulas, and commercial trade names',
         'Compendial specifications: USP, BP, EP, IP, and in-house manufacturer purity standards',
         'Packaging configurations: 25kg HDPE drums, corrugated boxes, vacuum bags, and cold-chain protocols'
       ],
       stats: { metric: '150+', label: 'Pre-Loaded Compendial APIs' },
       workflowSteps: [
-        { step: '01', title: 'Instant Catalog Search', desc: 'Search any chemical by name, therapeutic category, or CAS registry number.' },
+        { step: '01', title: 'Instant Catalog Search', desc: 'Search any chemical by name, therapeutic category, or item code.' },
         { step: '02', title: 'Stock & Lot Visibility', desc: 'View current inventory at Mumbai warehouse and Gujarat plant.' },
         { step: '03', title: 'Compliance Attachment', desc: 'Access standard specification sheets, MSDS, and master sample COAs.' },
         { step: '04', title: 'Direct RFQ Link', desc: 'Initiate customer quotes or procurement purchase orders directly from catalog.' }
@@ -205,7 +205,7 @@ export default function FeaturesPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Generic business CRMs fail in pharma trading because they lack chemical nomenclature, CAS registry support, batch COAs, pharmacopeial purity grades (USP/BP/EP/IP), and hazardous shipping workflows. Explore how Pharma Chemi solves each of these challenges.
+            Generic business CRMs fail in pharma trading because they lack chemical nomenclature, item master stock tracking, batch COAs, pharmacopeial purity grades (USP/BP/EP/IP), and hazardous shipping workflows. Explore how Pharma Chemi solves each of these challenges.
           </p>
 
           <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
@@ -433,7 +433,7 @@ export default function FeaturesPage() {
                   150+ APIs Master Catalog
                 </h3>
                 <p className="text-2xs text-slate-600 leading-relaxed">
-                  Search pre-indexed compendial active pharmaceutical ingredients by CAS number and therapeutic class.
+                  Search pre-indexed compendial active pharmaceutical ingredients by item code and therapeutic class.
                 </p>
               </div>
 

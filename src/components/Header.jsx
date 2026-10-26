@@ -137,7 +137,7 @@ export default function Header() {
                 setShowSearchResults(true);
               }}
               onFocus={() => setShowSearchResults(true)}
-              placeholder="Search customer, item, supplier, CAS No..."
+              placeholder="Search customer, item, supplier, item code..."
               className="w-full bg-white text-slate-800 placeholder-slate-400 pl-9 pr-8 py-1.5 rounded-md text-xs font-medium focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"
             />
             {globalSearchQuery && (
@@ -224,7 +224,7 @@ export default function Header() {
                       >
                         <div>
                           <div className="font-semibold text-slate-800">{i.description}</div>
-                          <div className="text-[11px] text-slate-500">CAS: {i.casNo} · Rate: ₹{i.rate.toLocaleString()}/KG</div>
+                          <div className="text-[11px] text-slate-500">Code: {i.code || i.casNo} · Rate: ₹{i.rate.toLocaleString()}/KG</div>
                         </div>
                         <span className="text-[10px] px-1.5 py-0.5 rounded font-medium bg-purple-100 text-purple-800">
                           Stock: {i.stock} KG
